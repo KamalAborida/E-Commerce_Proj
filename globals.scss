@@ -1,0 +1,42 @@
+@import './node_modules/scss-reset/reset';
+
+@import './src/app/styles/variables';
+@import './src/app/styles/base';
+
+.blackBackground {
+  background-image: url("/banner-backGround.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  height: 729px;
+  width: 100%;
+  z-index: -1;
+  border-radius:0 0 10px 10px;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@import "./src/app/\(shared\)/NavBar/navbar";
+@import "./src/app/\(shared\)/NavBar/icons-list";
+@import "./src/app/\(shared\)/NavBar/nav-list";
+
+@import "./src/app/\(shared\)/Footer/footer";
+@import "./src/app/\(shared\)/Footer/footer-about";
+@import "./src/app/\(shared\)/Footer/footer-socialMediaList";
+
+@import "./src/app/\(routes\)/\(home\)/components/Banner/banner";
+@import "./src/app/\(routes\)/\(home\)/components/Banner/product-cta";
+@import "./src/app/\(routes\)/\(home\)/components/Banner/headphones-image";
+
+@import "./src/app/\(routes\)/\(home\)/components/BestSelling/best-selling";
+@import "./src/app/\(routes\)/\(home\)/components/BestSelling/best-selling-card";
+
+@import "./src/app/\(routes\)/components/Categories/categories";
+@import "./src/app/\(routes\)/components/Categories/category";
+
+@import "./src/app/\(routes\)/\(home\)/components/Mission/mission";

@@ -1,0 +1,13 @@
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+
+  &__item {
+    &:hover {
+      color: $primary-orange;
+      cursor: pointer;
+    }
+  }
+}

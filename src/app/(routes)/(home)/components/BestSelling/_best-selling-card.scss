@@ -1,0 +1,50 @@
+.bestSellingCard {
+  display: flex;
+  justify-content: space-between;
+  // border: 2px solid yellow;
+  margin-bottom: 45px;
+  
+  &__img {
+    width: 45%;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__cta {
+    background-color: $very-light-gray;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__name {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      position: relative;
+      left: 20%;
+    }
+
+    &__btn {
+      background-color: transparent;
+      border: 2px solid black;
+      width: 160px;
+      height: 50px;
+      position: relative;
+      left: 20%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}

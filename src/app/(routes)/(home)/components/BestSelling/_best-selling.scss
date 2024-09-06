@@ -1,0 +1,10 @@
+.bestSelling {
+  margin: 150px auto 200px auto;
+  // border: 2px solid red;
+
+  &__title {
+    @extend .h1Text;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}

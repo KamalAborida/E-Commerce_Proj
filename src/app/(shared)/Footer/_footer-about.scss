@@ -1,0 +1,20 @@
+.footer__container__about {
+  width: 577px;
+  grid-row: 1 / 4;
+  align-content: center;
+  // padding-top: 20px;
+  // border: 1px solid red;
+
+  &__img {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 70px;
+    @extend .regularText;
+  }
+
+  &__copyrights {
+    @extend .regularText;
+  }
+}
