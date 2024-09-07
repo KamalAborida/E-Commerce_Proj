@@ -5,12 +5,13 @@
   margin-bottom: 45px;
 
   &__img {
-    width: 45%;
+    width: 48%;
     border-radius: 10px;
 
     img {
       width: 100%;
       max-width: 100%;
+      border-radius: 10px;
     }
   }
 
@@ -63,6 +64,29 @@
 
       &__btn {
         position: static;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .bestSellingCard {
+    &__cta {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__name {
+        font-size: 10px;
+        position: static;
+      }
+
+      &__btn {
+        background-color: transparent;
+        border: 2px solid black;
+        height: 30px;
+        font-size: 10px;
       }
     }
   }

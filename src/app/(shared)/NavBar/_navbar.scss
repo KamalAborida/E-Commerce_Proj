@@ -6,4 +6,13 @@
   color: white;
   padding: 30px 10px;
   margin-bottom: 40px;
+
+  &__hamLogo {
+    display: flex;
+    // border: 2px solid red;
+
+    &__hamburger {
+      margin-right: 20px;
+    }
+  }
 }

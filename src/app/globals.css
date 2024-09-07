@@ -586,10 +586,15 @@ template {
   border-radius: 0 0 10px 10px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .blackBackground {
     background-image: url("/banner-backGround-tablet.png");
     border-radius: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .blackBackground {
+    background-image: url("/banner-backGround-mobile.png");
   }
 }
 .main {
@@ -597,7 +602,7 @@ template {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .main {
     width: 95%;
   }
@@ -610,6 +615,12 @@ template {
   color: white;
   padding: 30px 10px;
   margin-bottom: 40px;
+}
+.nav__hamLogo {
+  display: flex;
+}
+.nav__hamLogo__hamburger {
+  margin-right: 20px;
 }
 
 .navIconList {
@@ -650,7 +661,7 @@ template {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .footer {
     height: -moz-max-content;
     height: max-content;
@@ -674,13 +685,31 @@ template {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 450px) {
+  .footer__container {
+    width: 90%;
+    text-align: center;
+  }
+  .footer__container__upperPart {
+    align-items: center;
+  }
+  .footer__container__upperPart .navList {
+    flex-direction: column;
+  }
+  .footer__container__upperPart .navList__item {
+    margin-bottom: 30px;
+  }
+  .footer__container__upperPart__logo {
+    margin-bottom: 45px;
+  }
+}
 .footer__container__lowerPart__about {
   width: 577px;
 }
 .footer__container__lowerPart__about__description {
   margin-bottom: 70px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .footer__container__lowerPart__about {
     width: 100%;
   }
@@ -697,10 +726,20 @@ template {
   width: 20%;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .footer__container__lowerPart__socialMediaList {
     width: 100%;
     margin-top: unset;
+  }
+}
+@media screen and (max-width: 450px) {
+  .footer__container__lowerPart__socialMediaList {
+    width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .footer__container__lowerPart__socialMediaList > ul {
+    width: 40%;
   }
 }
 .banner {
@@ -711,7 +750,7 @@ template {
   margin-bottom: 160px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .banner {
     justify-content: center;
     align-items: center;
@@ -749,9 +788,21 @@ template {
   background-color: #FBAF85;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .banner__productCta {
     text-align: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .banner__productCta {
+    width: 100%;
+  }
+  .banner__productCta__name {
+    font-size: 40px;
+  }
+  .banner__productCta__description {
+    margin: 40px auto;
+    width: 80%;
   }
 }
 .banner__headPhonesImage {
@@ -777,12 +828,13 @@ template {
   margin-bottom: 45px;
 }
 .bestSellingCard__img {
-  width: 45%;
+  width: 48%;
   border-radius: 10px;
 }
 .bestSellingCard__img img {
   width: 100%;
   max-width: 100%;
+  border-radius: 10px;
 }
 .bestSellingCard__cta {
   background-color: #F1F1F1;
@@ -815,7 +867,7 @@ template {
   color: white;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .bestSellingCard__cta {
     flex-direction: column;
     justify-content: center;
@@ -827,14 +879,37 @@ template {
   }
   .bestSellingCard__cta__btn {
     position: static;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .bestSellingCard__cta {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bestSellingCard__cta__name {
+    font-size: 10px;
+    position: static;
+  }
+  .bestSellingCard__cta__btn {
+    background-color: transparent;
+    border: 2px solid black;
+    height: 30px;
+    font-size: 10px;
   }
 }
 .categories {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
+@media screen and (max-width: 450px) {
+  .categories {
+    flex-direction: column;
+    align-content: center;
+  }
+}
 .categories__category {
   background-color: #F1F1F1;
   width: 30%;
@@ -877,9 +952,16 @@ template {
   color: #D87D4A;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .categories__category {
     width: 32%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .categories__category {
+    width: 100%;
+    max-width: unset;
+    margin-bottom: 100px;
   }
 }
 .mission {
@@ -906,7 +988,7 @@ template {
   width: 555px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .mission {
     flex-direction: column-reverse;
   }

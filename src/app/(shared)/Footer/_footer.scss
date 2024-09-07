@@ -55,3 +55,27 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-max-width) {
+  .footer {
+    &__container {
+      width: 90%;
+      text-align: center;
+
+      &__upperPart {
+        align-items: center;
+        .navList {
+          flex-direction: column;
+
+          &__item {
+            margin-bottom: 30px;
+          }
+        }
+
+        &__logo {
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+}

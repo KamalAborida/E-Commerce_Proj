@@ -1,5 +1,12 @@
 .categories {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .categories {
+    // border: 2px solid red;
+    flex-direction: column;
+    align-content: center;
+  }
 }

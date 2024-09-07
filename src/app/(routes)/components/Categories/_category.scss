@@ -52,3 +52,11 @@
     width: 32%;
   }
 }
+
+@media screen and (max-width: $mobile-max-width) {
+  .categories__category {
+    width: 100%;
+    max-width: unset;
+    margin-bottom: 100px;
+  }
+}

@@ -23,6 +23,12 @@
   }
 }
 
+@media screen and (max-width: $mobile-max-width) {
+  .blackBackground {
+    background-image: url("/banner-backGround-mobile.png");
+  }
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
