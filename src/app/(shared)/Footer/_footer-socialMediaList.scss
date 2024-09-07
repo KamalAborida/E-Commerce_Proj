@@ -1,5 +1,7 @@
-.footer__container__socialMediaList {
+.footer__container__lowerPart__socialMediaList {
   // border: 2px solid red;
+  width: 45%;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
 
@@ -8,5 +10,12 @@
     justify-content: space-between;
     // border: 2px solid blue;
     width: 20%;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .footer__container__lowerPart__socialMediaList {
+    width: 100%;
+    margin-top: unset;
   }
 }

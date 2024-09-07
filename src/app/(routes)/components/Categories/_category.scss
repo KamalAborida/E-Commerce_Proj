@@ -46,3 +46,9 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet-max-width) {
+  .categories__category {
+    width: 32%;
+  }
+}

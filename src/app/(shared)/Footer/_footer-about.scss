@@ -1,13 +1,7 @@
-.footer__container__about {
+.footer__container__lowerPart__about {
   width: 577px;
-  grid-row: 1 / 4;
-  align-content: center;
   // padding-top: 20px;
   // border: 1px solid red;
-
-  &__img {
-    margin-bottom: 40px;
-  }
 
   &__description {
     margin-bottom: 70px;
@@ -16,5 +10,11 @@
 
   &__copyrights {
     @extend .regularText;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .footer__container__lowerPart__about {
+    width: 100%;
   }
 }

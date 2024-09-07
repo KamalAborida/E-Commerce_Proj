@@ -15,7 +15,7 @@
       text-transform: uppercase;
 
       & > .text-orange {
-        color: $primary-orange
+        color: $primary-orange;
       }
     }
 
@@ -26,5 +26,28 @@
 
   &__img {
     width: 555px;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .mission {
+    flex-direction: column-reverse;
+    // border: 2px solid red;
+
+    &__content {
+      width: 90%;
+      text-align: center;
+      margin: 25px auto;
+    }
+
+    &__img {
+      width: 100%;
+      margin-bottom: 35px;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
   }
 }

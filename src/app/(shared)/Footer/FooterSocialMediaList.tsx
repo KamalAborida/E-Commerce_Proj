@@ -8,7 +8,7 @@ export default function FooterSocialMediaList() {
   ];
 
   return (
-    <div className="footer__container__socialMediaList">
+    <div className="footer__container__lowerPart__socialMediaList">
       <ul>
         {socialIcons.map((icon, index) => (
           <li key={index}>

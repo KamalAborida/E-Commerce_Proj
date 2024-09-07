@@ -36,3 +36,9 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet-max-width) {
+  .banner__productCta {
+    text-align: center;
+  }
+}

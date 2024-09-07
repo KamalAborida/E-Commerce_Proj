@@ -7,11 +7,20 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <FooterAbout />
-        <div className="footer__container__navList">
+        <div className="footer__container__upperPart">
+          <Image
+            className="footer__container__upperPart__logo"
+            src={'./logo.svg'}
+            alt="Brand Logo"
+            width={145}
+            height={25}
+          />
           <NavList />
         </div>
-        <FooterSocialMediaList />
+        <div className="footer__container__lowerPart">
+          <FooterAbout />
+          <FooterSocialMediaList />
+        </div>
       </div>
     </footer>
   );

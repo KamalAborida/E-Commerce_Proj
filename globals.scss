@@ -16,9 +16,22 @@
   border-radius:0 0 10px 10px;
 }
 
+@media screen and (max-width: $tablet-max-width) {
+  .blackBackground {
+    background-image: url("/banner-backGround-tablet.png");
+    border-radius:0;
+  }
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .main {
+    width: 95%;
+  }
 }
 
 @import "./src/app/\(shared\)/NavBar/navbar";

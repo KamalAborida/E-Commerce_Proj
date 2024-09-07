@@ -3,7 +3,7 @@
   justify-content: space-between;
   // border: 2px solid yellow;
   margin-bottom: 45px;
-  
+
   &__img {
     width: 45%;
     border-radius: 10px;
@@ -44,6 +44,25 @@
         cursor: pointer;
         background-color: black;
         color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .bestSellingCard {
+    &__cta {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__name {
+        font-size: 20px;
+        position: static;
+      }
+
+      &__btn {
+        position: static;
       }
     }
   }

@@ -560,7 +560,7 @@ template {
   display: none;
 }
 
-.regularText, .mission__content__description, .banner__productCta__description, .footer__container__about__copyrights, .footer__container__about__description {
+.regularText, .mission__content__description, .banner__productCta__description, .footer__container__lowerPart__about__copyrights, .footer__container__lowerPart__about__description {
   font-size: 15px;
   color: #AEAEAE;
   line-height: 25px;
@@ -586,11 +586,22 @@ template {
   border-radius: 0 0 10px 10px;
 }
 
+@media screen and (max-width: 850px) {
+  .blackBackground {
+    background-image: url("/banner-backGround-tablet.png");
+    border-radius: 0;
+  }
+}
 .main {
   width: 80%;
   margin: 0 auto;
 }
 
+@media screen and (max-width: 850px) {
+  .main {
+    width: 95%;
+  }
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -625,41 +636,73 @@ template {
   padding-top: 50px;
 }
 .footer__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 80px 15px;
   width: 80%;
   margin: auto;
 }
-.footer__container__navList {
-  grid-row: 0/2;
-  align-content: center;
+.footer__container__upperPart {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.footer__container__lowerPart {
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer__container__about {
+@media screen and (max-width: 850px) {
+  .footer {
+    height: -moz-max-content;
+    height: max-content;
+    padding-bottom: 20px;
+  }
+  .footer__container {
+    width: 85%;
+  }
+  .footer__container__upperPart {
+    flex-direction: column;
+    align-items: unset;
+    margin-bottom: 30px;
+  }
+  .footer__container__upperPart .navList {
+    width: 100%;
+  }
+  .footer__container__upperPart__logo {
+    margin-bottom: 25px;
+  }
+  .footer__container__lowerPart {
+    flex-direction: column;
+  }
+}
+.footer__container__lowerPart__about {
   width: 577px;
-  grid-row: 1/4;
-  align-content: center;
 }
-.footer__container__about__img {
-  margin-bottom: 40px;
-}
-.footer__container__about__description {
+.footer__container__lowerPart__about__description {
   margin-bottom: 70px;
 }
-.footer__container__socialMediaList {
+@media screen and (max-width: 850px) {
+  .footer__container__lowerPart__about {
+    width: 100%;
+  }
+}
+.footer__container__lowerPart__socialMediaList {
+  width: 45%;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
 }
-.footer__container__socialMediaList > ul {
+.footer__container__lowerPart__socialMediaList > ul {
   display: flex;
   justify-content: space-between;
   width: 20%;
 }
 
+@media screen and (max-width: 850px) {
+  .footer__container__lowerPart__socialMediaList {
+    width: 100%;
+    margin-top: unset;
+  }
+}
 .banner {
   display: flex;
   height: 555px;
@@ -668,6 +711,12 @@ template {
   margin-bottom: 160px;
 }
 
+@media screen and (max-width: 850px) {
+  .banner {
+    justify-content: center;
+    align-items: center;
+  }
+}
 .banner__productCta {
   width: 400px;
 }
@@ -700,6 +749,11 @@ template {
   background-color: #FBAF85;
 }
 
+@media screen and (max-width: 850px) {
+  .banner__productCta {
+    text-align: center;
+  }
+}
 .banner__headPhonesImage {
   width: 585px;
   height: 450px;
@@ -761,9 +815,24 @@ template {
   color: white;
 }
 
+@media screen and (max-width: 850px) {
+  .bestSellingCard__cta {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bestSellingCard__cta__name {
+    font-size: 20px;
+    position: static;
+  }
+  .bestSellingCard__cta__btn {
+    position: static;
+  }
+}
 .categories {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .categories__category {
@@ -808,6 +877,11 @@ template {
   color: #D87D4A;
 }
 
+@media screen and (max-width: 850px) {
+  .categories__category {
+    width: 32%;
+  }
+}
 .mission {
   display: flex;
   margin: 190px auto;
@@ -830,4 +904,23 @@ template {
 }
 .mission__img {
   width: 555px;
+}
+
+@media screen and (max-width: 850px) {
+  .mission {
+    flex-direction: column-reverse;
+  }
+  .mission__content {
+    width: 90%;
+    text-align: center;
+    margin: 25px auto;
+  }
+  .mission__img {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  .mission__img img {
+    width: 100%;
+    max-width: 100%;
+  }
 }
