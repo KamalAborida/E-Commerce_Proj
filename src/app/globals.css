@@ -573,30 +573,6 @@ template {
   font-weight: bold;
 }
 
-.blackBackground {
-  background-image: url("/banner-backGround.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  height: 729px;
-  width: 100%;
-  z-index: -1;
-  border-radius: 0 0 10px 10px;
-}
-
-@media screen and (max-width: 800px) {
-  .blackBackground {
-    background-image: url("/banner-backGround-tablet.png");
-    border-radius: 0;
-  }
-}
-@media screen and (max-width: 450px) {
-  .blackBackground {
-    background-image: url("/banner-backGround-mobile.png");
-  }
-}
 .main {
   width: 80%;
   margin: 0 auto;
@@ -645,6 +621,7 @@ template {
   color: white;
   height: 380px;
   padding-top: 50px;
+  width: 100%;
 }
 .footer__container {
   width: 80%;
@@ -740,6 +717,31 @@ template {
   }
   .footer__container__lowerPart__socialMediaList > ul {
     width: 40%;
+  }
+}
+.blackBackground {
+  background-image: url("/banner-backGround.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 729px;
+  width: 100%;
+  z-index: -1;
+  border-radius: 0 0 10px 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .blackBackground {
+    background-image: url("/banner-backGround-tablet.png");
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .blackBackground {
+    background-image: url("/banner-backGround-mobile.png");
   }
 }
 .banner {
