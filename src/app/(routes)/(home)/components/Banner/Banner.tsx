@@ -1,4 +1,4 @@
-import ProductCta from './ProductCta';
+import ProductCta from '../../../components/ProductCta/ProductCta';
 import HeadphonesImage from './HeadPhonesImage';
 
 export default function Banner() {

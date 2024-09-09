@@ -5,6 +5,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 160px;
+
+  .productCta {
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: $tablet-max-width) {

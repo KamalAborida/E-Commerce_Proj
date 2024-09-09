@@ -35,11 +35,16 @@
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
 @import './src/app/\(routes\)/\(home\)/components/Banner/banner';
-@import './src/app/\(routes\)/\(home\)/components/Banner/product-cta';
 @import './src/app/\(routes\)/\(home\)/components/Banner/headphones-image';
+
+@import './src/app/\(routes\)/components/ProductCta/product-cta';
 
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling';
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling-card';
+
+@import './src/app/\(routes\)/category/components/CategoryBackground/category-background';
+@import './src/app/\(routes\)/category/components/Product/product';
+@import './src/app/\(routes\)/category/components/Products/products';
 
 @import './src/app/\(routes\)/components/Categories/categories';
 @import './src/app/\(routes\)/components/Categories/category';

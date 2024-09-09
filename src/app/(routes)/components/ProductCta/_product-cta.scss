@@ -1,6 +1,5 @@
-.banner__productCta {
+.productCta {
   // border: 2px solid red;
-  width: 400px;
 
   &__isNew {
     font-size: 14px;
@@ -38,13 +37,13 @@
 }
 
 @media screen and (max-width: $tablet-max-width) {
-  .banner__productCta {
+  .productCta {
     text-align: center;
   }
 }
 
 @media screen and (max-width: $mobile-max-width) {
-  .banner__productCta {
+  .productCta {
     width: 100%;
 
     &__name {

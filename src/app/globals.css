@@ -560,7 +560,7 @@ template {
   display: none;
 }
 
-.regularText, .mission__content__description, .banner__productCta__description, .footer__container__lowerPart__about__copyrights, .footer__container__lowerPart__about__description {
+.regularText, .mission__content__description, .productCta__description, .footer__container__lowerPart__about__copyrights, .footer__container__lowerPart__about__description {
   font-size: 15px;
   color: #AEAEAE;
   line-height: 25px;
@@ -751,60 +751,14 @@ template {
   align-items: center;
   margin-bottom: 160px;
 }
+.banner .productCta {
+  width: 400px;
+}
 
 @media screen and (max-width: 800px) {
   .banner {
     justify-content: center;
     align-items: center;
-  }
-}
-.banner__productCta {
-  width: 400px;
-}
-.banner__productCta__isNew {
-  font-size: 14px;
-  color: #898989;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-.banner__productCta__name {
-  font-size: 56px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-}
-.banner__productCta__description {
-  margin-bottom: 40px;
-}
-.banner__productCta__btn {
-  background-color: #D87D4A;
-  color: white;
-  width: 150px;
-  height: 50px;
-  text-transform: uppercase;
-}
-.banner__productCta__btn:hover {
-  cursor: pointer;
-  background-color: #FBAF85;
-}
-
-@media screen and (max-width: 800px) {
-  .banner__productCta {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 450px) {
-  .banner__productCta {
-    width: 100%;
-  }
-  .banner__productCta__name {
-    font-size: 40px;
-  }
-  .banner__productCta__description {
-    margin: 40px auto;
-    width: 80%;
   }
 }
 .banner__headPhonesImage {
@@ -816,6 +770,52 @@ template {
   background-repeat: no-repeat;
 }
 
+.productCta__isNew {
+  font-size: 14px;
+  color: #898989;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.productCta__name {
+  font-size: 56px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+.productCta__description {
+  margin-bottom: 40px;
+}
+.productCta__btn {
+  background-color: #D87D4A;
+  color: white;
+  width: 150px;
+  height: 50px;
+  text-transform: uppercase;
+}
+.productCta__btn:hover {
+  cursor: pointer;
+  background-color: #FBAF85;
+}
+
+@media screen and (max-width: 800px) {
+  .productCta {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .productCta {
+    width: 100%;
+  }
+  .productCta__name {
+    font-size: 40px;
+  }
+  .productCta__description {
+    margin: 40px auto;
+    width: 80%;
+  }
+}
 .bestSelling {
   margin: 150px auto 200px auto;
 }
@@ -901,6 +901,87 @@ template {
     font-size: 10px;
   }
 }
+.categoryBackground {
+  width: 100%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 336px;
+  z-index: -1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 100px;
+  font-size: 50px;
+}
+
+.product {
+  margin-bottom: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+.product:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.product__productCta {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product__productCta .productCta {
+  width: 70%;
+}
+.product__productCta .productCta__isNew {
+  color: #D87D4A;
+}
+.product__productCta .productCta__name {
+  color: black;
+}
+.product__img {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product:nth-child(even) {
+    flex-direction: column;
+  }
+  .product__productCta {
+    width: 100%;
+  }
+  .product__img {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product:nth-child(even) {
+    flex-direction: column;
+  }
+  .product__productCta {
+    width: 100%;
+  }
+  .product__img {
+    margin-bottom: 50px;
+  }
+}
+.products {
+  margin: 355px auto 240px auto;
+}
+
 .categories {
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,7 @@ import NavIconList from './IconsList';
 import { useState } from 'react';
 
 export default function NavBar() {
-  const [isHamburger, setIsHamburger] = useState(false);
+  const [isHamburger, setIsHamburger] = useState(true);
 
   return (
     <nav className="nav">
