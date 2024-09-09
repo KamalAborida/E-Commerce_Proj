@@ -1,0 +1,43 @@
+.productDescriptionCta {
+  // border: 2px solid red;
+
+  &__isNew {
+    font-size: 14px;
+    color: $semi-dark-gray;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-size: 56px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    @extend .regularText;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .productDescriptionCta {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .productDescriptionCta {
+    &__name {
+      font-size: 40px;
+    }
+
+    &__description {
+      margin: 40px auto;
+      width: 80%;
+    }
+  }
+}

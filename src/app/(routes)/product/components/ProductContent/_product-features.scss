@@ -1,0 +1,28 @@
+.productContent__features {
+  width: 60%;
+
+  &__title {
+    font-size: 32px;
+    letter-spacing: 1.14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    &__item {
+      margin-bottom: 25px;
+      &__p {
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .productContent__features {
+    width: 100%;
+    // border: 3px solid red;
+    margin-bottom: 50px;
+  }
+}

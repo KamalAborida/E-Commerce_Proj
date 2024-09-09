@@ -38,6 +38,7 @@
 @import './src/app/\(routes\)/\(home\)/components/Banner/headphones-image';
 
 @import './src/app/\(routes\)/components/ProductCta/product-cta';
+@import './src/app/\(routes\)/components/ProductCta/product-description-cta';
 
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling';
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling-card';
@@ -50,3 +51,13 @@
 @import './src/app/\(routes\)/components/Categories/category';
 
 @import './src/app/\(routes\)/\(home\)/components/Mission/mission';
+
+@import './src/app/\(routes\)/product/components/ProductPageBackground/product-page-background';
+@import './src/app/\(routes\)/product/components/RecommendedProducts/recommended-products';
+@import './src/app/\(routes\)/product/components/RecommendedProducts/recommended-product';
+@import './src/app/\(routes\)/product/components/ActionDiv/action-div';
+@import './src/app/\(routes\)/product/components/ImageCollague/image-collague';
+@import './src/app/\(routes\)/product/components/ProductDiv/product-div';
+@import './src/app/\(routes\)/product/components/ProductContent/product-content';
+@import './src/app/\(routes\)/product/components/ProductContent/product-features';
+@import './src/app/\(routes\)/product/components/ProductContent/product-inTheBox';

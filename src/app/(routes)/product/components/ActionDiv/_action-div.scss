@@ -1,0 +1,10 @@
+.actionDiv {
+  display: flex;
+  margin: 70px auto;
+  // border: 2px solid red;
+
+  &__goBack {
+    text-decoration: none;
+    color: $semi-dark-gray;
+  }
+}

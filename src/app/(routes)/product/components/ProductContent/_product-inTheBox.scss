@@ -1,0 +1,30 @@
+.productContent__inTheBox {
+  width: 25%;
+
+  &__title {
+    font-size: 32px;
+    letter-spacing: 1.14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    &__item {
+      margin-bottom: 25px;
+
+      &__number {
+        color: $primary-orange;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .productContent__inTheBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}

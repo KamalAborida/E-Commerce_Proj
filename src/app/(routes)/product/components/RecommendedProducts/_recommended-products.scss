@@ -1,0 +1,32 @@
+.recommendedProductsSection {
+  // border: 3px solid red;
+  margin: 120px auto;
+
+  &__title {
+    margin-bottom: 50px;
+    letter-spacing: 1.14px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__recommendedProducts {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .recommendedProductsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__recommendedProducts {
+      flex-direction: column;
+    }
+  }
+}

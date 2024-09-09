@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 export default function Mission() {
+  // Change the image src according to the screen size
   return (
     <div className="mission">
       <div className="mission__content">
@@ -19,6 +20,7 @@ export default function Mission() {
       <div className="mission__img">
         <Image
           src={'/mission.png'}
+          sizes="(max-width: 800px) 689px, (max-width: 450px) 327px"
           alt="Our Mission"
           width={540}
           height={590}
