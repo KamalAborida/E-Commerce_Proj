@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "init-db": "ts-node src/app/(server)/initDB.ts"
   },
   "dependencies": {
     "@types/better-sqlite3": "^7.6.11",
@@ -27,6 +28,7 @@
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "scss-reset": "^1.4.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5",
     "vitest": "^2.0.5"
   },
