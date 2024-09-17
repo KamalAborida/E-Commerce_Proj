@@ -1,0 +1,25 @@
+.successModal__recipt__grayDiv {
+  background-color: $very-light-gray;
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+
+  &__objectList__item {
+    // border: 2px solid red;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 13px;
+      color: $light-gray;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .successModal__recipt__grayDiv {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}

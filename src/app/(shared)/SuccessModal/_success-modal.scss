@@ -1,0 +1,56 @@
+.successModal {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  left: 33.3%;
+  top: 20px;
+  // transform: scale(0.7);
+  // transform: translate(-50%, -50%);
+  background-color: white;
+
+  &__icon {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    width: 60%;
+    font-weight: bold;
+  }
+
+  &__note {
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 25px;
+    width: 70%;
+  }
+
+  &__btn {
+    background-color: $primary-orange;
+    width: 100%;
+    height: 50px;
+    color: white;
+    margin: 35px 0 15px 0;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .successModal {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__title {
+      width: 100%;
+    }
+  
+    &__note {
+      width: 100%;
+    }
+  }
+}

@@ -1,6 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function RecommendedProduct() {
+interface recommendedProductProps {
+  btnNavUrl: string;
+}
+
+export default function RecommendedProduct({
+  btnNavUrl,
+}: recommendedProductProps) {
   return (
     <div className="recommendedProductsSection__recommendedProducts__recommendedProduct">
       <div className="recommendedProductsSection__recommendedProducts__recommendedProduct__img">
@@ -14,9 +21,11 @@ export default function RecommendedProduct() {
       <h3 className="recommendedProductsSection__recommendedProducts__recommendedProduct__name">
         XX99 MARK I
       </h3>
-      <button className="recommendedProductsSection__recommendedProducts__recommendedProduct__btn">
-        SEE PRODUCT
-      </button>
+      <Link href={`/${btnNavUrl}`}>
+        <button className="recommendedProductsSection__recommendedProducts__recommendedProduct__btn">
+          SEE PRODUCT
+        </button>
+      </Link>
     </div>
   );
 }

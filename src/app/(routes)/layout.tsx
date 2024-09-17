@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import NavBar from '@/app/(shared)/NavBar/NavBar';
 import Footer from '@/app/(shared)/Footer/Footer';
+import CartModal from '../(shared)/Cart/CartModal';
+import SuccessModal from '../(shared)/SuccessModal/SuccessModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <CartModal />
+        <SuccessModal />
         <main className="main">
           <NavBar />
           {children}

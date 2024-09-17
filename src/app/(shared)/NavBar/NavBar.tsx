@@ -3,10 +3,17 @@
 import Image from 'next/image';
 import NavList from './NavList';
 import NavIconList from './IconsList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function NavBar() {
-  const [isHamburger, setIsHamburger] = useState(true);
+  const [isHamburger, setIsHamburger] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 800) {
+      setIsHamburger(true);
+    }
+  }, []);
 
   return (
     <nav className="nav">
@@ -20,13 +27,15 @@ export default function NavBar() {
             className="nav__hamLogo__hamburger"
           />
         )}
-        <Image
-          src={'/logo.svg'}
-          alt="Audio Store Logo"
-          width={143}
-          height={25}
-          className="nav__hamLogo__logo"
-        />
+        <Link href={'/'}>
+          <Image
+            src={'/logo.svg'}
+            alt="Audio Store Logo"
+            width={143}
+            height={25}
+            className="nav__hamLogo__logo"
+          />
+        </Link>
       </div>
       {!isHamburger && <NavList />}
       <NavIconList />

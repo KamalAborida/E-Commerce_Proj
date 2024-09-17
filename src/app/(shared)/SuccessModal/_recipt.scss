@@ -1,0 +1,31 @@
+.successModal__recipt {
+  display: flex;
+
+  &__blackDiv {
+    background-color: black;
+    width: 40%;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 25px;
+
+    & > p:first-of-type {
+      margin-bottom: 10px;
+      color: $dark-gray;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .successModal__recipt {
+    flex-direction: column;
+  
+    &__blackDiv {
+      width: 100%;
+      border-radius: 0 0 10px 10px;
+      padding: 40px;
+    }
+  }
+}

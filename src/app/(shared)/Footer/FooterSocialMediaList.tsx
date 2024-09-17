@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function FooterSocialMediaList() {
   const socialIcons = [
-    { src: './facebook-icon.svg', alt: 'facebook' },
-    { src: './instagram-icon.svg', alt: 'instagram' },
-    { src: './twitter-icon.svg', alt: 'twitter' },
+    { src: '/facebook-icon.svg', alt: 'facebook' },
+    { src: '/instagram-icon.svg', alt: 'instagram' },
+    { src: '/twitter-icon.svg', alt: 'twitter' },
   ];
 
   return (

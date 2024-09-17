@@ -1,5 +1,10 @@
 @import './node_modules/scss-reset/reset';
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 @import './src/app/styles/variables';
 @import './src/app/styles/base';
 
@@ -32,6 +37,13 @@
 @import './src/app/\(shared\)/Footer/footer-about';
 @import './src/app/\(shared\)/Footer/footer-socialMediaList';
 
+@import './src/app/\(shared\)/Cart/cart-object';
+@import './src/app/\(shared\)/Cart/cart-modal';
+
+@import './src/app/\(shared\)/SuccessModal/success-modal';
+@import './src/app/\(shared\)/SuccessModal/recipt';
+@import './src/app/\(shared\)/SuccessModal/gray-div';
+
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
 @import './src/app/\(routes\)/\(home\)/components/Banner/banner';
@@ -52,12 +64,24 @@
 
 @import './src/app/\(routes\)/\(home\)/components/Mission/mission';
 
+@import './src/app/\(routes\)/components/ActionDiv/action-div';
+@import './src/app/\(routes\)/components/NumbersInput/numbers-input';
+
 @import './src/app/\(routes\)/product/components/ProductPageBackground/product-page-background';
 @import './src/app/\(routes\)/product/components/RecommendedProducts/recommended-products';
 @import './src/app/\(routes\)/product/components/RecommendedProducts/recommended-product';
-@import './src/app/\(routes\)/product/components/ActionDiv/action-div';
 @import './src/app/\(routes\)/product/components/ImageCollague/image-collague';
 @import './src/app/\(routes\)/product/components/ProductDiv/product-div';
 @import './src/app/\(routes\)/product/components/ProductContent/product-content';
 @import './src/app/\(routes\)/product/components/ProductContent/product-features';
 @import './src/app/\(routes\)/product/components/ProductContent/product-inTheBox';
+
+@import './src/app/\(routes\)/checkout/components/Input/input';
+@import './src/app/\(routes\)/checkout/components/RadioBtn/radio-btn';
+@import './src/app/\(routes\)/checkout/components/CheckoutForm/checkout-form';
+@import './src/app/\(routes\)/checkout/components/CheckoutForm/shipping-info';
+@import './src/app/\(routes\)/checkout/components/CheckoutForm/payment-details';
+@import './src/app/\(routes\)/checkout/components/CheckoutForm/billing-details';
+@import './src/app/\(routes\)/checkout/components/Summary/summary';
+@import './src/app/\(routes\)/checkout/components/Summary/info-line';
+@import './src/app/\(routes\)/checkout/page';

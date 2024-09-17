@@ -1,6 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function BestSellingCard() {
+interface bestSellingCardProps {
+  btnNavLink: string;
+}
+
+export default function BestSellingCard({ btnNavLink }: bestSellingCardProps) {
   return (
     <div className="bestSellingCard">
       <div className="bestSellingCard__img">
@@ -13,7 +18,9 @@ export default function BestSellingCard() {
       </div>
       <div className="bestSellingCard__cta">
         <h2 className="bestSellingCard__cta__name">YX1 EARPHONES</h2>
-        <button className="bestSellingCard__cta__btn">SEE PRODUCT</button>
+        <button className="bestSellingCard__cta__btn">
+          <Link href={`/${btnNavLink}`}>SEE PRODUCT</Link>
+        </button>
       </div>
     </div>
   );

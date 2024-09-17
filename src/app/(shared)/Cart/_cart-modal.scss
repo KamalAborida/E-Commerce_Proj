@@ -1,0 +1,61 @@
+.cartModal {
+  width: 377px;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  background-color: white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    &__title {
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1.29px;
+    }
+
+    &__remove {
+      font-size: 15px;
+      line-height: 25px;
+      text-decoration: underline;
+
+      &:hover {
+        cursor: pointer;
+        color: gray;
+      }
+    }
+  }
+
+  &__cartObjects {
+    margin-bottom: 25px;
+
+    .cartObject {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    margin: 20px 0;
+    background-color: $primary-orange;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .cartModal {
+    width: 95%;
+    right: 0;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%)
+  }
+}

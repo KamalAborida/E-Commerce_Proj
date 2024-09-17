@@ -4,10 +4,16 @@
   align-items: center;
   width: 500px;
 
+  a {
+    color: white;
+  }
+
   &__item {
-    &:hover {
-      color: $primary-orange;
-      cursor: pointer;
+    a {
+      &:hover {
+        color: $primary-orange;
+        cursor: pointer;
+      }
     }
   }
 }

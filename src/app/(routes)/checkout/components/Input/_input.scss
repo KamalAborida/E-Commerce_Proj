@@ -1,0 +1,88 @@
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  &__input {
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 18px;
+    border: 2px solid $light-gray;
+
+    &::placeholder {
+      font-weight: bold;
+      color: $light-gray;
+    }
+  }
+}
+
+.inputDiv-active {
+  @extend .inputDiv;
+
+  .inputDiv__input {
+    border: 2px solid $primary-orange;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+
+.inputDiv-error {
+  @extend .inputDiv;
+
+  .inputDiv__label {
+    color: red;
+  }
+
+  .inputDiv__input {
+    border: 2px solid red;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  // .inputDiv {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   &__label {
+  //     font-weight: bold;
+  //     margin-bottom: 10px;
+  //     font-size: 12px;
+  //   }
+
+  //   &__input {
+  //     font-size: 14px;
+  //     border-radius: 10px;
+  //     padding: 18px;
+  //     border: 2px solid $light-gray;
+
+  //     &::placeholder {
+  //       font-weight: bold;
+  //       color: $light-gray;
+  //     }
+  //   }
+  // }
+}
+
+// @media screen and (max-width: $mobile-max-width) {
+//   .inputDiv {
+//     &__label {
+//       font-size: 10px;
+//     }
+
+//     &__input {
+//       font-size: 10px;
+//       padding: 15px;
+//     }
+//   }
+// }

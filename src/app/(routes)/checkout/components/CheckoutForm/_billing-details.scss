@@ -1,0 +1,20 @@
+.checkoutForm__billingDetails {
+  // border: 2px solid red;
+  // margin-bottom: 65px;
+
+  &__inputsDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    // grid-column-gap: 15px;
+    grid-gap: 20px 15px;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .checkoutForm__billingDetails {
+    &__inputsDiv {
+      grid-template-columns: 1fr;
+    }
+  }
+}

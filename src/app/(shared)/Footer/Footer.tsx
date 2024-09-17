@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer__container__upperPart">
           <Image
             className="footer__container__upperPart__logo"
-            src={'./logo.svg'}
+            src={'/logo.svg'}
             alt="Brand Logo"
             width={145}
             height={25}

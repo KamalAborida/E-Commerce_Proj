@@ -1,0 +1,25 @@
+.summary__infoLine {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+
+  & > p:first-of-type {
+    color: $semi-dark-gray;
+  }
+
+  & > p:last-of-type {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.summary__infoLine-orange {
+  @extend .summary__infoLine;
+  margin: 25px 0;
+
+  & > p:last-of-type {
+    color: $primary-orange;
+  }
+}

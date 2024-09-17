@@ -1,7 +1,11 @@
 import ProductCta from '@/app/(routes)/components/ProductCta/ProductCta';
 import Image from 'next/image';
 
-export default function Product() {
+interface productProps {
+  btnNavUrl: string;
+}
+
+export default function Product({ btnNavUrl }: productProps) {
   return (
     <div className="product">
       <div className="product__img">
@@ -13,7 +17,7 @@ export default function Product() {
         />
       </div>
       <div className="product__productCta">
-        <ProductCta />
+        <ProductCta btnNavUrl={btnNavUrl} />
       </div>
     </div>
   );

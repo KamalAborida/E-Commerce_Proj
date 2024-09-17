@@ -1,3 +1,4 @@
+import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import ProductDescriptionCta from '@/app/(routes)/components/ProductCta/ProductDescriptionCta';
 import Image from 'next/image';
 
@@ -16,9 +17,7 @@ export default function ProductDiv() {
         <ProductDescriptionCta />
         <p className="productDiv__ctaDiv__price">25.005$</p>
         <div className="productDiv__ctaDiv__btnDiv">
-          <button className="productDiv__ctaDiv__btnDiv__btn cartProductNumber">
-            5
-          </button>
+          <NumbersInput />
           <button className="productDiv__ctaDiv__btnDiv__btn addToCart">
             ADD TO CART
           </button>

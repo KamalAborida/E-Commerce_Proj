@@ -1,10 +1,17 @@
 import ProductDescriptionCta from './ProductDescriptionCta';
+import Link from 'next/link';
 
-export default function ProductCta() {
+interface productCtaProps {
+  btnNavUrl: string;
+}
+
+export default function ProductCta({ btnNavUrl }: productCtaProps) {
   return (
     <div className="productCta">
       <ProductDescriptionCta />
-      <button className="productCta__btn">SEE PRODUCT</button>
+      <Link href={`/${btnNavUrl}`}>
+        <button className="productCta__btn">SEE PRODUCT</button>
+      </Link>
     </div>
   );
 }

@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Category() {
+interface categoryProps {
+  href: string;
+}
+
+export default function Category({ href }: categoryProps) {
   return (
     <div className="categories__category">
       <Image
@@ -19,7 +23,7 @@ export default function Category() {
         className="categories__category__shadow"
       />
       <h2 className="categories__category__name">Headphones</h2>
-      <Link href={'/'} className="categories__category__shop">
+      <Link href={`/${href}`} className="categories__category__shop">
         <p>Shop</p>
         <Image src={'/arrow-right.svg'} alt="arrow" width={5} height={10} />
       </Link>
