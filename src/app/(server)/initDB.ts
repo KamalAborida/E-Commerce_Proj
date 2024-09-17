@@ -1,7 +1,12 @@
 import Database from 'better-sqlite3';
 
-// Initialize database
-const db = new Database('audio_store.db');
+import path from 'path';
+
+// Define the path for the database file
+const dbPath = path.join(__dirname, 'audio_store.db');
+
+// Initialize the database with the specified path
+const db = new Database(dbPath);
 
 // Create tables
 db.exec(`
