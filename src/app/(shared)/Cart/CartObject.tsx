@@ -10,7 +10,7 @@ export default function CartObject({ isEditabdle }: cartObjectProps) {
     <div className="cartObject">
       <Image
         className="cartObject__img"
-        src={'/headPhones-cart.png'}
+        src={'/headphones-cart.png'}
         alt="Headphones"
         width={64}
         height={64}

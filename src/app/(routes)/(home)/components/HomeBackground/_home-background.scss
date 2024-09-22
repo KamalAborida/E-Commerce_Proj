@@ -1,5 +1,5 @@
 .blackBackground {
-  background-image: url("/banner-backGround.png");
+  background-image: url("/banner-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,13 +14,13 @@
 
 @media screen and (max-width: $tablet-max-width) {
   .blackBackground {
-    background-image: url("/banner-backGround-tablet.png");
+    background-image: url("/banner-background-tablet.png");
     border-radius:0;
   }
 }
 
 @media screen and (max-width: $mobile-max-width) {
   .blackBackground {
-    background-image: url("/banner-backGround-mobile.png");
+    background-image: url("/banner-background-mobile.png");
   }
 }

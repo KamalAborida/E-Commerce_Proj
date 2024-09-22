@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "init-db": "ts-node src/app/(server)/initDB.ts"
+    "init-db": "ts-node src/app/(server)/initDB.ts",
+    "test": "vitest"
   },
   "dependencies": {
     "@types/better-sqlite3": "^7.6.11",
@@ -18,20 +19,24 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.7",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.5",
+    "jsdom": "^25.0.0",
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "scss-reset": "^1.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5",
-    "vitest": "^2.0.5"
+    "vitest": "^2.1.1"
   },
   "husky": {
     "hooks": {

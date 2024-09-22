@@ -13,7 +13,7 @@ export default function RecommendedProduct({
       <div className="recommendedProductsSection__recommendedProducts__recommendedProduct__img">
         <Image
           alt="Product"
-          src={'/headPhones-preview-small.png'}
+          src={'/headphones-preview-small.png'}
           width={350}
           height={320}
         />

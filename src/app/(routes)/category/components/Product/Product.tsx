@@ -10,7 +10,7 @@ export default function Product({ btnNavUrl }: productProps) {
     <div className="product">
       <div className="product__img">
         <Image
-          src={'/headPhones-preview.png'}
+          src={'/headphones-preview.png'}
           alt="Product Image"
           width={540}
           height={560}

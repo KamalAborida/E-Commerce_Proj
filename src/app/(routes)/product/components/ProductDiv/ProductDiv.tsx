@@ -8,7 +8,7 @@ export default function ProductDiv() {
       <div className="productDiv__img">
         <Image
           alt="Product Preview"
-          src={'/headPhones-preview.png'}
+          src={'/headphones-preview.png'}
           width={540}
           height={560}
         />
