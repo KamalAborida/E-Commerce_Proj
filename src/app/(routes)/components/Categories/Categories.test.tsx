@@ -25,16 +25,8 @@ it('Should fetch data from the server and render categories', async () => {
     </Suspense>
   );
 
-  // await screen.debug();
-  // // Wait for the categories div to be rendered
   const categoriesDiv = await screen.findByRole('div');
-  // // Ensure the correct number of categories is rendered
 
   expect(categoriesDiv.children.length).toBe(data.length);
-
   // screen.debug();
-  // // Check that specific category names are rendered
-  // expect(screen.getByText('MMXX11')).toBeTruthy();
-  // const data = await getCategories();
-  // console.log(data);
 });

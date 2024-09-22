@@ -5,8 +5,13 @@ import NavList from './NavList';
 import NavIconList from './IconsList';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Category } from '@/app/(server)/services/category';
 
-export default function NavBar() {
+interface NavBarProps {
+  categories: Category[];
+}
+
+export default function NavBar({ categories }: NavBarProps) {
   const [isHamburger, setIsHamburger] = useState(false);
 
   useEffect(() => {
@@ -37,7 +42,7 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      {!isHamburger && <NavList />}
+      {!isHamburger && categories && <NavList categories={categories} />}
       <NavIconList />
     </nav>
   );

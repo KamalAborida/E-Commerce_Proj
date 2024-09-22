@@ -2,8 +2,13 @@ import Image from 'next/image';
 import NavList from '../NavBar/NavList';
 import FooterAbout from './FooterAbout';
 import FooterSocialMediaList from './FooterSocialMediaList';
+import { Category } from '@/app/(server)/services/category';
 
-export default function Footer() {
+interface FooterProps {
+  categories: Category[];
+}
+
+export default function Footer({ categories }: FooterProps) {
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -15,7 +20,7 @@ export default function Footer() {
             width={145}
             height={25}
           />
-          <NavList />
+          <NavList categories={categories} />
         </div>
         <div className="footer__container__lowerPart">
           <FooterAbout />
