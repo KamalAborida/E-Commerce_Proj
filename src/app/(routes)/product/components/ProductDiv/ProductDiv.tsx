@@ -2,19 +2,35 @@ import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import ProductDescriptionCta from '@/app/(routes)/components/ProductCta/ProductDescriptionCta';
 import Image from 'next/image';
 
-export default function ProductDiv() {
+interface ProductDivProps {
+  image: string;
+  isNew: number;
+  name: string;
+  description: string;
+}
+
+export default function ProductDiv({
+  name,
+  image,
+  isNew,
+  description,
+}: ProductDivProps) {
   return (
     <div className="productDiv">
       <div className="productDiv__img">
         <Image
           alt="Product Preview"
-          src={'/headphones-preview.png'}
+          src={`/${image}.png`}
           width={540}
           height={560}
         />
       </div>
       <div className="productDiv__ctaDiv">
-        <ProductDescriptionCta />
+        <ProductDescriptionCta
+          isNew={isNew}
+          name={name}
+          description={description}
+        />
         <p className="productDiv__ctaDiv__price">25.005$</p>
         <div className="productDiv__ctaDiv__btnDiv">
           <NumbersInput />

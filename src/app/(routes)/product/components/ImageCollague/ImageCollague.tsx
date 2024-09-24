@@ -1,11 +1,18 @@
 import Image from 'next/image';
 
-export default function ImageCollague() {
+interface ImageCollagueProps {
+  images: string; // Access the dynamic route params
+}
+
+export default function ImageCollague({ images }: ImageCollagueProps) {
+  type imageListType = { smallImages: string[]; largeImage: string };
+  const imagesList: imageListType = JSON.parse(images);
+
   return (
     <div className="imageCollague">
       <div className="imageCollague__img">
         <Image
-          src={'/imageCollague-s1.png'}
+          src={`/${imagesList.smallImages[0]}.png`}
           alt="PP"
           width={445}
           height={280}
@@ -13,7 +20,7 @@ export default function ImageCollague() {
       </div>
       <div className="imageCollague__img">
         <Image
-          src={'/imageCollague-s2.png'}
+          src={`/${imagesList.smallImages[1]}.png`}
           alt="PP"
           width={445}
           height={280}
@@ -21,7 +28,7 @@ export default function ImageCollague() {
       </div>
       <div className="imageCollague__img">
         <Image
-          src={'/imageCollague-l3.png'}
+          src={`/${imagesList.largeImage}.png`}
           alt="PP"
           width={635}
           height={592}

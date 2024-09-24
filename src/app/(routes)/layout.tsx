@@ -6,6 +6,7 @@ import Footer from '@/app/(shared)/Footer/Footer';
 import CartModal from '../(shared)/Cart/CartModal';
 import SuccessModal from '../(shared)/SuccessModal/SuccessModal';
 import { getCategories } from '../(server)/services/category';
+import { getProducts } from '../(server)/services/product';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const categories = await getCategories();
+  const products = await getProducts();
 
   return (
     <html lang="en">

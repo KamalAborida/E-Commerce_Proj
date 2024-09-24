@@ -10,7 +10,7 @@ export default async function Categories() {
         categories.map((category) => {
           return (
             <Category
-              href={`category/${category.name.toLowerCase()}`}
+              href={`category/${category.id}`}
               key={category.id}
               name={category.name}
             />

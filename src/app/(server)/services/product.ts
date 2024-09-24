@@ -1,9 +1,9 @@
 import db from '../db';
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
-  isNew: boolean;
+  isNew: number;
   price: number;
   previewImage: string;
   features: string;
@@ -16,6 +16,11 @@ interface Product {
 export const getProductsByCategoryId = (categoryId: number): Product[] => {
   const stmt = db.prepare('SELECT * FROM Product WHERE categoryId = ?');
   return stmt.all(categoryId) as Product[];
+};
+
+export const getProducts = (): Product[] => {
+  const stmt = db.prepare('SELECT * FROM Product');
+  return stmt.all() as Product[];
 };
 
 export const getProduct = (id: number): Product | undefined => {

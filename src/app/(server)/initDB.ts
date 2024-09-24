@@ -68,10 +68,10 @@ try {
 
   // Populate Headphones category
   insertProduct.run(
-    'M11X Headphone',
+    'XX99 Mark II Headphones',
     1, // isNew
     299.99,
-    'url-to-headphone-m11x-preview',
+    'XX99_Mark_II_Headphones-preview',
     'High-fidelity sound, Noise cancellation',
     'The M11X offers exceptional sound quality...',
     JSON.stringify([
@@ -80,17 +80,20 @@ try {
       { item: 'User manual', quantity: 1 },
     ]),
     JSON.stringify({
-      smallImages: ['url-to-small-image1', 'url-to-small-image2'],
-      largeImage: 'url-to-large-image',
+      smallImages: [
+        'XX99_Mark_II_Headphones-image1',
+        'XX99_Mark_II_Headphones-image2',
+      ],
+      largeImage: 'XX99_Mark_II_Headphones-image',
     }),
     headphones.lastInsertRowid
   );
 
   insertProduct.run(
-    'X500 Wireless Headphone',
+    'XX99 Mark I Headphones',
     0, // isNew
     199.99,
-    'url-to-headphone-x500-preview',
+    'XX99_Mark_I_Headphones-preview',
     'Wireless, 40-hour battery life',
     'X500 offers unmatched wireless sound...',
     JSON.stringify([
@@ -98,18 +101,21 @@ try {
       { item: 'Charging cable', quantity: 1 },
     ]),
     JSON.stringify({
-      smallImages: ['url-to-small-image1', 'url-to-small-image2'],
-      largeImage: 'url-to-large-image',
+      smallImages: [
+        'XX99_Mark_I_Headphones-image1',
+        'XX99_Mark_I_Headphones-image2',
+      ],
+      largeImage: 'XX99_Mark_I_Headphones-image',
     }),
     headphones.lastInsertRowid
   );
 
   // Populate Speakers category
   insertProduct.run(
-    'BoomBox Portable Speaker',
+    'ZX9 SPEAKER',
     1, // isNew
     149.99,
-    'url-to-speaker-boombox-preview',
+    'ZX9_SPEAKER-preview',
     'Portable, Water-resistant',
     'BoomBox is the perfect outdoor companion...',
     JSON.stringify([
@@ -118,8 +124,8 @@ try {
       { item: 'Carrying strap', quantity: 1 },
     ]),
     JSON.stringify({
-      smallImages: ['url-to-small-image1', 'url-to-small-image2'],
-      largeImage: 'url-to-large-image',
+      smallImages: ['ZX9_SPEAKER-image1', 'ZX9_SPEAKER-image2'],
+      largeImage: 'ZX9_SPEAKER-image',
     }),
     speakers.lastInsertRowid
   );
@@ -145,10 +151,10 @@ try {
 
   // Populate Earphones category
   insertProduct.run(
-    'EarFit Pro',
+    'YX1 WIRELESS EARPHONES',
     1, // isNew
     79.99,
-    'url-to-earphone-earfit-preview',
+    'YX1_WIRELESS_EARPHONES-preview',
     'Noise cancellation, Wireless',
     'EarFit Pro provides comfort and high-quality sound...',
     JSON.stringify([
@@ -157,8 +163,11 @@ try {
       { item: 'User manual', quantity: 1 },
     ]),
     JSON.stringify({
-      smallImages: ['url-to-small-image1', 'url-to-small-image2'],
-      largeImage: 'url-to-large-image',
+      smallImages: [
+        'YX1_WIRELESS_EARPHONES-image1',
+        'YX1_WIRELESS_EARPHONES-image2',
+      ],
+      largeImage: 'YX1_WIRELESS_EARPHONES-image',
     }),
     earphones.lastInsertRowid
   );

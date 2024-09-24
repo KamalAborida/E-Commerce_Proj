@@ -1,11 +1,19 @@
 import ProductFeatures from './ProductFeatures';
 import ProductInTheBox from './ProductInTheBox';
 
-export default function ProductContent() {
+interface ProductContentProps {
+  features: string;
+  inTheBox: string;
+}
+
+export default function ProductContent({
+  features,
+  inTheBox,
+}: ProductContentProps) {
   return (
     <div className="productContent">
-      <ProductFeatures />
-      <ProductInTheBox />
+      <ProductFeatures features={features} />
+      <ProductInTheBox inTheBox={inTheBox} />
     </div>
   );
 }

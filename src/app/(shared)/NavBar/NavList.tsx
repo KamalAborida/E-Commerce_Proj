@@ -15,7 +15,7 @@ export default function NavList({ categories }: NavListProps) {
         categories.map((category) => {
           return (
             <li className="navList__item" key={category.id}>
-              <Link href={`/category/${category.name.toLowerCase()}`}>
+              <Link href={`/category/${category.id}`}>
                 {category.name.toUpperCase()}
               </Link>
             </li>
