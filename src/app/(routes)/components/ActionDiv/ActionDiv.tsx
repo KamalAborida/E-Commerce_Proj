@@ -6,6 +6,9 @@ export default function ActionDiv() {
       <Link className="actionDiv__goBack" href={'#'}>
         Go Back
       </Link>
+      <Link className="actionDiv__goBack" href={'#'}>
+        Go Back
+      </Link>
     </div>
   );
 }

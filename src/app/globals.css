@@ -1327,6 +1327,7 @@ a {
 .actionDiv {
   display: flex;
   margin: 70px auto;
+  justify-content: space-between;
 }
 .actionDiv__goBack {
   text-decoration: none;

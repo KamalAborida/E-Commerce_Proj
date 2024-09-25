@@ -23,7 +23,6 @@ export default async function Product({ params }: ProductPageProps) {
   return (
     <main>
       <ProductPageBackground />
-      {/* <ActionDiv /> */}
       <ProductDiv
         name={product.name}
         isNew={product.isNew}
