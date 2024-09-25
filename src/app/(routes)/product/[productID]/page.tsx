@@ -28,6 +28,7 @@ export default async function Product({ params }: ProductPageProps) {
         isNew={product.isNew}
         image={product.previewImage}
         description={product.description}
+        price={product.price}
       />
       <ProductContent features={product.features} inTheBox={product.inTheBox} />
       <ImageCollague images={product.images} />

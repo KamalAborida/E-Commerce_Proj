@@ -7,6 +7,7 @@ interface ProductDivProps {
   isNew: number;
   name: string;
   description: string;
+  price: number;
 }
 
 export default function ProductDiv({
@@ -14,6 +15,7 @@ export default function ProductDiv({
   image,
   isNew,
   description,
+  price,
 }: ProductDivProps) {
   return (
     <div className="productDiv">
@@ -31,7 +33,7 @@ export default function ProductDiv({
           name={name}
           description={description}
         />
-        <p className="productDiv__ctaDiv__price">25.005$</p>
+        <p className="productDiv__ctaDiv__price">{price}$</p>
         <div className="productDiv__ctaDiv__btnDiv">
           <NumbersInput />
           <button className="productDiv__ctaDiv__btnDiv__btn addToCart">

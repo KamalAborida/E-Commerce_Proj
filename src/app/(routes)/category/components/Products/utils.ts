@@ -18,3 +18,24 @@ export function sortProductsByPrice(
 
   return sortedProducts;
 }
+
+export function searchProducts(
+  categoryProducts: ProductType[],
+  searchTerm: string
+) {
+  const searchedProducts = categoryProducts?.filter((product) => {
+    return product.name.includes(searchTerm);
+  });
+  return searchedProducts;
+}
+
+export function filterProducts(
+  categoryProducts: ProductType[],
+  minValue: number,
+  maxValue: number
+) {
+  const filteredProducts = categoryProducts?.filter((product) => {
+    return product.price > minValue && product.price < maxValue;
+  });
+  return filteredProducts;
+}

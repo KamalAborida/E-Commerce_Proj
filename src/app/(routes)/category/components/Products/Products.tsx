@@ -6,7 +6,13 @@ import { Product as ProductType } from '@/app/(server)/services/product';
 import { useParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import ActionDiv from '@/app/(routes)/components/ActionDiv/ActionDiv';
-import { ASCENDING, DESCENDING, sortProductsByPrice } from './utils';
+import {
+  ASCENDING,
+  DESCENDING,
+  filterProducts,
+  searchProducts,
+  sortProductsByPrice,
+} from './utils';
 
 interface ProductsProps {
   products: ProductType[] | null;
@@ -15,6 +21,9 @@ interface ProductsProps {
 export default function Products({ products }: ProductsProps) {
   const [categoryProducts, setCategoryProducts] = useState(products);
   const [arrangmentType, setArrangmentType] = useState(ASCENDING);
+  const [searchTerm, setSearchTerm] = useState('XX');
+  const [minValue, setMinValue] = useState(200);
+  const [maxValue, setMaxValue] = useState(400);
   const params = useParams();
   const categoryId = +params.categoryID;
 
@@ -29,8 +38,10 @@ export default function Products({ products }: ProductsProps) {
 
   useEffect(() => {
     getThisCategoryProducts();
+    setCategoryProducts((prev) => searchProducts(prev!, searchTerm));
     setCategoryProducts((prev) => sortProductsByPrice(prev!, arrangmentType));
-  }, [arrangmentType, getThisCategoryProducts]);
+    setCategoryProducts((prev) => filterProducts(prev!, minValue, maxValue));
+  }, [arrangmentType, getThisCategoryProducts, maxValue, minValue, searchTerm]);
 
   return (
     <div className="products" role="div">
