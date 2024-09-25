@@ -1328,12 +1328,57 @@ a {
   display: flex;
   margin: 70px auto;
   justify-content: space-between;
+  align-items: center;
 }
-.actionDiv__goBack {
-  text-decoration: none;
+.actionDiv__sort__dropDOwn {
+  padding: 10px 20px;
+}
+.actionDiv__searchBox {
   color: #898989;
+  font-weight: bold;
+  position: relative;
+  width: 30%;
+}
+.actionDiv__searchBox__inpt {
+  padding: 10px;
+  width: 100%;
+}
+.actionDiv__searchBox__btn {
+  position: absolute;
+  right: 0;
+  width: 15%;
+  height: 100%;
+  background-color: #AEAEAE;
+}
+.actionDiv__minMaxFunc {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+.actionDiv__minMaxFunc input {
+  width: 40%;
+  padding: 10px;
 }
 
+@media screen and (max-width: 450px) {
+  .actionDiv {
+    flex-direction: column-reverse;
+  }
+  .actionDiv__searchBox {
+    width: 100%;
+    margin: 20px 0 50px 0;
+  }
+  .actionDiv__minMaxFunc {
+    width: 100%;
+    margin: 15px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .actionDiv__minMaxFunc input {
+    width: 100%;
+    margin: 10px;
+  }
+}
 .numbersInput {
   background-color: #F1F1F1;
   display: flex;

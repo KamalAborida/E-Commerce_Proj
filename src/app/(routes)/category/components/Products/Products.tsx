@@ -21,9 +21,9 @@ interface ProductsProps {
 export default function Products({ products }: ProductsProps) {
   const [categoryProducts, setCategoryProducts] = useState(products);
   const [arrangmentType, setArrangmentType] = useState(ASCENDING);
-  const [searchTerm, setSearchTerm] = useState('XX');
-  const [minValue, setMinValue] = useState(200);
-  const [maxValue, setMaxValue] = useState(400);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(1000000000000000);
   const params = useParams();
   const categoryId = +params.categoryID;
 
@@ -45,7 +45,12 @@ export default function Products({ products }: ProductsProps) {
 
   return (
     <div className="products" role="div">
-      <ActionDiv />
+      <ActionDiv
+        setArrangmentType={setArrangmentType}
+        setMaxValue={setMaxValue}
+        setMinValue={setMinValue}
+        setSearchTerm={setSearchTerm}
+      />
       {categoryProducts &&
         categoryProducts.map((product) => {
           return <Product product={product} key={product.id} />;
