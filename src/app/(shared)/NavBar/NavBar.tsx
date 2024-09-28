@@ -6,6 +6,8 @@ import NavIconList from './IconsList';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Category } from '@/app/(server)/services/category';
+import { useRouter } from 'next/navigation';
+import NavModal from './NavModal';
 
 interface NavBarProps {
   categories: Category[];
@@ -13,6 +15,11 @@ interface NavBarProps {
 
 export default function NavBar({ categories }: NavBarProps) {
   const [isHamburger, setIsHamburger] = useState(false);
+  const router = useRouter();
+
+  const handleHamburger = () => {
+    router.push('?nav=true');
+  };
 
   useEffect(() => {
     if (window.innerWidth < 800) {
@@ -30,6 +37,7 @@ export default function NavBar({ categories }: NavBarProps) {
             width={15}
             height={15}
             className="nav__hamLogo__hamburger"
+            onClick={handleHamburger}
           />
         )}
         <Link href={'/'}>

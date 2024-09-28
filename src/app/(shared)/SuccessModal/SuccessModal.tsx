@@ -25,13 +25,13 @@ export default function SuccessModal() {
 
   const closeModal = () => {
     setSuccessModal(false);
-    router.back();
+    router.push('/');
   };
 
   const backHomeHandler = () => {
-    router.push("/")
+    router.push('/');
     setSuccessModal(false);
-  }
+  };
 
   return (
     <>
@@ -50,7 +50,9 @@ export default function SuccessModal() {
               You will receive an email confirmation shortly.
             </p>
             <Recipt />
-            <button onClick={backHomeHandler} className="successModal__btn">BACK TO HOME</button>
+            <button onClick={backHomeHandler} className="successModal__btn">
+              BACK TO HOME
+            </button>
           </div>
         </div>
       )}

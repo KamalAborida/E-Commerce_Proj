@@ -581,10 +581,11 @@ a {
 .backdrop {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 95px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.647);
+  z-index: 98;
 }
 
 .main {
@@ -635,6 +636,27 @@ a {
   cursor: pointer;
 }
 
+.navModal {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 100px 25px;
+  z-index: 99;
+}
+.navModal .categories {
+  z-index: 99;
+}
+.navModal .categories__category {
+  z-index: 99;
+}
+
+@media screen and (max-width: 450px) {
+  .navModal {
+    padding: 100px 25px 25px 25px;
+  }
+}
 .footer {
   background-color: #131313;
   color: white;
@@ -877,9 +899,9 @@ a {
   margin: 35px 0 15px 0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   .successModal {
-    width: 90%;
+    width: 95%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -888,6 +910,11 @@ a {
   }
   .successModal__note {
     width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .successModal {
+    width: 90%;
   }
 }
 .successModal__recipt {

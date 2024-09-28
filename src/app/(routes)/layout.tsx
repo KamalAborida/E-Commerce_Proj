@@ -7,6 +7,7 @@ import CartModal from '../(shared)/Cart/CartModal';
 import SuccessModal from '../(shared)/SuccessModal/SuccessModal';
 import { getCategories } from '../(server)/services/category';
 import { getProducts } from '../(server)/services/product';
+import NavModal from '../(shared)/NavBar/NavModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,6 +29,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <CartModal />
         <SuccessModal />
+        <NavModal categories={categories} />
         <main className="main">
           <NavBar categories={categories} />
           {children}

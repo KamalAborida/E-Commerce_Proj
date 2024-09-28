@@ -1,0 +1,23 @@
+.navModal {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 100px 25px;
+  z-index: 99;
+
+  .categories {
+    z-index: 99;
+
+    &__category {
+      z-index: 99;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .navModal {
+    padding: 100px 25px 25px 25px;
+  }
+}

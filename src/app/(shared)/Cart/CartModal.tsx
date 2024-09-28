@@ -28,11 +28,15 @@ export default function CartModal() {
     router.back();
   };
 
+  const stopPropagation = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
+
   return (
     <>
       {cartModal && (
         <div className="backdrop" onClick={closeModal}>
-          <div className="cartModal">
+          <div className="cartModal" onClick={stopPropagation}>
             <div className="cartModal__header">
               <p className="cartModal__header__title">Cart (3)</p>
               <p className="cartModal__header__remove">Remove all</p>

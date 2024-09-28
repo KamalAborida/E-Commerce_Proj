@@ -39,9 +39,9 @@
   }
 }
 
-@media screen and (max-width: $mobile-max-width) {
+@media screen and (max-width: $tablet-max-width) {
   .successModal {
-    width: 90%;
+    width: 95%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -52,5 +52,11 @@
     &__note {
       width: 100%;
     }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .successModal {
+    width: 90%;
   }
 }
