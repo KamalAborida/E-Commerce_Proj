@@ -1,41 +1,23 @@
 'use client';
 import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Recipt from './Recipt';
+import { useModal } from '../hooks/modal-hook';
 
 export default function SuccessModal() {
-  const searchParams = useSearchParams();
-  const successSearchParam = searchParams.get('success');
-  const [successModal, setSuccessModal] = useState(false);
-  const router = useRouter();
+  const { searchParam, modal, closeModal, openModal } = useModal('success', '');
 
   useEffect(() => {
-    if (successSearchParam) {
-      setSuccessModal(true);
-      window.scrollTo(0, 0);
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
+    if (searchParam) {
+      openModal();
     } else {
-      setSuccessModal(false);
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+      closeModal();
     }
-  }, [successSearchParam]);
-
-  const closeModal = () => {
-    setSuccessModal(false);
-    router.push('/');
-  };
-
-  const backHomeHandler = () => {
-    router.push('/');
-    setSuccessModal(false);
-  };
+  }, [closeModal, openModal, searchParam]);
 
   return (
     <>
-      {successModal && (
+      {modal && (
         <div className="backdrop" onClick={closeModal}>
           <div className="successModal">
             <Image
@@ -50,7 +32,7 @@ export default function SuccessModal() {
               You will receive an email confirmation shortly.
             </p>
             <Recipt />
-            <button onClick={backHomeHandler} className="successModal__btn">
+            <button onClick={closeModal} className="successModal__btn">
               BACK TO HOME
             </button>
           </div>

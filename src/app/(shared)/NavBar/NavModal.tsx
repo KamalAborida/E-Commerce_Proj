@@ -1,48 +1,51 @@
 'use client';
+
 import Categories from '@/app/(routes)/components/Categories/Categories';
 import { Category as CategoryType } from '@/app/(server)/services/category';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { handleWindow } from '../utils/windowFunctions';
+import { stopPropagation } from '../utils/general';
+import { useModal } from '../hooks/modal-hook';
 
 interface NavModalProps {
   categories: CategoryType[];
 }
 
 export default function NavModal({ categories }: NavModalProps) {
-  const searchParams = useSearchParams();
-  const navSearchParam = searchParams.get('nav');
-  const screenWidth = window.innerWidth;
-  const [navModal, setNavModal] = useState(false);
-  const router = useRouter();
+  const pathName = usePathname();
+  const { searchParam, modal, closeModal, openModal, openModalInMobile } =
+    useModal('nav', pathName);
+
+  const [screenWidth, setScreenWidth] = useState<number | null>(null);
+  const isNotMobile = screenWidth && screenWidth > 450;
+  const isMobile = screenWidth && screenWidth < 450;
 
   useEffect(() => {
-    if (navSearchParam && screenWidth > 450) {
-      setNavModal(true);
-      window.scrollTo(0, 0);
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-    } else if (navSearchParam && screenWidth < 450) {
-      setNavModal(true);
-      window.scrollTo(0, 0);
+    handleWindow(setScreenWidth);
+  }, []);
+
+  useEffect(() => {
+    if (searchParam && isNotMobile) {
+      openModal();
+    } else if (searchParam && isMobile) {
+      openModalInMobile();
     } else {
-      setNavModal(false);
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+      closeModal();
     }
-  }, [navSearchParam, screenWidth]);
-
-  const closeModal = (event: React.MouseEvent<HTMLElement>) => {
-    setNavModal(false);
-    router.back();
-  };
-
-  const stopPropagation = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-  };
+  }, [
+    isMobile,
+    isNotMobile,
+    searchParam,
+    screenWidth,
+    openModal,
+    closeModal,
+    openModalInMobile,
+  ]);
 
   return (
     <>
-      {navModal && (
+      {modal && (
         <div className="backdrop" onClick={closeModal}>
           <div className="navModal" onClick={stopPropagation}>
             <Categories categories={categories} />

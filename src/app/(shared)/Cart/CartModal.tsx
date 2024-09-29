@@ -1,40 +1,29 @@
 'use client';
 import CartObject from './CartObject';
 import InfoLine from '@/app/(routes)/checkout/components/Summary/InfoLine';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { stopPropagation } from '../utils/general';
+import { useModal } from '../hooks/modal-hook';
 
 export default function CartModal() {
-  const searchParams = useSearchParams();
-  const cartSearchParam = searchParams.get('cart');
-  const [cartModal, setCartModal] = useState(false);
-  const router = useRouter();
+  const pathName = usePathname();
+  const { searchParam, modal, closeModal, openModal } = useModal(
+    'cart',
+    pathName
+  );
 
   useEffect(() => {
-    if (cartSearchParam) {
-      setCartModal(true);
-      window.scrollTo(0, 0);
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
+    if (searchParam) {
+      openModal();
     } else {
-      setCartModal(false);
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+      closeModal();
     }
-  }, [cartSearchParam]);
-
-  const closeModal = () => {
-    setCartModal(false);
-    router.back();
-  };
-
-  const stopPropagation = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-  };
+  }, [closeModal, openModal, searchParam]);
 
   return (
     <>
-      {cartModal && (
+      {modal && (
         <div className="backdrop" onClick={closeModal}>
           <div className="cartModal" onClick={stopPropagation}>
             <div className="cartModal__header">

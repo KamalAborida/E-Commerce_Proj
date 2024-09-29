@@ -3,7 +3,6 @@ import CartObject from '../Cart/CartObject';
 import GrayDiv from './GrayDiv';
 
 export default function Recipt() {
-
   return (
     <div className="successModal__recipt">
       <GrayDiv />
