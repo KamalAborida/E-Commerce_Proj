@@ -5,7 +5,10 @@ import Recipt from './Recipt';
 import { useModal } from '../hooks/modal-hook';
 
 export default function SuccessModal() {
-  const { searchParam, modal, closeModal, openModal } = useModal('success', '');
+  const { searchParam, modal, closeModal, openModal } = useModal(
+    'success',
+    'home'
+  );
 
   useEffect(() => {
     if (searchParam) {

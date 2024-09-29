@@ -1,5 +1,6 @@
 import CartObject from '@/app/(shared)/Cart/CartObject';
 import InfoLine from './InfoLine';
+import Link from 'next/link';
 
 export default function Summary() {
   return (
@@ -14,7 +15,9 @@ export default function Summary() {
       <InfoLine isOrange={false} label="Bla Bla" value="500" />
       <InfoLine isOrange={false} label="Bla BLa Bla" value="500" />
       <InfoLine isOrange={true} label="GRAND TOTAL" value="1500" />
-      <button className="summary__button">CHECKOUT & PAY</button>
+      <Link href={'?success=true'}>
+        <button className="summary__button">CHECKOUT & PAY</button>
+      </Link>
     </div>
   );
 }

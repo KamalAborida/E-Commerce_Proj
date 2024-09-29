@@ -7,11 +7,7 @@ import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
 
 export default function CartModal() {
-  const pathName = usePathname();
-  const { searchParam, modal, closeModal, openModal } = useModal(
-    'cart',
-    pathName
-  );
+  const { searchParam, modal, closeModal, openModal } = useModal('cart', '');
 
   useEffect(() => {
     if (searchParam) {

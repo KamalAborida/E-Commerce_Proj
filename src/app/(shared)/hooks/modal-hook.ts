@@ -7,14 +7,18 @@ export function useModal(modalSearchParam: string, closeDestination: string) {
   const searchParam = searchParams.get(modalSearchParam);
 
   const router = useRouter();
+  const path = usePathname();
 
   const [modal, setModal] = useState(false);
 
   const closeModal = useCallback(() => {
     setModal(false);
     enableScrolling();
-    router.push(`/${closeDestination}`);
-  }, [closeDestination, router]);
+    router.replace(path);
+    if (closeDestination === 'home') {
+      router.push('/');
+    }
+  }, [closeDestination, path, router]);
 
   const openModal = useCallback(() => {
     setModal(true);

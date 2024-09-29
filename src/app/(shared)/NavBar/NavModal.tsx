@@ -21,7 +21,7 @@ export default function NavModal({ categories }: NavModalProps) {
     openModal,
     openModalInMobile,
     setModal,
-  } = useModal('nav', pathName);
+  } = useModal('nav', '');
 
   const [screenWidth, setScreenWidth] = useState<number | null>(null);
   const isNotMobile = screenWidth && screenWidth > 450;
