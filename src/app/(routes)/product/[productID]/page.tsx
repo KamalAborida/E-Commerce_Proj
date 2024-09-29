@@ -7,6 +7,7 @@ import ProductDiv from '../components/ProductDiv/ProductDiv';
 import ProductPageBackground from '../components/ProductPageBackground/ProductPageBackground';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
 import { getProducts } from '@/app/(server)/services/product';
+import { getCategories } from '@/app/(server)/services/category';
 
 interface ProductPageProps {
   params: { productID: string }; // Access the dynamic route params
@@ -14,6 +15,7 @@ interface ProductPageProps {
 
 export default async function Product({ params }: ProductPageProps) {
   const products = await getProducts();
+  const categories = await getCategories();
   const productID = +params.productID;
 
   const product = products.filter((product) => product.id === productID)[0];
@@ -33,7 +35,7 @@ export default async function Product({ params }: ProductPageProps) {
       <ProductContent features={product.features} inTheBox={product.inTheBox} />
       <ImageCollague images={product.images} />
       <RecommendedProducts />
-      <Categories />
+      <Categories categories={categories} />
       <Mission />
     </main>
   );

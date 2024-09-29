@@ -10,7 +10,6 @@ export default function Checkout() {
     <main>
       <ProductPageBackground />
       <div className="checkoutBackground"></div>
-      <ActionDiv />
       <div className="mainContent">
         <CheckoutForm />
         <Summary />

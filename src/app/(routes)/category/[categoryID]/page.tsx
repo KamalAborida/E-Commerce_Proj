@@ -6,7 +6,7 @@ import Products from '../components/Products/Products';
 import { getCategories } from '@/app/(server)/services/category';
 import ActionDiv from '../../components/ActionDiv/ActionDiv';
 
-export default async function CategoryPage() {
+export default async function Category() {
   const products = await getProducts();
   const categories = await getCategories();
 

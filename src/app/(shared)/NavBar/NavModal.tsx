@@ -4,7 +4,7 @@ import Categories from '@/app/(routes)/components/Categories/Categories';
 import { Category as CategoryType } from '@/app/(server)/services/category';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { handleWindow } from '../utils/windowFunctions';
+import { enableScrolling, handleWindow } from '../utils/windowFunctions';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
 
@@ -14,8 +14,14 @@ interface NavModalProps {
 
 export default function NavModal({ categories }: NavModalProps) {
   const pathName = usePathname();
-  const { searchParam, modal, closeModal, openModal, openModalInMobile } =
-    useModal('nav', pathName);
+  const {
+    searchParam,
+    modal,
+    closeModal,
+    openModal,
+    openModalInMobile,
+    setModal,
+  } = useModal('nav', pathName);
 
   const [screenWidth, setScreenWidth] = useState<number | null>(null);
   const isNotMobile = screenWidth && screenWidth > 450;
@@ -30,6 +36,8 @@ export default function NavModal({ categories }: NavModalProps) {
       openModal();
     } else if (searchParam && isMobile) {
       openModalInMobile();
+      // setModal(true);
+      // enableScrolling();1
     } else {
       closeModal();
     }
@@ -41,6 +49,7 @@ export default function NavModal({ categories }: NavModalProps) {
     openModal,
     closeModal,
     openModalInMobile,
+    setModal,
   ]);
 
   return (
