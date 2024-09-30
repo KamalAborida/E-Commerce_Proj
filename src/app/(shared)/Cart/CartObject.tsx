@@ -1,11 +1,27 @@
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
+import { cartActions, CartProduct } from '@/lib/features/cart/cart-slice';
+import { AppDispatch } from '@/lib/store';
 import Image from 'next/image';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-interface cartObjectProps {
-  isEditabdle: boolean;
+interface CartObjectProps {
+  isEditable: boolean;
+  cartItem: CartProduct;
 }
 
-export default function CartObject({ isEditabdle }: cartObjectProps) {
+export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
+  const [inputNumber, setInputNumber] = useState(cartItem.quantity);
+  const dispatch = useDispatch<AppDispatch>();
+
+  const changeQuantity = (operation: string) => {
+    if (operation === '+') {
+      dispatch(cartActions.addItemToCart(cartItem));
+    } else if (operation === '-') {
+      dispatch(cartActions.removeItemFromCart(cartItem.id));
+    }
+  };
+
   return (
     <div className="cartObject">
       <Image
@@ -15,18 +31,22 @@ export default function CartObject({ isEditabdle }: cartObjectProps) {
         width={64}
         height={64}
       />
-      <p className="cartObject__name">MXXX1 550</p>
-      <p className="cartObject__price">1600$</p>
-      {!isEditabdle && (
+      <p className="cartObject__name">{cartItem.name}</p>
+      <p className="cartObject__price">{cartItem.price}$</p>
+      {!isEditable && (
         <div className="cartObject__number">
-          <p>x5</p>
+          <p>x{cartItem.quantity}</p>
         </div>
       )}
-      {/* {isEditabdle && (
+      {isEditable && (
         <div className="cartObject__numbersInputDiv">
-          <NumbersInput />
+          <NumbersInput
+            quantity={inputNumber}
+            changeQuantity={changeQuantity}
+            setInputNumberState={setInputNumber}
+          />
         </div>
-      )} */}
+      )}
     </div>
   );
 }

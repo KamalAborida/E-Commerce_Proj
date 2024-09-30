@@ -1,41 +1,52 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface NumbersInputProps {
   setInputNumberState: (quantity: number) => void;
+  changeQuantity: ((operation: string) => void) | null;
+  quantity: number;
 }
 
-export default function NumbersInput({
+function NumbersInput({
   setInputNumberState,
+  changeQuantity,
+  quantity,
 }: NumbersInputProps) {
-  const [number, setNumber] = useState<number>(1);
+  const [number, setNumber] = useState<number>(quantity);
+  const [operation, setOperation] = useState('');
 
   const increaseNumber = () => {
-    setNumber((prev) => ++prev);
+    setNumber((prev) => prev + 1);
+    setOperation('+');
   };
 
   const decreaseNumber = () => {
-    if (number === 0) {
+    if (number === 1) {
       return;
     }
-
-    setNumber((prev) => --prev);
+    setNumber((prev) => prev - 1);
+    setOperation('-');
   };
 
   useEffect(() => {
     setInputNumberState(number);
-  }, [number, setInputNumberState]);
+    if (changeQuantity && operation) {
+      changeQuantity(operation);
+    }
+  }, [changeQuantity, number, operation, setInputNumberState]);
 
   return (
     <div className="numbersInput">
-      <button className="numbersInput__plus" onClick={decreaseNumber}>
+      <button className="numbersInput__minus" onClick={decreaseNumber}>
         -
       </button>
       <p className="numbersInput__number">{number}</p>
-      <button className="numbersInput__minus" onClick={increaseNumber}>
+      <button className="numbersInput__plus" onClick={increaseNumber}>
         +
       </button>
     </div>
   );
 }
+
+export default React.memo(NumbersInput); // Memoized to avoid unnecessary re-renders

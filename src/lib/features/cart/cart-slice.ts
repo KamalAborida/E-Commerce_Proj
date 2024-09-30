@@ -7,7 +7,7 @@ interface InitialState {
   totalQuantity: number;
 }
 
-interface CartProduct extends Product {
+export interface CartProduct extends Product {
   quantity: number;
 }
 

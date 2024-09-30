@@ -47,7 +47,7 @@ export default function CartModal() {
                 cartItems.map((cartItem) => {
                   return (
                     <li key={cartItem.id}>
-                      <CartObject isEditabdle={false} />
+                      <CartObject isEditable={true} cartItem={cartItem} />
                     </li>
                   );
                 })}
@@ -55,7 +55,7 @@ export default function CartModal() {
             <InfoLine
               isOrange={false}
               label="Total"
-              value={totalPrice.toString()}
+              value={totalPrice.toFixed(2).toString()}
             />
             <button className="cartModal__btn">CHECKOUT</button>
           </div>

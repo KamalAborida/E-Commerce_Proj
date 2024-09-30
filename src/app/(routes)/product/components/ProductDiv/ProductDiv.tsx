@@ -43,7 +43,11 @@ export default function ProductDiv({ product }: ProductDivProps) {
         />
         <p className="productDiv__ctaDiv__price">{product.price}$</p>
         <div className="productDiv__ctaDiv__btnDiv">
-          <NumbersInput setInputNumberState={setInputNumberState} />
+          <NumbersInput
+            setInputNumberState={setInputNumberState}
+            changeQuantity={null}
+            quantity={1}
+          />
           <button
             className="productDiv__ctaDiv__btnDiv__btn addToCart"
             onClick={handleAddToCart}
