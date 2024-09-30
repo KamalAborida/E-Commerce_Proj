@@ -1,42 +1,53 @@
+'use client';
+
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import ProductDescriptionCta from '@/app/(routes)/components/ProductCta/ProductDescriptionCta';
+import { Product } from '@/app/(server)/services/product';
+import { cartActions } from '@/lib/features/cart/cart-slice';
+import { AppDispatch } from '@/lib/store';
 import Image from 'next/image';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 interface ProductDivProps {
-  image: string;
-  isNew: number;
-  name: string;
-  description: string;
-  price: number;
+  product: Product;
 }
 
-export default function ProductDiv({
-  name,
-  image,
-  isNew,
-  description,
-  price,
-}: ProductDivProps) {
+export default function ProductDiv({ product }: ProductDivProps) {
+  const dispatch = useDispatch<AppDispatch>();
+  const [inputNumber, setInputNumber] = useState(1);
+
+  const setInputNumberState = (quantity: number) => {
+    setInputNumber(quantity);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(cartActions.addItemToCart({ ...product, quantity: inputNumber }));
+  };
+
   return (
     <div className="productDiv">
       <div className="productDiv__img">
         <Image
           alt="Product Preview"
-          src={`/${image}.png`}
+          src={`/${product.previewImage}.png`}
           width={540}
           height={560}
         />
       </div>
       <div className="productDiv__ctaDiv">
         <ProductDescriptionCta
-          isNew={isNew}
-          name={name}
-          description={description}
+          isNew={product.isNew}
+          name={product.name}
+          description={product.description}
         />
-        <p className="productDiv__ctaDiv__price">{price}$</p>
+        <p className="productDiv__ctaDiv__price">{product.price}$</p>
         <div className="productDiv__ctaDiv__btnDiv">
-          <NumbersInput />
-          <button className="productDiv__ctaDiv__btnDiv__btn addToCart">
+          <NumbersInput setInputNumberState={setInputNumberState} />
+          <button
+            className="productDiv__ctaDiv__btnDiv__btn addToCart"
+            onClick={handleAddToCart}
+          >
             ADD TO CART
           </button>
         </div>

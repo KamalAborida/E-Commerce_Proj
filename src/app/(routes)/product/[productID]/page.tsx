@@ -25,13 +25,7 @@ export default async function Product({ params }: ProductPageProps) {
   return (
     <main>
       <ProductPageBackground />
-      <ProductDiv
-        name={product.name}
-        isNew={product.isNew}
-        image={product.previewImage}
-        description={product.description}
-        price={product.price}
-      />
+      <ProductDiv product={product} />
       <ProductContent features={product.features} inTheBox={product.inTheBox} />
       <ImageCollague images={product.images} />
       <RecommendedProducts />

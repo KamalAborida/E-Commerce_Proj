@@ -8,6 +8,7 @@ import SuccessModal from '../(shared)/SuccessModal/SuccessModal';
 import { getCategories } from '../(server)/services/category';
 import { getProducts } from '../(server)/services/product';
 import NavModal from '../(shared)/NavBar/NavModal';
+import ReduxProvider from '@/lib/provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,14 +28,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartModal />
-        <SuccessModal />
-        <NavModal categories={categories} />
-        <main className="main">
-          <NavBar categories={categories} />
-          {children}
-        </main>
-        <Footer categories={categories} />
+        <ReduxProvider>
+          <CartModal />
+          <SuccessModal />
+          <NavModal categories={categories} />
+          <main className="main">
+            <NavBar categories={categories} />
+            {children}
+          </main>
+          <Footer categories={categories} />
+        </ReduxProvider>
       </body>
     </html>
   );

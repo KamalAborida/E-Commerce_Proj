@@ -28,6 +28,7 @@ const cartSlice = createSlice({
     },
     addItemToCart(state, action: PayloadAction<CartProduct>) {
       const newItem = action.payload;
+      // console.log(newItem);
 
       if (state.cartItems.length <= 0) {
         state.cartItems.push(newItem);

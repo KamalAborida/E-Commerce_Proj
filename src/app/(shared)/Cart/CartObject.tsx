@@ -22,11 +22,11 @@ export default function CartObject({ isEditabdle }: cartObjectProps) {
           <p>x5</p>
         </div>
       )}
-      {isEditabdle && (
+      {/* {isEditabdle && (
         <div className="cartObject__numbersInputDiv">
           <NumbersInput />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

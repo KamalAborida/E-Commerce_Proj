@@ -1,8 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function NumbersInput() {
+interface NumbersInputProps {
+  setInputNumberState: (quantity: number) => void;
+}
+
+export default function NumbersInput({
+  setInputNumberState,
+}: NumbersInputProps) {
   const [number, setNumber] = useState<number>(1);
 
   const increaseNumber = () => {
@@ -16,6 +22,10 @@ export default function NumbersInput() {
 
     setNumber((prev) => --prev);
   };
+
+  useEffect(() => {
+    setInputNumberState(number);
+  }, [number, setInputNumberState]);
 
   return (
     <div className="numbersInput">
