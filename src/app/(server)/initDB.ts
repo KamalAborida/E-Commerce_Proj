@@ -81,10 +81,10 @@ try {
     ]),
     JSON.stringify({
       smallImages: [
-        'XX99_Mark_II_Headphones-image1',
         'XX99_Mark_II_Headphones-image2',
+        'XX99_Mark_II_Headphones-image3',
       ],
-      largeImage: 'XX99_Mark_II_Headphones-image',
+      largeImage: 'XX99_Mark_II_Headphones-image1',
     }),
     headphones.lastInsertRowid
   );
@@ -102,75 +102,95 @@ try {
     ]),
     JSON.stringify({
       smallImages: [
-        'XX99_Mark_I_Headphones-image1',
         'XX99_Mark_I_Headphones-image2',
+        'XX99_Mark_I_Headphones-image3',
       ],
-      largeImage: 'XX99_Mark_I_Headphones-image',
+      largeImage: 'XX99_Mark_I_Headphones-image1',
+    }),
+    headphones.lastInsertRowid
+  );
+
+  insertProduct.run(
+    'XX59 Headphones',
+    0, // isNew
+    899.99,
+    'XX59_Headphones-preview',
+    'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
+    'These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.X500 offers unmatched wireless sound...',
+    JSON.stringify([
+      { item: 'Headphone', quantity: 1 },
+      { item: 'Charging Cable', quantity: 1 },
+      { item: 'User Manual', quantity: 1 },
+      { item: 'Replacement Earcups', quantity: 4 },
+    ]),
+    JSON.stringify({
+      smallImages: ['XX59_Headphones-image2', 'XX59_Headphones-image3'],
+      largeImage: 'XX59_Headphones-image1',
     }),
     headphones.lastInsertRowid
   );
 
   // Populate Speakers category
-  insertProduct.run(
-    'ZX9 SPEAKER',
-    1, // isNew
-    149.99,
-    'ZX9_SPEAKER-preview',
-    'Portable, Water-resistant',
-    'BoomBox is the perfect outdoor companion...',
-    JSON.stringify([
-      { item: 'Speaker', quantity: 1 },
-      { item: 'Charging cable', quantity: 1 },
-      { item: 'Carrying strap', quantity: 1 },
-    ]),
-    JSON.stringify({
-      smallImages: ['ZX9_SPEAKER-image1', 'ZX9_SPEAKER-image2'],
-      largeImage: 'ZX9_SPEAKER-image',
-    }),
-    speakers.lastInsertRowid
-  );
+  // insertProduct.run(
+  //   'ZX9 SPEAKER',
+  //   1, // isNew
+  //   149.99,
+  //   'ZX9_SPEAKER-preview',
+  //   'Portable, Water-resistant',
+  //   'BoomBox is the perfect outdoor companion...',
+  //   JSON.stringify([
+  //     { item: 'Speaker', quantity: 1 },
+  //     { item: 'Charging cable', quantity: 1 },
+  //     { item: 'Carrying strap', quantity: 1 },
+  //   ]),
+  //   JSON.stringify({
+  //     smallImages: ['ZX9_SPEAKER-image1', 'ZX9_SPEAKER-image2'],
+  //     largeImage: 'ZX9_SPEAKER-image',
+  //   }),
+  //   speakers.lastInsertRowid
+  // );
 
-  insertProduct.run(
-    'SoundBlast Pro',
-    0, // isNew
-    249.99,
-    'url-to-speaker-soundblast-preview',
-    'Powerful bass, 360-degree sound',
-    'SoundBlast Pro delivers deep bass and rich sound...',
-    JSON.stringify([
-      { item: 'Speaker', quantity: 1 },
-      { item: 'Charging cable', quantity: 1 },
-      { item: 'User manual', quantity: 1 },
-    ]),
-    JSON.stringify({
-      smallImages: ['url-to-small-image1', 'url-to-small-image2'],
-      largeImage: 'url-to-large-image',
-    }),
-    speakers.lastInsertRowid
-  );
+  // insertProduct.run(
+  //   'SoundBlast Pro',
+  //   0, // isNew
+  //   249.99,
+  //   'url-to-speaker-soundblast-preview',
+  //   'Powerful bass, 360-degree sound',
+  //   'SoundBlast Pro delivers deep bass and rich sound...',
+  //   JSON.stringify([
+  //     { item: 'Speaker', quantity: 1 },
+  //     { item: 'Charging cable', quantity: 1 },
+  //     { item: 'User manual', quantity: 1 },
+  //   ]),
+  //   JSON.stringify({
+  //     smallImages: ['url-to-small-image1', 'url-to-small-image2'],
+  //     largeImage: 'url-to-large-image',
+  //   }),
+  //   speakers.lastInsertRowid
+  // );
 
   // Populate Earphones category
-  insertProduct.run(
-    'YX1 WIRELESS EARPHONES',
-    1, // isNew
-    79.99,
-    'YX1_WIRELESS_EARPHONES-preview',
-    'Noise cancellation, Wireless',
-    'EarFit Pro provides comfort and high-quality sound...',
-    JSON.stringify([
-      { item: 'Earphones', quantity: 1 },
-      { item: 'Charging case', quantity: 1 },
-      { item: 'User manual', quantity: 1 },
-    ]),
-    JSON.stringify({
-      smallImages: [
-        'YX1_WIRELESS_EARPHONES-image1',
-        'YX1_WIRELESS_EARPHONES-image2',
-      ],
-      largeImage: 'YX1_WIRELESS_EARPHONES-image',
-    }),
-    earphones.lastInsertRowid
-  );
+  // insertProduct.run(
+  //   'YX1 WIRELESS EARPHONES',
+  //   1, // isNew
+  //   79.99,
+  //   'YX1_WIRELESS_EARPHONES-preview',
+  //   'Noise cancellation, Wireless',
+  //   'EarFit Pro provides comfort and high-quality sound...',
+  //   JSON.stringify([
+  //     { item: 'Earphones', quantity: 1 },
+  //     { item: 'Charging case', quantity: 1 },
+  //     { item: 'User manual', quantity: 1 },
+  //   ]),
+  //   JSON.stringify({
+  //     smallImages: [
+  //       'YX1_WIRELESS_EARPHONES-image1',
+  //       'YX1_WIRELESS_EARPHONES-image2',
+  //     ],
+  //     largeImage: 'YX1_WIRELESS_EARPHONES-image',
+  //   }),
+  //   earphones.lastInsertRowid
+  // );
 
   console.log(
     'Database populated with categories and products, with image updates.'

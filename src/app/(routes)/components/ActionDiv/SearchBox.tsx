@@ -20,9 +20,6 @@ export default function SearchBox({ setSearchTerm }: SearchBoxProps) {
         placeholder="Search"
         onChange={handleSearch}
       />
-      <button className="actionDiv__searchBox__btn">
-        <Image src={'/arrow-right.svg'} alt="search" width={10} height={10} />
-      </button>
     </div>
   );
 }

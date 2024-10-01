@@ -28,7 +28,7 @@ export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
     <div className="cartObject">
       <Image
         className="cartObject__img"
-        src={'/headphones-cart.png'}
+        src={`/${cartItem.previewImage}.png`}
         alt="Headphones"
         width={64}
         height={64}
