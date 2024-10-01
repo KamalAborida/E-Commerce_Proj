@@ -6,7 +6,6 @@ interface infoLineProps {
 
 export default function InfoLine({ isOrange, label, value }: infoLineProps) {
   return (
-    // total or not
     <div
       className={`${isOrange ? 'summary__infoLine-orange' : 'summary__infoLine'}`}
     >

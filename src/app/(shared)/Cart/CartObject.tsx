@@ -1,15 +1,16 @@
 'use client';
 
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
-import { cartActions, CartProduct } from '@/lib/features/cart/cart-slice';
+import { cartActions } from '@/lib/features/cart/cart-slice';
 import { AppDispatch } from '@/lib/store';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { CartProductType } from '../utils/types';
 
 interface CartObjectProps {
   isEditable: boolean;
-  cartItem: CartProduct;
+  cartItem: CartProductType;
 }
 
 export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
@@ -43,7 +44,7 @@ export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
       {isEditable && (
         <div className="cartObject__numbersInputDiv">
           <NumbersInput
-            quantity={inputNumber}
+            defaultQuantity={inputNumber}
             changeQuantity={changeQuantity}
             setInputNumberState={setInputNumber}
           />

@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 const RadioBtnContext = React.createContext<{
   isTouched: boolean;
   currentValue: string;
-  setRadioValue: (value: string) => void; // Add a setter function to the context
+  setRadioValue: (value: string) => void;
 }>({
   isTouched: false,
   currentValue: 'e-money',

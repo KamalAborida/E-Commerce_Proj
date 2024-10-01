@@ -1,10 +1,10 @@
 'use client';
 
-import { Category } from '@/app/(server)/services/category';
+import { CategoryType } from '@/app/(shared)/utils/types';
 import { useParams } from 'next/navigation';
 
 interface CategoryBackgroundProps {
-  categories: Category[];
+  categories: CategoryType[];
 }
 
 export default function CategoryBackground({

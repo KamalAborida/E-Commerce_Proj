@@ -6,9 +6,8 @@ import Link from 'next/link';
 import { useAppSelector } from '@/lib/store';
 
 export default function Summary() {
-  const { cartItems, totalPrice, totalQuantity } = useAppSelector(
-    (state) => state.cart
-  );
+  const { cartItems, totalPrice } = useAppSelector((state) => state.cart);
+
   const vat = totalPrice / 5.5;
   const totalWithVat = vat + totalPrice;
 

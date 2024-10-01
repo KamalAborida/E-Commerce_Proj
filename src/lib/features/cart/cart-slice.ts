@@ -1,14 +1,10 @@
-import { Product } from '@/app/(server)/services/product';
+import { CartProductType } from '@/app/(shared)/utils/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface InitialState {
-  cartItems: CartProduct[];
+  cartItems: CartProductType[];
   totalPrice: number;
   totalQuantity: number;
-}
-
-export interface CartProduct extends Product {
-  quantity: number;
 }
 
 const initialState: InitialState = {
@@ -26,7 +22,7 @@ const cartSlice = createSlice({
       state.cartItems = [];
       state.totalPrice = 0;
     },
-    addItemToCart(state, action: PayloadAction<CartProduct>) {
+    addItemToCart(state, action: PayloadAction<CartProductType>) {
       const newItem = action.payload;
 
       if (state.cartItems.length <= 0) {

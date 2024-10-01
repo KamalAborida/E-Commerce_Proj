@@ -1,17 +1,12 @@
+import { CategoryType } from '@/app/(shared)/utils/types';
 import db from '../db';
 
-export interface Category {
-  id: number;
-  name: string;
-  previewImage: string;
-}
-
-export const getCategories = (): Category[] => {
+export const getCategories = (): CategoryType[] => {
   const stmt = db.prepare('SELECT * FROM Category');
-  return stmt.all() as Category[];
+  return stmt.all() as CategoryType[];
 };
 
-export const getCategory = (id: number): Category | undefined => {
+export const getCategory = (id: number): CategoryType | undefined => {
   const stmt = db.prepare('SELECT * FROM Category WHERE id = ?');
-  return stmt.get(id) as Category | undefined;
+  return stmt.get(id) as CategoryType | undefined;
 };

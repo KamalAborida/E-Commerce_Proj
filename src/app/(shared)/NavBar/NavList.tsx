@@ -1,8 +1,8 @@
-import { Category, getCategories } from '@/app/(server)/services/category';
 import Link from 'next/link';
+import { CategoryType } from '../utils/types';
 
 interface NavListProps {
-  categories: Category[];
+  categories: CategoryType[];
 }
 
 export default function NavList({ categories }: NavListProps) {

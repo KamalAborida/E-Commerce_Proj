@@ -1,4 +1,4 @@
-import { Product as ProductType } from '@/app/(server)/services/product';
+import { ProductType } from '@/app/(shared)/utils/types';
 import { SetStateAction } from 'react';
 
 export const DESCENDING = 'desc';

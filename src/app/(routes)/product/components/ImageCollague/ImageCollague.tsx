@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 interface ImageCollagueProps {
-  images: string; // Access the dynamic route params
+  images: string;
 }
 
 export default function ImageCollague({ images }: ImageCollagueProps) {

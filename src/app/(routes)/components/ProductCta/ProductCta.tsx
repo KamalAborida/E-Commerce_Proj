@@ -1,9 +1,9 @@
-import { Product } from '@/app/(server)/services/product';
+import { ProductType } from '@/app/(shared)/utils/types';
 import ProductDescriptionCta from './ProductDescriptionCta';
 import Link from 'next/link';
 
 interface productCtaProps {
-  product: Product;
+  product: ProductType;
 }
 
 export default function ProductCta({ product }: productCtaProps) {

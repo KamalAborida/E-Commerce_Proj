@@ -13,13 +13,13 @@ export default function RadioBtn({ label, name, value }: radioBtnProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
   const ctx = useContext(RadioBtnContext);
 
-  useEffect(() => {
-    setIsActive(ctx.currentValue === value);
-  }, [ctx.currentValue, value]);
-
   const handleRadioBtn = () => {
     ctx.setRadioValue(value);
   };
+
+  useEffect(() => {
+    setIsActive(ctx.currentValue === value);
+  }, [ctx.currentValue, value]);
 
   return (
     <div

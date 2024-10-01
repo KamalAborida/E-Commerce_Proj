@@ -1,7 +1,4 @@
-import {
-  Category as CategoryType,
-  getCategories,
-} from '@/app/(server)/services/category';
+import { CategoryType } from '@/app/(shared)/utils/types';
 import Category from './Category';
 
 interface CategoriesProps {

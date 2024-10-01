@@ -7,12 +7,14 @@ import {
 } from '../../category/components/Products/utils';
 
 interface SortDropDownProps {
-  setArrangmentType: Dispatch<SetStateAction<string>>;
+  setArrangementType: Dispatch<SetStateAction<string>>;
 }
 
-export default function SortDropDown({ setArrangmentType }: SortDropDownProps) {
+export default function SortDropDown({
+  setArrangementType,
+}: SortDropDownProps) {
   const handleSort = (event: ChangeEvent<HTMLSelectElement>) => {
-    setArrangmentType(event.currentTarget.value);
+    setArrangementType(event.currentTarget.value);
   };
 
   return (

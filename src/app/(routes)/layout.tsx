@@ -28,7 +28,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>
+        <ReduxProvider categories={categories} products={products}>
           <CartModal />
           <SuccessModal />
           <NavModal categories={categories} />

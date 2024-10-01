@@ -1,5 +1,5 @@
 import ProductCta from '@/app/(routes)/components/ProductCta/ProductCta';
-import { Product as ProductType } from '@/app/(server)/services/product';
+import { ProductType } from '@/app/(shared)/utils/types';
 import Image from 'next/image';
 
 interface productProps {

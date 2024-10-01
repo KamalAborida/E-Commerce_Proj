@@ -1,12 +1,12 @@
 'use client';
 
 import Categories from '@/app/(routes)/components/Categories/Categories';
-import { Category as CategoryType } from '@/app/(server)/services/category';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { enableScrolling, handleWindow } from '../utils/windowFunctions';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
+import { CategoryType } from '../utils/types';
 
 interface NavModalProps {
   categories: CategoryType[];
@@ -36,8 +36,6 @@ export default function NavModal({ categories }: NavModalProps) {
       openModal();
     } else if (searchParam && isMobile) {
       openModalInMobile();
-      // setModal(true);
-      // enableScrolling();1
     } else {
       closeModal();
     }

@@ -7,7 +7,7 @@ interface categoryProps {
 }
 
 export default function Category({ href, name }: categoryProps) {
-  let nameArr = name.split('');
+  const nameArr = name.split('');
   nameArr[0] = nameArr[0].toUpperCase();
   const title = nameArr.join('');
 

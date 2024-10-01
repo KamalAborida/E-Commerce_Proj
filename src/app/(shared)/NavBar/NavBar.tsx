@@ -5,12 +5,12 @@ import NavList from './NavList';
 import NavIconList from './IconsList';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Category } from '@/app/(server)/services/category';
 import { useRouter } from 'next/navigation';
 import NavModal from './NavModal';
+import { CategoryType } from '../utils/types';
 
 interface NavBarProps {
-  categories: Category[];
+  categories: CategoryType[];
 }
 
 export default function NavBar({ categories }: NavBarProps) {

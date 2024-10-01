@@ -2,7 +2,7 @@
 
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import ProductDescriptionCta from '@/app/(routes)/components/ProductCta/ProductDescriptionCta';
-import { Product } from '@/app/(server)/services/product';
+import { ProductType } from '@/app/(shared)/utils/types';
 import { cartActions } from '@/lib/features/cart/cart-slice';
 import { AppDispatch } from '@/lib/store';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 interface ProductDivProps {
-  product: Product;
+  product: ProductType;
 }
 
 export default function ProductDiv({ product }: ProductDivProps) {
@@ -46,7 +46,7 @@ export default function ProductDiv({ product }: ProductDivProps) {
           <NumbersInput
             setInputNumberState={setInputNumberState}
             changeQuantity={null}
-            quantity={1}
+            defaultQuantity={1}
           />
           <button
             className="productDiv__ctaDiv__btnDiv__btn addToCart"

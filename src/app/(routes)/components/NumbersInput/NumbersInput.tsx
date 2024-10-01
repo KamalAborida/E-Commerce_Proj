@@ -5,16 +5,15 @@ import React, { useEffect, useState } from 'react';
 interface NumbersInputProps {
   setInputNumberState: (quantity: number) => void;
   changeQuantity: ((operation: string) => void) | null;
-  quantity: number;
+  defaultQuantity: number;
 }
 
 function NumbersInput({
   setInputNumberState,
   changeQuantity,
-  quantity,
+  defaultQuantity,
 }: NumbersInputProps) {
-  const [number, setNumber] = useState<number>(quantity);
-  // const [operation, setOperation] = useState('');
+  const [number, setNumber] = useState<number>(defaultQuantity);
 
   const increaseNumber = () => {
     setNumber((prev) => prev + 1);
@@ -50,4 +49,4 @@ function NumbersInput({
   );
 }
 
-export default React.memo(NumbersInput); // Memoized to avoid unnecessary re-renders
+export default React.memo(NumbersInput);

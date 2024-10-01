@@ -2,10 +2,10 @@ import Image from 'next/image';
 import NavList from '../NavBar/NavList';
 import FooterAbout from './FooterAbout';
 import FooterSocialMediaList from './FooterSocialMediaList';
-import { Category } from '@/app/(server)/services/category';
+import { CategoryType } from '../utils/types';
 
 interface FooterProps {
-  categories: Category[];
+  categories: CategoryType[];
 }
 
 export default function Footer({ categories }: FooterProps) {
