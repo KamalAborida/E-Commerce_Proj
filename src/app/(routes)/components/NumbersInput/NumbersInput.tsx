@@ -14,11 +14,13 @@ function NumbersInput({
   quantity,
 }: NumbersInputProps) {
   const [number, setNumber] = useState<number>(quantity);
-  const [operation, setOperation] = useState('');
+  // const [operation, setOperation] = useState('');
 
   const increaseNumber = () => {
     setNumber((prev) => prev + 1);
-    setOperation('+');
+    if (changeQuantity) {
+      changeQuantity('+');
+    }
   };
 
   const decreaseNumber = () => {
@@ -26,15 +28,14 @@ function NumbersInput({
       return;
     }
     setNumber((prev) => prev - 1);
-    setOperation('-');
+    if (changeQuantity) {
+      changeQuantity('-');
+    }
   };
 
   useEffect(() => {
     setInputNumberState(number);
-    if (changeQuantity && operation) {
-      changeQuantity(operation);
-    }
-  }, [changeQuantity, number, operation, setInputNumberState]);
+  }, [number, setInputNumberState]);
 
   return (
     <div className="numbersInput">

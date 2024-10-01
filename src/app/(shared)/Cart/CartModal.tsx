@@ -8,6 +8,7 @@ import { useModal } from '../hooks/modal-hook';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, useAppSelector } from '@/lib/store';
 import { cartActions } from '@/lib/features/cart/cart-slice';
+import Link from 'next/link';
 
 export default function CartModal() {
   const { searchParam, modal, closeModal, openModal } = useModal('cart', '');
@@ -57,7 +58,9 @@ export default function CartModal() {
               label="Total"
               value={totalPrice.toFixed(2).toString()}
             />
-            <button className="cartModal__btn">CHECKOUT</button>
+            <Link href={'/checkout'}>
+              <button className="cartModal__btn">CHECKOUT</button>
+            </Link>
           </div>
         </div>
       )}
