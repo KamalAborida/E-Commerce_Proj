@@ -1,16 +1,12 @@
 'use client';
 
 import { CategoryType } from '@/app/(shared)/utils/types';
+import { useAppSelector } from '@/lib/store';
 import { useParams } from 'next/navigation';
 
-interface CategoryBackgroundProps {
-  categories: CategoryType[];
-}
-
-export default function CategoryBackground({
-  categories,
-}: CategoryBackgroundProps) {
+export default function CategoryBackground() {
   const { categoryID } = useParams();
+  const categories = useAppSelector((state) => state.data.categories);
 
   const category = categories.find((category) => +categoryID === category.id);
 

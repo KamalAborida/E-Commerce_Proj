@@ -15,7 +15,6 @@ interface ProductPageProps {
 export default async function Product({ params }: ProductPageProps) {
   const productID = +params.productID;
   const product = await getProduct(productID);
-  const categories = await getCategories();
 
   if (!product) {
     return <p>No product found</p>;
@@ -28,7 +27,7 @@ export default async function Product({ params }: ProductPageProps) {
       <ProductContent features={product.features} inTheBox={product.inTheBox} />
       <ImageCollague images={product.images} />
       <RecommendedProducts />
-      <Categories categories={categories} />
+      <Categories />
       <Mission />
     </main>
   );

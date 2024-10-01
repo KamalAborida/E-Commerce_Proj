@@ -4,17 +4,13 @@ import Categories from '../../components/Categories/Categories';
 import CategoryBackground from '../components/CategoryBackground/CategoryBackground';
 import Products from '../components/Products/Products';
 import { getCategories } from '@/app/(server)/services/category';
-import ActionDiv from '../../components/ActionDiv/ActionDiv';
 
 export default async function CategoryPage() {
-  const products = await getProducts();
-  const categories = await getCategories();
-
   return (
     <main>
-      <CategoryBackground categories={categories} />
-      {products && <Products products={products} />}
-      <Categories categories={categories} />
+      <CategoryBackground />
+      <Products />
+      <Categories />
       <Mission />
     </main>
   );

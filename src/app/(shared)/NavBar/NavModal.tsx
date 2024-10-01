@@ -55,7 +55,7 @@ export default function NavModal({ categories }: NavModalProps) {
       {modal && (
         <div className="backdrop" onClick={closeModal}>
           <div className="navModal" onClick={stopPropagation}>
-            <Categories categories={categories} />
+            <Categories />
           </div>
         </div>
       )}

@@ -11,13 +11,11 @@ import {
   searchProducts,
   sortProductsByPrice,
 } from './utils';
-import { ProductType } from '@/app/(shared)/utils/types';
+import { useAppSelector } from '@/lib/store';
 
-interface ProductsProps {
-  products: ProductType[] | undefined;
-}
+export default function Products() {
+  const products = useAppSelector((state) => state.data.products);
 
-export default function Products({ products }: ProductsProps) {
   const [categoryProducts, setCategoryProducts] = useState(products);
   const [arrangementType, setArrangementType] = useState(ASCENDING);
   const [searchTerm, setSearchTerm] = useState('');

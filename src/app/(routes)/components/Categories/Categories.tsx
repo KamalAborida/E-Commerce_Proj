@@ -1,11 +1,12 @@
+'use client';
+
 import { CategoryType } from '@/app/(shared)/utils/types';
 import Category from './Category';
+import { useAppSelector } from '@/lib/store';
 
-interface CategoriesProps {
-  categories: CategoryType[];
-}
+export default function Categories() {
+  const categories = useAppSelector((state) => state.data.categories);
 
-export default function Categories({ categories }: CategoriesProps) {
   return (
     <div className="categories" role="div">
       {categories &&
