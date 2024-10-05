@@ -1089,12 +1089,12 @@ a {
 }
 .bestSellingCard__img {
   width: 48%;
+  height: 330px;
   border-radius: 10px;
 }
 .bestSellingCard__img img {
-  width: 100%;
-  max-width: 100%;
   border-radius: 10px;
+  height: 100%;
 }
 .bestSellingCard__cta {
   background-color: #F1F1F1;
@@ -1146,10 +1146,25 @@ a {
   }
 }
 @media screen and (max-width: 450px) {
+  .bestSellingCard {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  .bestSellingCard__img {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .bestSellingCard__img img {
+    border-radius: 10px;
+    height: 100%;
+  }
   .bestSellingCard__cta {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 25px;
   }
   .bestSellingCard__cta__name {
     font-size: 10px;

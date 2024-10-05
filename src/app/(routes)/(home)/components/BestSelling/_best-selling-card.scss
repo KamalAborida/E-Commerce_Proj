@@ -6,12 +6,12 @@
 
   &__img {
     width: 48%;
+    height: 330px;
     border-radius: 10px;
 
     img {
-      width: 100%;
-      max-width: 100%;
       border-radius: 10px;
+      height: 100%;
     }
   }
 
@@ -76,10 +76,27 @@
 
 @media screen and (max-width: $mobile-max-width) {
   .bestSellingCard {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    // border: 2px solid red;
+
+    &__img {
+      width: 100%;
+      margin-bottom: 25px;
+  
+      img {
+        border-radius: 10px;
+        height: 100%;
+      }
+    }
+
     &__cta {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      padding: 25px;
 
       &__name {
         font-size: 10px;
