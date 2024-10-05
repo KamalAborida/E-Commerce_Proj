@@ -1,5 +1,5 @@
 import Mission from '../../(home)/components/Mission/Mission';
-import Categories from '../../components/Categories/Categories';
+import Categories from '../../../(shared)/Categories/Categories';
 import ImageCollague from '../components/ImageCollague/ImageCollague';
 import ProductContent from '../components/ProductContent/ProductContent';
 import ProductDiv from '../components/ProductDiv/ProductDiv';

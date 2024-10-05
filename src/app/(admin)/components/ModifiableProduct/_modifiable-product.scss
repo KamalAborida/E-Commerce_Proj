@@ -1,0 +1,43 @@
+.modifiableProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .product {
+    width: 75%;
+    margin-bottom: unset;
+
+    &__productCta {
+      button {
+        display: none;
+      }
+    }
+  }
+
+  &__actionDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  &__btn--delete {
+    background-color: #ff4d4f;
+    color: white;
+  }
+
+  &__btn--edit {
+    background-color: #ccc;
+    color: #333;
+  }
+}

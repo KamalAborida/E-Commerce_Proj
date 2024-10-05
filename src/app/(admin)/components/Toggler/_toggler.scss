@@ -1,0 +1,36 @@
+.toggler {
+  &__label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  &__switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+
+    &--active {
+      background-color: $primary-orange;
+    }
+  }
+
+  &__ball {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 4px;
+    left: 4px;
+    transition: transform 0.4s;
+
+    .toggler__switch--active & {
+      transform: translateX(26px);
+    }
+  }
+}

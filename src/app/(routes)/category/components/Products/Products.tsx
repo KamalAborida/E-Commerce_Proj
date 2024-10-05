@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import Product from '../Product/Product';
+import Product from '../../../../(shared)/Product/Product';
 import ActionDiv from '@/app/(routes)/components/ActionDiv/ActionDiv';
 import {
   ASCENDING,

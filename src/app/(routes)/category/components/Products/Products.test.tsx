@@ -5,7 +5,7 @@ import { getProducts } from '@/app/(server)/services/product';
 import Category from '../../[categoryID]/page';
 import { getCategories } from '@/app/(server)/services/category';
 import { productsData } from './mockedData';
-import { categoriesData } from '@/app/(routes)/components/Categories/mockedData';
+import { categoriesData } from '@/app/(shared)/Categories/mockedData';
 import Products from './Products';
 import { filterProducts, searchProducts, sortProductsByPrice } from './utils';
 

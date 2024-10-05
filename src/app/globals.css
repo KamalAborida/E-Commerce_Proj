@@ -565,7 +565,7 @@ a {
   color: black;
 }
 
-.regularText, .mission__content__description, .productDescriptionCta__description, .footer__container__lowerPart__about__copyrights, .footer__container__lowerPart__about__description {
+.regularText, .adminSideBar__list__item, .mission__content__description, .productDescriptionCta__description, .footer__container__lowerPart__about__copyrights, .footer__container__lowerPart__about__description {
   font-size: 15px;
   color: #AEAEAE;
   line-height: 25px;
@@ -591,6 +591,10 @@ a {
 .btn-orange {
   background-color: #D87D4A;
   color: white;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
 }
 
 .main {
@@ -975,6 +979,27 @@ a {
 .inputDiv, .inputDiv-error, .inputDiv-active {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.inputDiv__tipModal {
+  position: absolute;
+  background-color: #F1F1F1;
+  padding: 10px;
+  right: 20px;
+  top: 20px;
+}
+.inputDiv__tipCta {
+  position: absolute;
+  right: 10px;
+  background-color: #AEAEAE;
+  padding: 2.5px 7px;
+  border-radius: 100%;
+  font-size: 10px;
+  font-weight: bold;
+}
+.inputDiv__tipCta:hover {
+  cursor: pointer;
+  background-color: #434343;
 }
 .inputDiv__label {
   font-weight: bold;
@@ -1019,6 +1044,65 @@ a {
   color: black;
 }
 
+.product {
+  margin-bottom: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+.product:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.product__productCta {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product__productCta .productCta {
+  width: 70%;
+}
+.product__productCta .productCta__isNew {
+  color: #D87D4A;
+}
+.product__productCta .productCta__name {
+  color: black;
+}
+.product__img {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product:nth-child(even) {
+    flex-direction: column;
+  }
+  .product__productCta {
+    width: 100%;
+  }
+  .product__img {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product:nth-child(even) {
+    flex-direction: column;
+  }
+  .product__productCta {
+    width: 100%;
+  }
+  .product__img {
+    margin-bottom: 50px;
+  }
+}
 .blackBackground {
   background-image: url("/banner-background.png");
   background-repeat: no-repeat;
@@ -1247,65 +1331,6 @@ a {
   font-size: 50px;
 }
 
-.product {
-  margin-bottom: 160px;
-  display: flex;
-  justify-content: space-between;
-}
-.product:nth-child(even) {
-  flex-direction: row-reverse;
-}
-.product__productCta {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.product__productCta .productCta {
-  width: 70%;
-}
-.product__productCta .productCta__isNew {
-  color: #D87D4A;
-}
-.product__productCta .productCta__name {
-  color: black;
-}
-.product__img {
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 800px) {
-  .product {
-    flex-direction: column;
-    align-items: center;
-  }
-  .product:nth-child(even) {
-    flex-direction: column;
-  }
-  .product__productCta {
-    width: 100%;
-  }
-  .product__img {
-    margin-bottom: 50px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .product {
-    flex-direction: column;
-    align-items: center;
-  }
-  .product:nth-child(even) {
-    flex-direction: column;
-  }
-  .product__productCta {
-    width: 100%;
-  }
-  .product__img {
-    margin-bottom: 50px;
-  }
-}
 .products {
   margin: 355px auto 240px auto;
 }
@@ -2000,4 +2025,162 @@ a {
     flex-direction: column;
     align-items: center;
   }
+}
+.adminLayout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adminPage {
+  margin: 30px 60px 0 0;
+  width: 75%;
+  padding: 35px;
+}
+
+.toggler__label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.toggler__switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+.toggler__switch--active {
+  background-color: #D87D4A;
+}
+.toggler__ball {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  bottom: 4px;
+  left: 4px;
+  transition: transform 0.4s;
+}
+.toggler__switch--active .toggler__ball {
+  transform: translateX(26px);
+}
+
+.modifiableCategory {
+  position: relative;
+  width: 350px;
+}
+.modifiableCategory .categories__category {
+  width: 350px;
+}
+.modifiableCategory .categories__category__shop {
+  display: none;
+}
+.modifiableCategory__actionDiv {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  z-index: 90;
+}
+.modifiableCategory__icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+}
+.modifiableCategory__icon--delete {
+  color: #ff4d4f;
+}
+.modifiableCategory__icon--edit {
+  color: #434343;
+}
+.modifiableCategory__icon:hover {
+  opacity: 0.8;
+}
+
+.modifiableList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.modifiableList__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.modifiableList__text {
+  font-size: 16px;
+}
+.modifiableList__icon {
+  cursor: pointer;
+  color: #ff4d4f;
+}
+.modifiableList__icon:hover {
+  opacity: 0.8;
+}
+
+.adminSideBar {
+  background-color: #131313;
+  width: 15%;
+  min-width: 180px;
+  height: 100%;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  padding: 25px;
+}
+.adminSideBar a {
+  color: #AEAEAE;
+}
+.adminSideBar a:hover {
+  color: #F1F1F1;
+}
+.adminSideBar__list {
+  margin-top: 50px;
+}
+.adminSideBar__list__item {
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+.modifiableProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modifiableProduct .product {
+  width: 75%;
+  margin-bottom: unset;
+}
+.modifiableProduct .product__productCta button {
+  display: none;
+}
+.modifiableProduct__actionDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.modifiableProduct__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.modifiableProduct__btn--delete {
+  background-color: #ff4d4f;
+  color: white;
+}
+.modifiableProduct__btn--edit {
+  background-color: #ccc;
+  color: #333;
 }

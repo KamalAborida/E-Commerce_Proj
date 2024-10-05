@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
+import { Manrope } from 'next/font/google'; // Replace Inter with Manrope
 import './globals.css';
+
+const manrope = Manrope({ subsets: ['latin'] }); // Use Manrope instead
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,7 +15,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.className}>
       <body>{children}</body>
     </html>
   );

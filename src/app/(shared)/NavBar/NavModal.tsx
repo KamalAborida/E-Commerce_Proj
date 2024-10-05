@@ -1,6 +1,6 @@
 'use client';
 
-import Categories from '@/app/(routes)/components/Categories/Categories';
+import Categories from '@/app/(shared)/Categories/Categories';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { enableScrolling, handleWindow } from '../utils/windowFunctions';

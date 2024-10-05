@@ -1,0 +1,28 @@
+.adminSideBar {
+  background-color: $tinted-black;
+  width: 15%;
+  min-width: 180px;
+  height: 100%;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  padding: 25px;
+
+  a {
+    color: $light-gray;
+
+    &:hover {
+      color: $very-light-gray;
+    }
+  }
+
+  &__list {
+    margin-top: 50px;
+
+    &__item {
+      @extend .regularText;
+      margin-bottom: 25px;
+      font-size: 12px;
+    }
+  }
+}

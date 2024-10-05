@@ -1,0 +1,40 @@
+.modifiableCategory {
+  position: relative;
+  width: 350px;
+
+  .categories__category {
+    width: 350px;
+
+    &__shop {
+      display: none;
+    }
+  }
+
+  &__actionDiv {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 40px;
+    z-index: 90;
+  }
+
+  &__icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+
+    &--delete {
+      color: #ff4d4f;
+    }
+
+    &--edit {
+      color: $dark-gray;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

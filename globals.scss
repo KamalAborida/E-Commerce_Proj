@@ -8,15 +8,9 @@ a {
 @import './src/app/styles/variables';
 @import './src/app/styles/base';
 
-// html {
-//   position: relative;
-//   height: fit-content;
-// }
-
-// body {
-//   position: relative;
-//   height: fit-content;
-// }
+body {
+  font-family: 'Manrope', sans-serif; // Ensure Manrope is applied
+}
 
 .main {
   width: 80%;
@@ -47,6 +41,8 @@ a {
 
 @import './src/app/\(shared\)/Input/input';
 
+@import './src/app/\(shared\)/Product/product';
+
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
 @import './src/app/\(routes\)/\(home\)/components/Banner/banner';
@@ -59,11 +55,10 @@ a {
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling-card';
 
 @import './src/app/\(routes\)/category/components/CategoryBackground/category-background';
-@import './src/app/\(routes\)/category/components/Product/product';
 @import './src/app/\(routes\)/category/components/Products/products';
 
-@import './src/app/\(routes\)/components/Categories/categories';
-@import './src/app/\(routes\)/components/Categories/category';
+@import './src/app/\(shared\)/Categories/categories';
+@import './src/app/\(shared\)/Categories/category';
 
 @import './src/app/\(routes\)/\(home\)/components/Mission/mission';
 
@@ -87,3 +82,11 @@ a {
 @import './src/app/\(routes\)/checkout/components/Summary/summary';
 @import './src/app/\(routes\)/checkout/components/Summary/info-line';
 @import './src/app/\(routes\)/checkout/page';
+
+@import './src/app/\(admin\)/admin/layout';
+@import './src/app/\(admin\)/admin/page';
+@import './src/app/\(admin\)/components/Toggler/toggler';
+@import './src/app/\(admin\)/components/ModifiableCategory/modifiable-category';
+@import './src/app/\(admin\)/components/ModifiableList/modifiable-list';
+@import './src/app/\(admin\)/components/SideBar/side-bar';
+@import './src/app/\(admin\)/components/ModifiableProduct/modifiable-product';

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../globals.css';
+// import '../globals.css';
 import NavBar from '@/app/(shared)/NavBar/NavBar';
 import Footer from '@/app/(shared)/Footer/Footer';
 import CartModal from '../(shared)/Cart/CartModal';

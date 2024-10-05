@@ -1,3 +1,5 @@
+import SideBar from '../components/SideBar/SideBar';
+
 export default function AdminLayout({
   children,
 }: Readonly<{
@@ -5,7 +7,7 @@ export default function AdminLayout({
 }>) {
   return (
     <main className="adminLayout">
-      <h1>Admin Layout</h1>
+      <SideBar />
       {children}
     </main>
   );
