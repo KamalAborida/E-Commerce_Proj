@@ -1,7 +1,7 @@
 import ActionDiv from '../components/ActionDiv/ActionDiv';
 import ProductPageBackground from '../product/components/ProductPageBackground/ProductPageBackground';
 import CheckoutForm from './components/CheckoutForm/CheckoutForm';
-import Input from './components/Input/Input';
+import Input from '../../(shared)/Input/Input';
 import RadioBtn from './components/RadioBtn/RadioBtn';
 import Summary from './components/Summary/Summary';
 

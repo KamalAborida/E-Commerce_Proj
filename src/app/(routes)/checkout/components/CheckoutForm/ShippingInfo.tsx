@@ -1,5 +1,4 @@
-import Input from '../Input/Input';
-import RadioBtn from '../RadioBtn/RadioBtn';
+import Input from '../../../../(shared)/Input/Input';
 
 export default function ShippingInfo() {
   return (

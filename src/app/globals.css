@@ -588,6 +588,11 @@ a {
   z-index: 98;
 }
 
+.btn-orange {
+  background-color: #D87D4A;
+  color: white;
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
@@ -967,6 +972,53 @@ a {
     border-radius: 10px 10px 0 0;
   }
 }
+.inputDiv, .inputDiv-error, .inputDiv-active {
+  display: flex;
+  flex-direction: column;
+}
+.inputDiv__label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.inputDiv__input {
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 18px;
+  border: 2px solid #AEAEAE;
+}
+.inputDiv__input::-moz-placeholder {
+  font-weight: bold;
+  color: #AEAEAE;
+}
+.inputDiv__input::placeholder {
+  font-weight: bold;
+  color: #AEAEAE;
+}
+
+.inputDiv-active .inputDiv__input {
+  border: 2px solid #D87D4A;
+}
+.inputDiv-active .inputDiv__input::-moz-placeholder {
+  color: black;
+}
+.inputDiv-active .inputDiv__input::placeholder {
+  color: black;
+}
+
+.inputDiv-error .inputDiv__label {
+  color: red;
+}
+.inputDiv-error .inputDiv__input {
+  border: 2px solid red;
+}
+.inputDiv-error .inputDiv__input::-moz-placeholder {
+  color: black;
+}
+.inputDiv-error .inputDiv__input::placeholder {
+  color: black;
+}
+
 .blackBackground {
   background-image: url("/banner-background.png");
   background-repeat: no-repeat;
@@ -1705,53 +1757,6 @@ a {
     justify-content: space-between;
   }
 }
-.inputDiv, .inputDiv-error, .inputDiv-active {
-  display: flex;
-  flex-direction: column;
-}
-.inputDiv__label {
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-.inputDiv__input {
-  font-size: 14px;
-  border-radius: 10px;
-  padding: 18px;
-  border: 2px solid #AEAEAE;
-}
-.inputDiv__input::-moz-placeholder {
-  font-weight: bold;
-  color: #AEAEAE;
-}
-.inputDiv__input::placeholder {
-  font-weight: bold;
-  color: #AEAEAE;
-}
-
-.inputDiv-active .inputDiv__input {
-  border: 2px solid #D87D4A;
-}
-.inputDiv-active .inputDiv__input::-moz-placeholder {
-  color: black;
-}
-.inputDiv-active .inputDiv__input::placeholder {
-  color: black;
-}
-
-.inputDiv-error .inputDiv__label {
-  color: red;
-}
-.inputDiv-error .inputDiv__input {
-  border: 2px solid red;
-}
-.inputDiv-error .inputDiv__input::-moz-placeholder {
-  color: black;
-}
-.inputDiv-error .inputDiv__input::placeholder {
-  color: black;
-}
-
 .radioBtn {
   font-size: 14px;
   border-radius: 10px;

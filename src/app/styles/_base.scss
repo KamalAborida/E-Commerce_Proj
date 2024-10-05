@@ -1,7 +1,6 @@
 .regularText {
   font-size: 15px;
   color: $light-gray;
-  // margin-bottom: 50px;
   line-height: 25px;
 }
 
@@ -20,4 +19,9 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.647);
   z-index: 98;
+}
+
+.btn-orange {
+  background-color: $primary-orange;
+  color: white;
 }

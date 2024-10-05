@@ -1,5 +1,3 @@
-import Input from '../Input/Input';
-import RadioBtn from '../RadioBtn/RadioBtn';
 import { RadioBtnContextProvider } from '../RadioBtn/radioBtns-context';
 import BillingDetails from './BillingDetails';
 import PaymentDetails from './PaymentDetails';

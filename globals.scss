@@ -45,6 +45,8 @@ a {
 @import './src/app/\(shared\)/SuccessModal/recipt';
 @import './src/app/\(shared\)/SuccessModal/gray-div';
 
+@import './src/app/\(shared\)/Input/input';
+
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
 @import './src/app/\(routes\)/\(home\)/components/Banner/banner';
@@ -77,7 +79,6 @@ a {
 @import './src/app/\(routes\)/product/components/ProductContent/product-features';
 @import './src/app/\(routes\)/product/components/ProductContent/product-inTheBox';
 
-@import './src/app/\(routes\)/checkout/components/Input/input';
 @import './src/app/\(routes\)/checkout/components/RadioBtn/radio-btn';
 @import './src/app/\(routes\)/checkout/components/CheckoutForm/checkout-form';
 @import './src/app/\(routes\)/checkout/components/CheckoutForm/shipping-info';
