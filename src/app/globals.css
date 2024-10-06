@@ -1045,7 +1045,6 @@ body {
 }
 
 .product {
-  margin-bottom: 160px;
   display: flex;
   justify-content: space-between;
 }
@@ -1334,19 +1333,36 @@ body {
 .products {
   margin: 355px auto 240px auto;
 }
+.products .product {
+  margin-bottom: 160px;
+}
 
 .categories {
   display: flex;
   justify-content: space-between;
 }
+.categories .category {
+  width: 30%;
+  max-width: 350px;
+}
 
+@media screen and (max-width: 800px) {
+  .categories .category {
+    width: 32%;
+  }
+}
 @media screen and (max-width: 450px) {
   .categories {
     flex-direction: column;
     align-content: center;
   }
+  .categories .category {
+    width: 100%;
+    max-width: unset;
+    margin-bottom: 100px;
+  }
 }
-.categories__category {
+.category {
   background-color: #F1F1F1;
   width: 30%;
   max-width: 350px;
@@ -1354,7 +1370,7 @@ body {
   text-align: center;
   border-radius: 10px;
 }
-.categories__category__shadow {
+.category__shadow {
   display: block;
   margin: -45px auto;
   position: relative;
@@ -1362,7 +1378,7 @@ body {
   width: 120px;
   height: 60px;
 }
-.categories__category__img {
+.category__img {
   display: block;
   margin: auto;
   position: relative;
@@ -1370,7 +1386,7 @@ body {
   width: 120px;
   height: 160px;
 }
-.categories__category__shop {
+.category__shop {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1380,11 +1396,11 @@ body {
   text-decoration: none;
   color: #898989;
 }
-.categories__category__shop > p {
+.category__shop > p {
   margin-right: 5px;
   transition: color 0.3s ease;
 }
-.categories__category__shop > p:hover {
+.category__shop > p:hover {
   color: #D87D4A;
 }
 
@@ -2072,10 +2088,10 @@ body {
   position: relative;
   width: 350px;
 }
-.modifiableCategory .categories__category {
+.modifiableCategory .category {
   width: 350px;
 }
-.modifiableCategory .categories__category__shop {
+.modifiableCategory .category__shop {
   display: none;
 }
 .modifiableCategory__actionDiv {
@@ -2156,7 +2172,6 @@ body {
 }
 .modifiableProduct .product {
   width: 75%;
-  margin-bottom: unset;
 }
 .modifiableProduct .product__productCta button {
   display: none;
