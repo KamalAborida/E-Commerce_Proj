@@ -4,43 +4,17 @@ import ModifiableCategory from '../components/ModifiableCategory/ModifiableCateg
 import ModifiableList from '../components/ModifiableList/ModifiableList';
 import ModifiableProduct from '../components/ModifiableProduct/ModifiableProduct';
 import { getProduct } from '@/app/(server)/services/product';
+import CategoriesForm from './(routes)/categories/components/CategoriesForm/CategoriesForm';
+import CategoriesSection from './(routes)/categories/components/CategoriesSection/CategoriesSection';
 
 export default async function AdminPage() {
-  const product = await getProduct(1);
+  // const product = await getProduct(1);
+
   return (
     <main className="adminPage">
-      <Input
-        label="Area"
-        placeholder="Type here..."
-        name="area"
-        isTextArea={true}
-      />
+      <CategoriesForm />
       <br></br>
-      <Input label="AREA" placeholder="Type here..." name="area" />
-      <br></br>
-      <Input
-        label="AREA"
-        placeholder="Type here..."
-        name="area"
-        isFileInput={true}
-        isInfoTip={true}
-        infoTip={'Upload an image here'}
-      />
-      <br></br>
-      <Toggler label="New Product ?" />
-      <br></br>
-      <br></br>
-      <br></br>
-      <ModifiableCategory name="Speakers" href="category/speakers" />
-      <br></br>
-      <br></br>
-      <ModifiableList>
-        <ModifiableList.Item text="Cable x1" />
-        <ModifiableList.Item text="USB x2" />
-        <ModifiableList.Item text="Manual x1" />
-      </ModifiableList>
-      <br></br>
-      {product && <ModifiableProduct product={product} />}
+      <CategoriesSection />
     </main>
   );
 }

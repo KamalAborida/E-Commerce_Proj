@@ -5,10 +5,14 @@
 
   &__tipModal {
     position: absolute;
-    background-color: $very-light-gray;
-    padding: 10px;
+    background-color: $dark-gray;
+    padding: 20px;
     right: 20px;
     top: 20px;
+    width: 50%;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.186);
+    border-radius: 5px;
+    color: white;
   }
 
   &__tipCta {

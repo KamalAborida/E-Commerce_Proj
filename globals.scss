@@ -83,10 +83,13 @@ body {
 @import './src/app/\(routes\)/checkout/components/Summary/info-line';
 @import './src/app/\(routes\)/checkout/page';
 
-@import './src/app/\(admin\)/admin/layout';
+@import './src/app/\(admin\)/admin/\(routes\)/layout';
 @import './src/app/\(admin\)/admin/page';
 @import './src/app/\(admin\)/components/Toggler/toggler';
 @import './src/app/\(admin\)/components/ModifiableCategory/modifiable-category';
 @import './src/app/\(admin\)/components/ModifiableList/modifiable-list';
 @import './src/app/\(admin\)/components/SideBar/side-bar';
 @import './src/app/\(admin\)/components/ModifiableProduct/modifiable-product';
+
+@import './src/app/\(admin\)/admin/\(routes\)/categories/components/CategoriesForm/categories-form';
+@import './src/app/\(admin\)/admin/\(routes\)/categories/components/CategoriesSection/categories-section';

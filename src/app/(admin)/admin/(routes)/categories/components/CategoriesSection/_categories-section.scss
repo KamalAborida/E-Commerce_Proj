@@ -1,0 +1,23 @@
+.categoriesSection {
+  // background-color: $very-light-gray;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.577);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    @extend .h1Text;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  &__categoriesList {
+    // border: 3px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px 20px;
+    justify-items: center;
+  }
+}

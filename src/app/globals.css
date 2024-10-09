@@ -571,7 +571,7 @@ a {
   line-height: 25px;
 }
 
-.h1Text, .bestSelling__title {
+.h1Text, .categoriesSection__title, .categoriesForm__title, .bestSelling__title {
   font-size: 56px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -591,6 +591,10 @@ a {
 .btn-orange {
   background-color: #D87D4A;
   color: white;
+}
+.btn-orange:hover {
+  background-color: rgb(255, 206, 158);
+  cursor: pointer;
 }
 
 body {
@@ -983,10 +987,14 @@ body {
 }
 .inputDiv__tipModal {
   position: absolute;
-  background-color: #F1F1F1;
-  padding: 10px;
+  background-color: #434343;
+  padding: 20px;
   right: 20px;
   top: 20px;
+  width: 50%;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.186);
+  border-radius: 5px;
+  color: white;
 }
 .inputDiv__tipCta {
   position: absolute;
@@ -2198,4 +2206,46 @@ body {
 .modifiableProduct__btn--edit {
   background-color: #ccc;
   color: #333;
+}
+
+.categoriesForm {
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.577);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.categoriesForm__title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.categoriesForm__inptsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.categoriesForm__btn {
+  margin: 50px auto 0 auto;
+  height: 60px;
+  width: 25%;
+}
+
+.categoriesSection {
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.577);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.categoriesSection__title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.categoriesSection__categoriesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px 20px;
+  justify-items: center;
 }

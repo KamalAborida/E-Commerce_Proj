@@ -24,4 +24,9 @@
 .btn-orange {
   background-color: $primary-orange;
   color: white;
+
+  &:hover {
+    background-color: rgb(255, 206, 158);
+    cursor: pointer;
+  }
 }
