@@ -11,6 +11,7 @@ interface InputProps {
   isFileInput?: boolean;
   isInfoTip?: boolean;
   infoTip?: string;
+  isPassword?: boolean;
 }
 
 export default function Input({
@@ -21,6 +22,7 @@ export default function Input({
   isFileInput = false,
   isInfoTip = false,
   infoTip = '',
+  isPassword = false,
 }: InputProps) {
   return (
     <div className="inputDiv">
@@ -29,7 +31,7 @@ export default function Input({
       {!isTextArea && (
         <input
           className="inputDiv__input"
-          type={`${isFileInput ? 'file' : 'text'}`}
+          type={`${isPassword ? 'password' : isFileInput ? 'file' : 'text'}`}
           placeholder={placeholder}
           name={name}
           id={name}

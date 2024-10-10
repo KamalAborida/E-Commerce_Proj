@@ -1,0 +1,53 @@
+.loginForm {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.477);
+  border-radius: 10px;
+  background-color: $tinted-black;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+
+  &__logo {
+    margin-bottom: 35px;
+    width: 30%;
+  }
+
+  .inputDiv {
+    width: 100%;
+    margin: 15px 0;
+
+    &__label {
+      color: white;
+    }
+  }
+
+  &__btn {
+    margin: 40px 0 0 0;
+    height: 60px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .loginForm {
+    padding: 50px 25px;
+    width: 90%;
+
+    &__logo {
+      width: 50%;
+    }
+
+    .inputDiv {
+      margin: 10px 0;
+
+      &__input {
+        font-size: 10px;
+      }
+    }
+
+    &__btn {
+      width: 100%;
+    }
+  }
+}

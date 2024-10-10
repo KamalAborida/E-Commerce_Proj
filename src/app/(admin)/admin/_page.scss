@@ -1,5 +1,9 @@
 .adminPage {
-  margin: 30px 60px 0 0;
-  width: 75%;
-  padding: 35px;
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(13, 13, 13);
 }

@@ -2056,9 +2056,13 @@ body {
 }
 
 .adminPage {
-  margin: 30px 60px 0 0;
-  width: 75%;
-  padding: 35px;
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(13, 13, 13);
 }
 
 .toggler__label {
@@ -2251,6 +2255,51 @@ body {
   }
   .modifiableProduct__actionDiv {
     justify-content: center;
+  }
+}
+.loginForm {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.477);
+  border-radius: 10px;
+  background-color: #131313;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+.loginForm__logo {
+  margin-bottom: 35px;
+  width: 30%;
+}
+.loginForm .inputDiv, .loginForm .inputDiv-active, .loginForm .inputDiv-error {
+  width: 100%;
+  margin: 15px 0;
+}
+.loginForm .inputDiv__label {
+  color: white;
+}
+.loginForm__btn {
+  margin: 40px 0 0 0;
+  height: 60px;
+  width: 50%;
+}
+
+@media screen and (max-width: 450px) {
+  .loginForm {
+    padding: 50px 25px;
+    width: 90%;
+  }
+  .loginForm__logo {
+    width: 50%;
+  }
+  .loginForm .inputDiv, .loginForm .inputDiv-active, .loginForm .inputDiv-error {
+    margin: 10px 0;
+  }
+  .loginForm .inputDiv__input {
+    font-size: 10px;
+  }
+  .loginForm__btn {
+    width: 100%;
   }
 }
 .categoriesAdminPage {
