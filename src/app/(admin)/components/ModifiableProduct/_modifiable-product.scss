@@ -1,22 +1,33 @@
 .modifiableProduct {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  // border: 1px solid yellow;
 
   .product {
-    width: 75%;
-    // margin-bottom: unset;
+    width: fit-content;
 
-    &__productCta {
-      button {
-        display: none;
+    &__info {
+      width: 80%;
+      
+      .productCta {
+        &__productDescriptionCta {
+          // border: 1px solid yellow;
+        }
+
+        &__btn {
+          display: none;
+        }
       }
     }
   }
 
   &__actionDiv {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 25px;
     gap: 40px;
   }
 
@@ -39,5 +50,37 @@
   &__btn--edit {
     background-color: #ccc;
     color: #333;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .modifiableProduct {
+    // border: 2px solid red;
+
+    .product {
+      width: 100%;
+  
+      &__info {
+        width: 100%;
+        
+        .productCta {
+          &__productDescriptionCta {
+            width: 100%;
+
+            &__name {
+              font-size: 25px;
+            }
+          }
+  
+          &__btn {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__actionDiv {
+      justify-content: center;
+    }
   }
 }

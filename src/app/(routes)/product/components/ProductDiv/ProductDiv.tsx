@@ -1,7 +1,7 @@
 'use client';
 
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
-import ProductDescriptionCta from '@/app/(routes)/components/ProductCta/ProductDescriptionCta';
+import ProductDescriptionCta from '@/app/(shared)/ProductCta/ProductDescriptionCta';
 import { ProductType } from '@/app/(shared)/utils/types';
 import { cartActions } from '@/lib/features/cart/cart-slice';
 import { AppDispatch } from '@/lib/store';

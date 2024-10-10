@@ -1,0 +1,20 @@
+.productsAdminPage {
+  margin: 30px 60px 0 0;
+  width: 75%;
+  padding: 35px;
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .productsAdminPage {
+    margin: unset;
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .productsAdminPage {
+    margin: 200px auto;
+    padding: unset;
+    width: 95%;
+  }
+}

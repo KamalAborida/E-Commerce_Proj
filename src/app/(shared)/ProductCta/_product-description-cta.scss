@@ -1,5 +1,5 @@
-.productDescriptionCta {
-  // border: 2px solid red;
+.productCta__productDescriptionCta {
+  // border: 2px solid blue;
 
   &__isNew {
     font-size: 14px;
@@ -23,15 +23,15 @@
 }
 
 @media screen and (max-width: $tablet-max-width) {
-  .productDescriptionCta {
+  .productCta__productDescriptionCta {
     text-align: center;
   }
 }
 
 @media screen and (max-width: $mobile-max-width) {
-  .productDescriptionCta {
+  .productCta__productDescriptionCta {
     &__name {
-      font-size: 40px;
+      font-size: 30px;
     }
 
     &__description {

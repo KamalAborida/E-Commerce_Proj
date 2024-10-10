@@ -42,14 +42,13 @@ body {
 @import './src/app/\(shared\)/Input/input';
 
 @import './src/app/\(shared\)/Product/product';
+@import './src/app/\(shared\)/ProductCta/product-cta';
+@import './src/app/\(shared\)/ProductCta/product-description-cta';
 
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
 @import './src/app/\(routes\)/\(home\)/components/Banner/banner';
 @import './src/app/\(routes\)/\(home\)/components/Banner/headphones-image';
-
-@import './src/app/\(routes\)/components/ProductCta/product-cta';
-@import './src/app/\(routes\)/components/ProductCta/product-description-cta';
 
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling';
 @import './src/app/\(routes\)/\(home\)/components/BestSelling/best-selling-card';
@@ -91,5 +90,12 @@ body {
 @import './src/app/\(admin\)/components/SideBar/side-bar';
 @import './src/app/\(admin\)/components/ModifiableProduct/modifiable-product';
 
+@import './src/app/\(admin\)/admin/\(routes\)/categories/page';
 @import './src/app/\(admin\)/admin/\(routes\)/categories/components/CategoriesForm/categories-form';
 @import './src/app/\(admin\)/admin/\(routes\)/categories/components/CategoriesSection/categories-section';
+
+@import './src/app/\(admin\)/admin/\(routes\)/products/page';
+@import './src/app/\(admin\)/admin/\(routes\)/products/components/ProductsSection/products-section';
+
+@import './src/app/\(admin\)/admin/\(routes\)/addProducts/page';
+@import './src/app/\(admin\)/admin/\(routes\)/addProducts/components/AddProductsForm/add-products-form';

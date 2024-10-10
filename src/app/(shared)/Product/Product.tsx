@@ -1,4 +1,4 @@
-import ProductCta from '@/app/(routes)/components/ProductCta/ProductCta';
+import ProductCta from '@/app/(shared)/ProductCta/ProductCta';
 import { ProductType } from '@/app/(shared)/utils/types';
 import Image from 'next/image';
 
@@ -17,7 +17,7 @@ export default function Product({ product }: productProps) {
           height={560}
         />
       </div>
-      <div className="product__productCta">
+      <div className="product__info">
         <ProductCta product={product} />
       </div>
     </div>

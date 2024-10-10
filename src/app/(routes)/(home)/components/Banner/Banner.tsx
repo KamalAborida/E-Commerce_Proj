@@ -1,4 +1,4 @@
-import ProductCta from '../../../components/ProductCta/ProductCta';
+import ProductCta from '../../../../(shared)/ProductCta/ProductCta';
 import { getProduct } from '@/app/(server)/services/product';
 
 export default async function Banner() {

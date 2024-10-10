@@ -2,10 +2,11 @@
   // background-color: $very-light-gray;
   padding: 50px;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.577);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.577);
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 100px;
 
   &__title {
     @extend .h1Text;
@@ -23,5 +24,32 @@
     margin: 50px auto 0 auto;
     height: 60px;
     width: 25%;
+  }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+  .categoriesForm {
+
+    &__inptsSection {
+      grid-template-columns: 1fr;
+    }
+
+    &__btn {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .categoriesForm {
+    padding: 25px;
+
+    &__title {
+      font-size: 25px;
+    }
+
+    &__btn {
+      width: 100%;
+    }
   }
 }

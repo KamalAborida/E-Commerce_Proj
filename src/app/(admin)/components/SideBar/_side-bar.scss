@@ -26,3 +26,23 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-max-width) {
+  .adminSideBar {
+    width: 100%;
+    min-width: unset;
+    height: fit-content;
+    text-align: unset;
+    position: absolute;
+
+    &__list {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      &__item {
+        margin-bottom: unset;
+      }
+    }
+  }
+}
