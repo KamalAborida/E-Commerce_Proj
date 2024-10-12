@@ -20,3 +20,9 @@ export interface ProductType {
 export interface CartProductType extends ProductType {
   quantity: number;
 }
+
+export interface AdminType {
+  id: number;
+  username: string;
+  password: string;
+}

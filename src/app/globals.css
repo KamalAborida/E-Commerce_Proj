@@ -580,12 +580,21 @@ a {
 
 .backdrop {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 95px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.647);
   z-index: 98;
+}
+.backdrop--noOffset {
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.967);
+}
+.backdrop--displayCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-orange {
@@ -595,6 +604,11 @@ a {
 .btn-orange:hover {
   background-color: rgb(255, 206, 158);
   cursor: pointer;
+}
+
+.p--error {
+  color: red;
+  font-weight: bold;
 }
 
 body {
@@ -2302,6 +2316,25 @@ body {
     width: 100%;
   }
 }
+.tokenChecker {
+  background-color: black;
+  width: 50%;
+  padding: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.532);
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.tokenChecker__icon {
+  margin-bottom: 40px;
+  transform: scale(1.5);
+}
+
 .categoriesAdminPage {
   margin: 30px 60px 0 0;
   width: 75%;

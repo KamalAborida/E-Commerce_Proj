@@ -1,4 +1,5 @@
 import db from './db';
+import bcrypt from 'bcrypt';
 
 // Create tables
 db.exec(`
@@ -22,28 +23,10 @@ db.exec(`
     FOREIGN KEY (categoryId) REFERENCES Category(id) ON DELETE CASCADE
   );
 
-  CREATE TABLE IF NOT EXISTS User (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL UNIQUE,
-    email TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-  );
-
-  CREATE TABLE IF NOT EXISTS Session (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId INTEGER NOT NULL,
-    token TEXT NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    expiresAt DATETIME NOT NULL,
-    FOREIGN KEY (userId) REFERENCES User(id) ON DELETE CASCADE
-  );
-
   CREATE TABLE IF NOT EXISTS Admin (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId INTEGER NOT NULL,
-    role TEXT NOT NULL DEFAULT 'admin', -- Can be admin or superadmin
-    FOREIGN KEY (userId) REFERENCES User(id) ON DELETE CASCADE
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
   );
 `);
 
@@ -55,6 +38,10 @@ const insertCategory = db.prepare(`
 const insertProduct = db.prepare(`
   INSERT INTO Product (name, isNew, price, previewImage, features, description, inTheBox, images, categoryId)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+`);
+
+const insertAdmin = db.prepare(`
+  INSERT INTO Admin (username, password) VALUES (?, ?)
 `);
 
 try {
@@ -128,6 +115,16 @@ try {
       largeImage: 'XX59_Headphones-image1',
     }),
     headphones.lastInsertRowid
+  );
+
+  const saltRounds = 10;
+  const password = 'securepassword123'; // Plain text password
+  const hashedPassword = bcrypt.hashSync(password, saltRounds); // Synchronously hash the password
+
+  // Insert admin user
+  insertAdmin.run(
+    'adminUser', // username
+    hashedPassword // password (in real-world applications, you'd hash the password)
   );
 
   // Populate Speakers category

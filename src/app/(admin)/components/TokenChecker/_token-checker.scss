@@ -1,0 +1,19 @@
+.tokenChecker {
+  background-color: black;
+  width: 50%;
+  padding: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.532);
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: bold;
+
+  &__icon {
+    margin-bottom: 40px;
+    transform: scale(1.5);
+  }
+}
