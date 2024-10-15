@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { authenticateAdmin } from '../../utils/login';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation';
+import { InputEventType } from '@/app/(shared)/utils/types';
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -14,19 +15,11 @@ export default function LoginForm() {
   const [state, action] = useFormState(authenticateAdmin, null);
   const router = useRouter();
 
-  const handleUsername = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
+  const handleUsername = (event: InputEventType) => {
     setUsername(event.target.value);
   };
 
-  const handlePassword = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
+  const handlePassword = (event: InputEventType) => {
     setPassword(event.target.value);
   };
 

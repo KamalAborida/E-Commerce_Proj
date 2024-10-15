@@ -14,7 +14,11 @@ export default function CategoriesSection() {
           categories.map((category) => {
             return (
               <li className="categoriesSection__list__item" key={category.id}>
-                <ModifiableCategory href={''} name={category.name} />
+                <ModifiableCategory
+                  href={''}
+                  name={category.name}
+                  id={category.id}
+                />
               </li>
             );
           })}

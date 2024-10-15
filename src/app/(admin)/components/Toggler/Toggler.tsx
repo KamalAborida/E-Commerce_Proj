@@ -1,9 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { InputEventType } from '@/app/(shared)/utils/types';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 interface TogglerProps {
   label: string;
+  value: string;
+  onChange?: (event: InputEventType) => void;
 }
 
 export default function Toggler({ label }: TogglerProps) {

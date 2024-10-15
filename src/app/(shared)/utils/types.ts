@@ -26,3 +26,7 @@ export interface AdminType {
   username: string;
   password: string;
 }
+
+export type InputEventType =
+  | React.ChangeEvent<HTMLInputElement>
+  | React.ChangeEvent<HTMLTextAreaElement>;

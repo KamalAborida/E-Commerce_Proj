@@ -1,23 +1,21 @@
 'use client';
 
-import { useState } from 'react';
 import InfoTip from './InfoTip';
-
-type eventType =
-  | React.ChangeEvent<HTMLInputElement>
-  | React.ChangeEvent<HTMLTextAreaElement>;
+import { InputEventType } from '../utils/types';
 
 interface InputProps {
   label: string;
   placeholder: string;
   name: string;
-  value?: string;
+  value?: string | File | null; // Handle File for file inputs and string for text inputs
   isTextArea?: boolean;
   isFileInput?: boolean;
   isInfoTip?: boolean;
   infoTip?: string;
   isPassword?: boolean;
-  onChange?: (event: eventType) => void;
+  onChange?: (
+    event: InputEventType | React.ChangeEvent<HTMLInputElement>
+  ) => void;
 }
 
 export default function Input({
@@ -36,17 +34,29 @@ export default function Input({
     <div className="inputDiv">
       <label className="inputDiv__label">{label}</label>
       {isInfoTip && <InfoTip infoTip={infoTip} />}
-      {!isTextArea && (
+
+      {!isTextArea && isFileInput && (
         <input
           className="inputDiv__input"
-          type={`${isPassword ? 'password' : isFileInput ? 'file' : 'text'}`}
+          type="file"
+          name={name}
+          id={name}
+          onChange={onChange}
+        />
+      )}
+
+      {!isTextArea && !isFileInput && (
+        <input
+          className="inputDiv__input"
+          type={isPassword ? 'password' : 'text'}
           placeholder={placeholder}
           name={name}
           id={name}
           onChange={onChange}
-          value={value}
+          value={typeof value === 'string' ? value : ''}
         />
       )}
+
       {isTextArea && (
         <textarea
           className="inputDiv__input"
@@ -54,7 +64,7 @@ export default function Input({
           name={name}
           id={name}
           onChange={onChange}
-          value={value}
+          value={typeof value === 'string' ? value : ''}
         />
       )}
     </div>

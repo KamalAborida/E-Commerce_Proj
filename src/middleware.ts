@@ -6,6 +6,8 @@ import { NextResponse } from 'next/server';
 export function middleware(req: Request) {
   const url = new URL(req.url);
 
+  console.log('Middleware');
+
   // 1. Authentication Check
   const authHeader = req.headers.get('authorization');
   const token = authHeader && authHeader.split(' ')[1];
@@ -13,6 +15,7 @@ export function middleware(req: Request) {
   // Block requests to any path starting with /admin/... except /admin
   if (url.pathname.startsWith('/admin') && url.pathname !== '/admin') {
     if (!token || token === 'null') {
+      console.log('No token');
       return NextResponse.json({ message: 'Access denied' }, { status: 400 });
     }
 
