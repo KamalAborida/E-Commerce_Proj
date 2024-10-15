@@ -7,15 +7,13 @@ interface InputProps {
   label: string;
   placeholder: string;
   name: string;
-  value?: string | File | null; // Handle File for file inputs and string for text inputs
+  value?: string | number | undefined;
   isTextArea?: boolean;
   isFileInput?: boolean;
   isInfoTip?: boolean;
   infoTip?: string;
   isPassword?: boolean;
-  onChange?: (
-    event: InputEventType | React.ChangeEvent<HTMLInputElement>
-  ) => void;
+  onChange?: (event: InputEventType) => void;
 }
 
 export default function Input({
@@ -42,6 +40,7 @@ export default function Input({
           name={name}
           id={name}
           onChange={onChange}
+          value={value}
         />
       )}
 
@@ -53,7 +52,7 @@ export default function Input({
           name={name}
           id={name}
           onChange={onChange}
-          value={typeof value === 'string' ? value : ''}
+          value={value}
         />
       )}
 
@@ -64,7 +63,7 @@ export default function Input({
           name={name}
           id={name}
           onChange={onChange}
-          value={typeof value === 'string' ? value : ''}
+          value={value}
         />
       )}
     </div>
