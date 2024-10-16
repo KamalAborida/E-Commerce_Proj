@@ -1,6 +1,6 @@
 import Input from '@/app/(shared)/Input/Input';
 
-export default async function ImagesInptSection() {
+export default function ImagesInptSection() {
   return (
     <section className="addProductsForm__section addProductsForm__imagesInpt">
       <Input

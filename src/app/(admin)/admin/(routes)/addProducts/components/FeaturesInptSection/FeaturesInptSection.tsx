@@ -1,7 +1,7 @@
 import ModifiableList from '@/app/(admin)/components/ModifiableList/ModifiableList';
 import Input from '@/app/(shared)/Input/Input';
 
-export default async function FeaturesInptSection() {
+export default function FeaturesInptSection() {
   return (
     <section className="addProductsForm__section addProductsForm__features">
       <Input

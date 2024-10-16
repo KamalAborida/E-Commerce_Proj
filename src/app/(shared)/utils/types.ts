@@ -29,4 +29,5 @@ export interface AdminType {
 
 export type InputEventType =
   | React.ChangeEvent<HTMLInputElement>
-  | React.ChangeEvent<HTMLTextAreaElement>;
+  | React.ChangeEvent<HTMLTextAreaElement>
+  | React.ChangeEvent<HTMLSelectElement>;

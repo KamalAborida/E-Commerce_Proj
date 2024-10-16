@@ -1,7 +1,7 @@
 import ModifiableList from '@/app/(admin)/components/ModifiableList/ModifiableList';
 import Input from '@/app/(shared)/Input/Input';
 
-export default async function InTheBoxInptSection() {
+export default function InTheBoxInptSection() {
   return (
     <section className="addProductsForm__section addProductsForm__inTheBox">
       <Input
