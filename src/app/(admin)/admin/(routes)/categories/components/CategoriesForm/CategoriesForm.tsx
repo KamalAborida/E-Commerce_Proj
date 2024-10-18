@@ -1,53 +1,45 @@
 'use client';
 
+import { useAdminForms } from '@/app/(admin)/hooks/form-hook';
 import { addCategoryAction } from '@/app/(admin)/utils/addCategory';
 import Input from '@/app/(shared)/Input/Input';
 import { useEffect, useState } from 'react';
 import { useFormState } from 'react-dom';
+import SubmitButton from '../SubmitButton/SubmitButton';
+import CategorySubmitButton from '../SubmitButton/SubmitButton';
 
 export default function CategoriesForm() {
-  const [name, setName] = useState('');
-  const [previewImage, setPreviewImage] = useState('');
-  const [formResponse, setFormResponse] = useState('');
-  const [state, action] = useFormState(addCategoryAction, null);
+  const {
+    formData,
+    handleCategoryName,
+    handleCategoryPreviewImg,
+    reset,
+    errors,
+    isTouched,
+  } = useAdminForms();
 
-  const handleName = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setName(event.target.value);
-  };
-
-  const handlePreviewImage = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setPreviewImage(event.target.value);
-  };
+  const [state, action] = useFormState(addCategoryAction, {});
 
   useEffect(() => {
-    if (state) {
-      if (state.error) {
-        setFormResponse(state.error);
-      } else {
-        setFormResponse(state.message);
-      }
+    if (state.isSubmitted && state.isSubmitted.value) {
+      reset();
     }
-  }, [state]);
+  }, [reset, state.isSubmitted]);
 
   return (
     <form className="categoriesForm" action={action}>
-      {state && <p>{formResponse}</p>}
       <h1 className="categoriesForm__title">CATEGORY</h1>
+      {state && state.error && <p className="p--error">{state.error}</p>}
+      {isTouched.categoryName && errors.categoryName && (
+        <p className="p--error">{errors.categoryName}</p>
+      )}
       <section className="categoriesForm__inptsSection">
         <Input
           label="Category Name"
           placeholder="Speakers"
           name="name"
-          onChange={handleName}
-          value={name}
+          onChange={handleCategoryName}
+          value={formData.categoryName}
         />
         <Input
           label="Preview Image"
@@ -56,13 +48,11 @@ export default function CategoriesForm() {
           isFileInput={true}
           isInfoTip={true}
           infoTip="This is the image that will be shown when previewing the category"
-          onChange={handlePreviewImage}
-          value={previewImage}
+          onChange={handleCategoryPreviewImg}
+          value={formData.categoryPreviewImg}
         />
       </section>
-      <button className="btn btn-orange categoriesForm__btn">
-        CREATE CATEGORY
-      </button>
+      <CategorySubmitButton />
     </form>
   );
 }

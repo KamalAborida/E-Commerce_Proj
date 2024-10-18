@@ -16,6 +16,7 @@ export default function DescriptionInputSection({
 }: DescriptionInputSectionProps) {
   return (
     <section className="addProductsForm__section addProductsForm__description">
+      {isTouched && errors && <p className="p--error">{errors}</p>}
       <Input
         name="description"
         label="Description"

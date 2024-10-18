@@ -28,6 +28,8 @@ export default function GeneralInptSection({
 
   return (
     <section className="addProductsForm__section addProductsForm__general">
+      {isTouched && errors && <p className="p--error">{errors.productName}</p>}
+      {isTouched && errors && <p className="p--error">{errors.price}</p>}
       <Input
         name="name"
         label="Product Name"

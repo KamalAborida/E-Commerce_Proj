@@ -1,8 +1,5 @@
 'use client';
 
-import ModifiableList from '@/app/(admin)/components/ModifiableList/ModifiableList';
-import Toggler from '@/app/(admin)/components/Toggler/Toggler';
-import Input from '@/app/(shared)/Input/Input';
 import GeneralInptSection from '../GeneralInptSection/GeneralInptSection';
 import ImagesInptSection from '../ImagesInptsSection/ImagesInptSection';
 import InTheBoxInptSection from '../InTheBoxInptSection/InTheBoxInptSection';
@@ -11,8 +8,8 @@ import DescriptionInputSection from '../DescriptionInputSection/DescriptionInput
 import { useAdminForms } from '@/app/(admin)/hooks/form-hook';
 import { useFormState } from 'react-dom';
 import { addProductAction } from '@/app/(admin)/utils/addProduct';
-import { useEffect, useState } from 'react';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import { useEffect } from 'react';
+import ProductSubmitButton from '../SubmitButton/SubmitButton';
 
 export default function AddProductsForm() {
   const {
@@ -44,6 +41,9 @@ export default function AddProductsForm() {
   return (
     <form className="addProductsForm" action={action}>
       <h1 className="addProductsForm__title">ADD PRODUCT</h1>
+      {state && state.error && (
+        <p className="addProductsForm__errorState p--error">{state.error}</p>
+      )}
       <GeneralInptSection
         values={formData}
         handleCategoryId={handleCategoryId}
@@ -76,7 +76,7 @@ export default function AddProductsForm() {
         handleFeatures={handleFeatures}
         value={formData.features}
       />
-      <SubmitButton />
+      <ProductSubmitButton />
     </form>
   );
 }

@@ -2,16 +2,16 @@
 
 import { useFormStatus } from 'react-dom';
 
-export default function ProductSubmitButton() {
+export default function CategorySubmitButton() {
   const { pending } = useFormStatus();
 
   return (
     <button
       disabled={pending}
       type="submit"
-      className="btn btn-orange addProductsForm__btn"
+      className="btn btn-orange categoriesForm__btn"
     >
-      {pending ? 'Submitting' : 'ADD PRODUCT +'}
+      {pending ? 'Submitting' : 'ADD CATEGORY +'}
     </button>
   );
 }

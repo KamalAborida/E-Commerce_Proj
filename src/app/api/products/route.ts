@@ -9,7 +9,7 @@ import sanitize from 'sanitize-html';
 import jwt from 'jsonwebtoken';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { addProduct } from '@/app/(server)/services/product';
+import { addProduct, deleteProduct } from '@/app/(server)/services/product';
 
 export interface Admin {
   username: string;
@@ -38,9 +38,30 @@ export async function POST(req: Request) {
 
   const productData: ProductType = await req.json();
 
-  if (!productData) {
+  if (!productData.name) {
     return NextResponse.json(
-      { message: 'Please complete the form' },
+      { message: 'Please provide a name' },
+      { status: 400 }
+    );
+  }
+
+  if (!productData.price) {
+    return NextResponse.json(
+      { message: 'Please provide a price bigger than 0' },
+      { status: 400 }
+    );
+  }
+
+  if (!productData.description) {
+    return NextResponse.json(
+      { message: 'Please provide a description' },
+      { status: 400 }
+    );
+  }
+
+  if (!productData.inTheBox || !productData.features) {
+    return NextResponse.json(
+      { message: 'Please fill all the fields' },
       { status: 400 }
     );
   }
@@ -88,9 +109,9 @@ export async function DELETE(req: Request) {
     }
   });
 
-  const { categoryId } = await req.json();
+  const { productId } = await req.json();
 
-  if (!categoryId) {
+  if (!productId) {
     return NextResponse.json(
       { message: 'Category ID is required' },
       { status: 400 }
@@ -98,9 +119,9 @@ export async function DELETE(req: Request) {
   }
 
   try {
-    await deleteCategory(categoryId);
+    await deleteProduct(productId);
 
-    revalidatePath('http://localhost:3000//admin/categories');
+    revalidatePath('/admin');
 
     return NextResponse.json(
       { message: 'Category deleted successfully' },

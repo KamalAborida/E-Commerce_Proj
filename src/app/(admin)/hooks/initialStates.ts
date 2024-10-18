@@ -10,6 +10,8 @@ export const dataInitialStateFunc = () => ({
   description: '',
   features: '',
   inTheBox: '',
+  categoryName: '',
+  categoryPreviewImg: '',
 });
 
 export const touchedInitialStateFunc = () => ({
@@ -20,6 +22,8 @@ export const touchedInitialStateFunc = () => ({
   description: false,
   features: false,
   inTheBox: false,
+  categoryName: false,
+  categoryPreviewImg: false,
 });
 
 export const errorsInitialStateFunc = () => ({
@@ -30,4 +34,6 @@ export const errorsInitialStateFunc = () => ({
   description: '',
   features: '',
   inTheBox: '',
+  categoryName: '',
+  categoryPreviewImg: '',
 });

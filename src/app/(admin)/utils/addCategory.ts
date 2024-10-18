@@ -2,13 +2,15 @@ export const addCategoryAction = async (
   currentState: any,
   formData: FormData
 ) => {
+  const image = formData.get('previewImage');
+
   const { name, previewImage } = {
     name: formData.get('name'),
     previewImage: `${formData.get('name')}-noBackground.svg`,
   };
 
   if (!name || !previewImage) {
-    return { message: 'No data provided' };
+    return { error: 'No data provided' };
   }
 
   try {
@@ -27,7 +29,7 @@ export const addCategoryAction = async (
     }
 
     const data = await response.json();
-    return data;
+    return { ...data, isSubmitted: { value: true } };
   } catch (error: unknown) {
     if (error instanceof Error) {
       return { error: error.message };

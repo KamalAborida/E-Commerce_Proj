@@ -76,6 +76,8 @@ export function useAdminForms() {
     handleCollagueSmall1Img: handleInputChange('collagueSmall1Img'),
     handleCollagueSmall2Img: handleInputChange('collagueSmall2Img'),
     handleDescription: handleInputChange('description', validateNotEmpty),
+    handleCategoryPreviewImg: handleInputChange('categoryPreviewImg'),
+    handleCategoryName: handleInputChange('categoryName', validateNotEmpty),
     handleFeatures,
     handleInTheBox,
     reset,
