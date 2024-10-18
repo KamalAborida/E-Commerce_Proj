@@ -17,17 +17,22 @@ export const getProduct = (id: number): ProductType | undefined => {
 };
 
 // Add a new product
-export const addProduct = (
-  name: string,
-  isNew: number,
-  price: number,
-  previewImage: string,
-  features: string,
-  description: string,
-  inTheBox: string,
-  images: string,
-  categoryId: number
-): void => {
+export const addProduct = (productData: ProductType): void => {
+  console.log(productData);
+
+  const {
+    name,
+    isNew,
+    price,
+    previewImage,
+    features,
+    description,
+    inTheBox,
+    categoryId,
+  } = productData;
+
+  const images = JSON.stringify(productData.images);
+
   const stmt = db.prepare(`
     INSERT INTO Product (name, isNew, price, previewImage, features, description, inTheBox, images, categoryId)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)

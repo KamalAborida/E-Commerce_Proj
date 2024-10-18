@@ -605,6 +605,13 @@ a {
   background-color: rgb(255, 206, 158);
   cursor: pointer;
 }
+.btn-orange:disabled {
+  background-color: rgb(164, 164, 164);
+  color: white;
+}
+.btn-orange:disabled:hover {
+  cursor: not-allowed;
+}
 
 .p--error {
   color: red;

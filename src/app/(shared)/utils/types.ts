@@ -27,6 +27,13 @@ export interface AdminType {
   password: string;
 }
 
+export interface imagesArrayType {
+  previewImage: File;
+  largeImage: File;
+  smallImage1: File;
+  smallImage2: File;
+}
+
 export type InputEventType =
   | React.ChangeEvent<HTMLInputElement>
   | React.ChangeEvent<HTMLTextAreaElement>

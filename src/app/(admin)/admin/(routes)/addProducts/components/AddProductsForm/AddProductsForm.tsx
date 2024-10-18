@@ -11,6 +11,8 @@ import DescriptionInputSection from '../DescriptionInputSection/DescriptionInput
 import { useAdminForms } from '@/app/(admin)/hooks/form-hook';
 import { useFormState } from 'react-dom';
 import { addProductAction } from '@/app/(admin)/utils/addProduct';
+import { useEffect, useState } from 'react';
+import SubmitButton from '../SubmitButton/SubmitButton';
 
 export default function AddProductsForm() {
   const {
@@ -20,13 +22,24 @@ export default function AddProductsForm() {
     handleIsNew,
     handleCategoryId,
     handleDescription,
+    handleInTheBox,
+    handleFeatures,
+    handleCollagueLargeImg,
+    handleCollagueSmall1Img,
+    handleCollagueSmall2Img,
+    handlePreviewImg,
+    reset,
     isTouched,
     errors,
   } = useAdminForms();
 
   const [state, action] = useFormState(addProductAction, {});
 
-  console.log(state);
+  useEffect(() => {
+    if (state.isSubmitted && state.isSubmitted.value) {
+      reset();
+    }
+  }, [reset, state.isSubmitted]);
 
   return (
     <form className="addProductsForm" action={action}>
@@ -40,18 +53,30 @@ export default function AddProductsForm() {
         errors={errors}
         isTouched={isTouched}
       />
-      <ImagesInptSection />
+      <ImagesInptSection
+        handleCollagueLargeImg={handleCollagueLargeImg}
+        handleCollagueSmall1Img={handleCollagueSmall1Img}
+        handleCollagueSmall2Img={handleCollagueSmall2Img}
+        handlePreviewImg={handlePreviewImg}
+        values={formData}
+        errors={errors}
+        isTouched={isTouched}
+      />
       <DescriptionInputSection
         value={formData.description}
         onChange={handleDescription}
         errors={errors.description}
         isTouched={isTouched.description}
       />
-      <InTheBoxInptSection />
-      <FeaturesInptSection />
-      <button className="btn btn-orange addProductsForm__btn">
-        ADD PRODUCT +
-      </button>
+      <InTheBoxInptSection
+        handleInTheBox={handleInTheBox}
+        value={formData.inTheBox}
+      />
+      <FeaturesInptSection
+        handleFeatures={handleFeatures}
+        value={formData.features}
+      />
+      <SubmitButton />
     </form>
   );
 }

@@ -1,6 +1,25 @@
 import Input from '@/app/(shared)/Input/Input';
+import { InputEventType } from '@/app/(shared)/utils/types';
 
-export default function ImagesInptSection() {
+interface ImagesInptSectionProps {
+  values: { [key: string]: any };
+  isTouched: { [key: string]: boolean };
+  errors: { [key: string]: string };
+  handleCollagueLargeImg: (event: InputEventType) => void;
+  handleCollagueSmall1Img: (event: InputEventType) => void;
+  handleCollagueSmall2Img: (event: InputEventType) => void;
+  handlePreviewImg: (event: InputEventType) => void;
+}
+
+export default function ImagesInptSection({
+  values,
+  isTouched,
+  errors,
+  handleCollagueLargeImg,
+  handleCollagueSmall1Img,
+  handleCollagueSmall2Img,
+  handlePreviewImg,
+}: ImagesInptSectionProps) {
   return (
     <section className="addProductsForm__section addProductsForm__imagesInpt">
       <Input
@@ -10,6 +29,8 @@ export default function ImagesInptSection() {
         isFileInput={true}
         isInfoTip={true}
         infoTip="This image will be the main preview image for this product"
+        value={values.previewImg}
+        onChange={handlePreviewImg}
       />
       <Input
         name="largeImage"
@@ -18,6 +39,8 @@ export default function ImagesInptSection() {
         isFileInput={true}
         isInfoTip={true}
         infoTip="This image will be a part of the collague in the product details page (Large Image)"
+        value={values.collagueLargeImg}
+        onChange={handleCollagueLargeImg}
       />
       <Input
         name="smallImage1"
@@ -26,6 +49,8 @@ export default function ImagesInptSection() {
         isFileInput={true}
         isInfoTip={true}
         infoTip="This image will be a part of the collague in the product details page (Small Image)"
+        value={values.collagueSmall1Img}
+        onChange={handleCollagueSmall1Img}
       />
       <Input
         name="smallImage2"
@@ -34,6 +59,8 @@ export default function ImagesInptSection() {
         isFileInput={true}
         isInfoTip={true}
         infoTip="This image will be a part of the collague in the product details page (Small Image)"
+        value={values.collagueSmall2Img}
+        onChange={handleCollagueSmall2Img}
       />
     </section>
   );
