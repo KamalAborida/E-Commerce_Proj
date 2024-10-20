@@ -27,7 +27,7 @@ export default async function DefaultLayout({
       suppressHydrationWarning={true}
     >
       <ReduxProvider categories={categories} products={products}>
-        <body>{children}</body>
+        <body suppressHydrationWarning={true}>{children}</body>
       </ReduxProvider>
     </html>
   );
