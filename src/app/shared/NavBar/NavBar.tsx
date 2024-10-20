@@ -18,6 +18,7 @@ export default function NavBar() {
   // console.log('NavBar rendered');
 
   useEffect(() => {
+    console.log('Rendering NavBar - ID:', Math.random());
     if (window.innerWidth < 800) {
       setIsHamburger(true);
     }

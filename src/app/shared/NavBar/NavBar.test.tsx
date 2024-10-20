@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useAppSelector } from '@/lib/store';
 import { useRouter } from 'next/navigation';
 import NavBar from './NavBar';
@@ -18,6 +18,10 @@ vi.mock('next/navigation', () => ({
 describe('NavBar', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    cleanup();
   });
 
   it('should render hamburger menu when window.innerWidth <= 800', () => {
@@ -41,13 +45,10 @@ describe('NavBar', () => {
 
     render(<NavBar />);
 
-    screen.debug();
+    // screen.debug();
 
-    const navList = await screen.getByText('HEADPHONES');
+    const navList = await screen.findByText('HEADPHONES');
     expect(navList).toBeDefined();
-
-    // const hamburgerIcon = screen.queryByAltText('Hamburger');
-    // expect(hamburgerIcon).toBeUndefined();
 
     const logo = screen.getByAltText('Audio Store Logo');
     expect(logo).toBeDefined();
