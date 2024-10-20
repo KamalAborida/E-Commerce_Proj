@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CategoryType, ProductType } from '@/app/(shared)/utils/types';
+import { CategoryType, ProductType } from '@/app/shared/utils/types';
 
 interface InitialState {
   categories: CategoryType[];

@@ -1,4 +1,4 @@
-import { Product } from '@/app/(server)/services/product';
+import { Product } from '@/app/server/services/product';
 
 export const productsData: Product[] = [
   {

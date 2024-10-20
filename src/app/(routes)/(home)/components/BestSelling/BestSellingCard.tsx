@@ -1,4 +1,4 @@
-import { ProductType } from '@/app/(shared)/utils/types';
+import { ProductType } from '@/app/shared/utils/types';
 import Image from 'next/image';
 import Link from 'next/link';
 

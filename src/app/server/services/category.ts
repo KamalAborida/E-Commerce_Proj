@@ -1,4 +1,4 @@
-import { CategoryType } from '@/app/(shared)/utils/types';
+import { CategoryType } from '@/app/shared/utils/types';
 import db from '../db';
 
 export const getCategories = (): CategoryType[] => {

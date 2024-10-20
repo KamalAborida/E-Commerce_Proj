@@ -1,4 +1,4 @@
-import Input from '../../../../(shared)/Input/Input';
+import Input from '../../../../shared/Input/Input';
 
 export default function BillingDetails() {
   return (

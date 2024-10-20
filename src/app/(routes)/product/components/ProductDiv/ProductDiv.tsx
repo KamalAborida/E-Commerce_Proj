@@ -1,8 +1,8 @@
 'use client';
 
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
-import ProductDescriptionCta from '@/app/(shared)/ProductCta/ProductDescriptionCta';
-import { ProductType } from '@/app/(shared)/utils/types';
+import ProductDescriptionCta from '@/app/shared/Product/ProductDescriptionCta';
+import { ProductType } from '@/app/shared/utils/types';
 import { cartActions } from '@/lib/features/cart/cart-slice';
 import { AppDispatch } from '@/lib/store';
 import Image from 'next/image';

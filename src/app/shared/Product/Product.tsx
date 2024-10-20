@@ -1,5 +1,5 @@
-import ProductCta from '@/app/(shared)/ProductCta/ProductCta';
-import { ProductType } from '@/app/(shared)/utils/types';
+import ProductCta from '@/app/shared/Product/ProductCta';
+import { ProductType } from '@/app/shared/utils/types';
 import Image from 'next/image';
 
 interface productProps {

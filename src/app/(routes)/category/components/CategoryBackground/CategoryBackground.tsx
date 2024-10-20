@@ -1,6 +1,6 @@
 'use client';
 
-import { CategoryType } from '@/app/(shared)/utils/types';
+import { CategoryType } from '@/app/shared/utils/types';
 import { useAppSelector } from '@/lib/store';
 import { useParams } from 'next/navigation';
 

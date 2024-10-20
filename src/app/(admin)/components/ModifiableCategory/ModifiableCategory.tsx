@@ -1,6 +1,6 @@
 'use client';
 
-import Category from '@/app/(shared)/Categories/Category';
+import Category from '@/app/shared/Categories/Category';
 import { useFormState } from 'react-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { deleteCategoryAction } from '../../utils/deleteCategoryAction';

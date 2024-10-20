@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Input from '@/app/(shared)/Input/Input';
+import Input from '@/app/shared/Input/Input';
 import React, { useEffect, useState } from 'react';
 import { authenticateAdmin } from '../../utils/login';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation';
-import { InputEventType } from '@/app/(shared)/utils/types';
+import { InputEventType } from '@/app/shared/utils/types';
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');

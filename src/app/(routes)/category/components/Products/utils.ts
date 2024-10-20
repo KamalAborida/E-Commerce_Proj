@@ -1,4 +1,4 @@
-import { ProductType } from '@/app/(shared)/utils/types';
+import { ProductType } from '@/app/shared/utils/types';
 import { SetStateAction } from 'react';
 
 export const DESCENDING = 'desc';

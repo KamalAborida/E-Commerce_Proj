@@ -1,5 +1,5 @@
 import db from '../db';
-import { ProductType } from '@/app/(shared)/utils/types';
+import { ProductType } from '@/app/shared/utils/types';
 
 export const getProductsByCategoryId = (categoryId: number): ProductType[] => {
   const stmt = db.prepare('SELECT * FROM Product WHERE categoryId = ?');

@@ -1,8 +1,8 @@
 'use client';
 
 import Toggler from '@/app/(admin)/components/Toggler/Toggler';
-import Input from '@/app/(shared)/Input/Input';
-import { InputEventType } from '@/app/(shared)/utils/types';
+import Input from '@/app/shared/Input/Input';
+import { InputEventType } from '@/app/shared/utils/types';
 import { useAppSelector } from '@/lib/store';
 
 interface GeneralInptSectionProps {

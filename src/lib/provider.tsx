@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { store } from './store';
-import { CategoryType, ProductType } from '@/app/(shared)/utils/types';
+import { CategoryType, ProductType } from '@/app/shared/utils/types';
 import { dataActions } from './features/cart/data-slice';
 
 interface ReduxProviderProps {

@@ -1,18 +1,15 @@
 'use client';
 
-import Categories from '@/app/(shared)/Categories/Categories';
+import Categories from '@/app/shared/Categories/Categories';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { enableScrolling, handleWindow } from '../utils/windowFunctions';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
 import { CategoryType } from '../utils/types';
+import { useAppSelector } from '@/lib/store';
 
-interface NavModalProps {
-  categories: CategoryType[];
-}
-
-export default function NavModal({ categories }: NavModalProps) {
+export default function NavModal() {
   const pathName = usePathname();
   const {
     searchParam,
@@ -22,6 +19,8 @@ export default function NavModal({ categories }: NavModalProps) {
     openModalInMobile,
     setModal,
   } = useModal('nav', '');
+
+  const categories = useAppSelector((state) => state.data.categories);
 
   const [screenWidth, setScreenWidth] = useState<number | null>(null);
   const isNotMobile = screenWidth && screenWidth > 450;

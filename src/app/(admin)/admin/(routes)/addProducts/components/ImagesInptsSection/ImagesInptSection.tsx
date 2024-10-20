@@ -1,5 +1,5 @@
-import Input from '@/app/(shared)/Input/Input';
-import { InputEventType } from '@/app/(shared)/utils/types';
+import Input from '@/app/shared/Input/Input';
+import { InputEventType } from '@/app/shared/utils/types';
 
 interface ImagesInptSectionProps {
   values: { [key: string]: any };

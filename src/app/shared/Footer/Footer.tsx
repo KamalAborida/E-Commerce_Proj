@@ -1,14 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import NavList from '../NavBar/NavList';
 import FooterAbout from './FooterAbout';
 import FooterSocialMediaList from './FooterSocialMediaList';
 import { CategoryType } from '../utils/types';
+import { useAppSelector } from '@/lib/store';
 
-interface FooterProps {
-  categories: CategoryType[];
-}
+export default function Footer() {
+  const categories = useAppSelector((state) => state.data.categories);
 
-export default function Footer({ categories }: FooterProps) {
   return (
     <footer className="footer">
       <div className="footer__container">

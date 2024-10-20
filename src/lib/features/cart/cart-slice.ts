@@ -1,4 +1,4 @@
-import { CartProductType } from '@/app/(shared)/utils/types';
+import { CartProductType } from '@/app/shared/utils/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface InitialState {

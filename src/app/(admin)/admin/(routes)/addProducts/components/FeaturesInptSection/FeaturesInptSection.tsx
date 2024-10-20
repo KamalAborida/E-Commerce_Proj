@@ -1,6 +1,6 @@
 import ModifiableList from '@/app/(admin)/components/ModifiableList/ModifiableList';
-import Input from '@/app/(shared)/Input/Input';
-import { InputEventType } from '@/app/(shared)/utils/types';
+import Input from '@/app/shared/Input/Input';
+import { InputEventType } from '@/app/shared/utils/types';
 import { useEffect, useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 

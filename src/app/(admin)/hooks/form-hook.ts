@@ -1,4 +1,4 @@
-import { InputEventType } from '@/app/(shared)/utils/types';
+import { InputEventType } from '@/app/shared/utils/types';
 import { features } from 'process';
 import { useCallback, useMemo, useState } from 'react';
 import {

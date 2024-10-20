@@ -3,7 +3,7 @@
 import {
   disableScrolling,
   enableScrolling,
-} from '@/app/(shared)/utils/windowFunctions';
+} from '@/app/shared/utils/windowFunctions';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaLock } from 'react-icons/fa';

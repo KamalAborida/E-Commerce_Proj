@@ -1,15 +1,15 @@
 'use server';
 
-import { getAdminByUsername } from '@/app/(server)/services/admin';
-import { addCategory, deleteCategory } from '@/app/(server)/services/category';
-import { CategoryType, ProductType } from '@/app/(shared)/utils/types';
+import { getAdminByUsername } from '@/app/server/services/admin';
+import { addCategory, deleteCategory } from '@/app/server/services/category';
+import { CategoryType, ProductType } from '@/app/shared/utils/types';
 import bcrypt from 'bcrypt';
 import DOMPurify from 'dompurify';
 import sanitize from 'sanitize-html';
 import jwt from 'jsonwebtoken';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { addProduct, deleteProduct } from '@/app/(server)/services/product';
+import { addProduct, deleteProduct } from '@/app/server/services/product';
 
 export interface Admin {
   username: string;

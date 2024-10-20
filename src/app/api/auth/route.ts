@@ -1,6 +1,6 @@
 'use server';
 
-import { getAdminByUsername } from '@/app/(server)/services/admin';
+import { getAdminByUsername } from '@/app/server/services/admin';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { NextResponse } from 'next/server';

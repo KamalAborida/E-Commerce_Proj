@@ -1,6 +1,6 @@
 'use client';
 
-import CartObject from '@/app/(shared)/Cart/CartObject';
+import CartObject from '@/app/shared/Cart/CartObject';
 import InfoLine from './InfoLine';
 import Link from 'next/link';
 import { useAppSelector } from '@/lib/store';

@@ -1,6 +1,6 @@
 'use client';
 
-import { InputEventType } from '@/app/(shared)/utils/types';
+import { InputEventType } from '@/app/shared/utils/types';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 
 interface TogglerProps {

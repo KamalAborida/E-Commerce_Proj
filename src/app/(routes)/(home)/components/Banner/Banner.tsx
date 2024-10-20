@@ -1,5 +1,5 @@
-import ProductCta from '../../../../(shared)/ProductCta/ProductCta';
-import { getProduct } from '@/app/(server)/services/product';
+import ProductCta from '../../../../shared/Product/ProductCta';
+import { getProduct } from '@/app/server/services/product';
 
 export default async function Banner() {
   const product = await getProduct(1);

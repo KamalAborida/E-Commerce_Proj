@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useContext } from 'react';
-import Input from '../../../../(shared)/Input/Input';
+import Input from '../../../../shared/Input/Input';
 import RadioBtn from '../RadioBtn/RadioBtn';
 import RadioBtnContext from '../RadioBtn/radioBtns-context';
 import Image from 'next/image';

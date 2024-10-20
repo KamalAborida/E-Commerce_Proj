@@ -2,7 +2,7 @@
 
 import { useAdminForms } from '@/app/(admin)/hooks/form-hook';
 import { addCategoryAction } from '@/app/(admin)/utils/addCategory';
-import Input from '@/app/(shared)/Input/Input';
+import Input from '@/app/shared/Input/Input';
 import { useEffect, useState } from 'react';
 import { useFormState } from 'react-dom';
 import SubmitButton from '../SubmitButton/SubmitButton';

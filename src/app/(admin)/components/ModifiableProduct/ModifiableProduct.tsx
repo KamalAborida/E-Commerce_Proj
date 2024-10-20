@@ -1,5 +1,5 @@
-import Product from '@/app/(shared)/Product/Product';
-import { ProductType } from '@/app/(shared)/utils/types';
+import Product from '@/app/shared/Product/Product';
+import { ProductType } from '@/app/shared/utils/types';
 import { useFormState } from 'react-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { deleteProductAction } from '../../utils/deleteProductAction';

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google'; // Replace Inter with Manrope
 import './globals.css';
-import { getCategories } from './(server)/services/category';
-import { getProducts } from './(server)/services/product';
+import { getCategories } from './server/services/category';
+import { getProducts } from './server/services/product';
 import ReduxProvider from '@/lib/provider';
 
 const manrope = Manrope({ subsets: ['latin'] }); // Use Manrope instead
@@ -21,7 +21,11 @@ export default async function DefaultLayout({
   const products = await getProducts();
 
   return (
-    <html lang="en" className={manrope.className}>
+    <html
+      lang="en"
+      className={manrope.className}
+      suppressHydrationWarning={true}
+    >
       <ReduxProvider categories={categories} products={products}>
         <body>{children}</body>
       </ReduxProvider>

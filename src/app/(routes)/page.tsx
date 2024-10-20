@@ -1,4 +1,4 @@
-import Categories from '../(shared)/Categories/Categories';
+import Categories from '../shared/Categories/Categories';
 import Banner from './(home)/components/Banner/Banner';
 import BestSelling from './(home)/components/BestSelling/BestSelling';
 import Mission from './(home)/components/Mission/Mission';

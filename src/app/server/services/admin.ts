@@ -1,5 +1,5 @@
 import db from '../db';
-import { AdminType } from '@/app/(shared)/utils/types';
+import { AdminType } from '@/app/shared/utils/types';
 
 // Fetch all admins
 export const getAdmins = (): AdminType[] => {

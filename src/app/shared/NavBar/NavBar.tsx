@@ -6,20 +6,16 @@ import NavIconList from './IconsList';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import NavModal from './NavModal';
-import { CategoryType } from '../utils/types';
 
-interface NavBarProps {
-  categories: CategoryType[];
-}
-
-export default function NavBar({ categories }: NavBarProps) {
+export default function NavBar() {
   const [isHamburger, setIsHamburger] = useState(false);
   const router = useRouter();
 
   const handleHamburger = () => {
     router.push('?nav=true');
   };
+
+  // console.log('NavBar rendered');
 
   useEffect(() => {
     if (window.innerWidth < 800) {
@@ -50,7 +46,7 @@ export default function NavBar({ categories }: NavBarProps) {
           />
         </Link>
       </div>
-      {!isHamburger && categories && <NavList categories={categories} />}
+      {!isHamburger && <NavList />}
       <NavIconList />
     </nav>
   );

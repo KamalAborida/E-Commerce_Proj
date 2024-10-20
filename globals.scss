@@ -23,27 +23,27 @@ body {
   }
 }
 
-@import './src/app/\(shared\)/NavBar/navbar';
-@import './src/app/\(shared\)/NavBar/icons-list';
-@import './src/app/\(shared\)/NavBar/nav-list';
-@import './src/app/\(shared\)/NavBar/nav-modal';
+@import './src/app/shared/NavBar/navbar';
+@import './src/app/shared/NavBar/icons-list';
+@import './src/app/shared/NavBar/nav-list';
+@import './src/app/shared/NavBar/nav-modal';
 
-@import './src/app/\(shared\)/Footer/footer';
-@import './src/app/\(shared\)/Footer/footer-about';
-@import './src/app/\(shared\)/Footer/footer-socialMediaList';
+@import './src/app/shared/Footer/footer';
+@import './src/app/shared/Footer/footer-about';
+@import './src/app/shared/Footer/footer-socialMediaList';
 
-@import './src/app/\(shared\)/Cart/cart-object';
-@import './src/app/\(shared\)/Cart/cart-modal';
+@import './src/app/shared/Cart/cart-object';
+@import './src/app/shared/Cart/cart-modal';
 
-@import './src/app/\(shared\)/SuccessModal/success-modal';
-@import './src/app/\(shared\)/SuccessModal/recipt';
-@import './src/app/\(shared\)/SuccessModal/gray-div';
+@import './src/app/shared/SuccessModal/success-modal';
+@import './src/app/shared/SuccessModal/recipt';
+@import './src/app/shared/SuccessModal/gray-div';
 
-@import './src/app/\(shared\)/Input/input';
+@import './src/app/shared/Input/input';
 
-@import './src/app/\(shared\)/Product/product';
-@import './src/app/\(shared\)/ProductCta/product-cta';
-@import './src/app/\(shared\)/ProductCta/product-description-cta';
+@import './src/app/shared/Product/product';
+@import './src/app/shared/Product/product-cta';
+@import './src/app/shared/Product/product-description-cta';
 
 @import './src/app/\(routes\)/\(home\)/components/HomeBackground/home-background';
 
@@ -56,8 +56,8 @@ body {
 @import './src/app/\(routes\)/category/components/CategoryBackground/category-background';
 @import './src/app/\(routes\)/category/components/Products/products';
 
-@import './src/app/\(shared\)/Categories/categories';
-@import './src/app/\(shared\)/Categories/category';
+@import './src/app/shared/Categories/categories';
+@import './src/app/shared/Categories/category';
 
 @import './src/app/\(routes\)/\(home\)/components/Mission/mission';
 

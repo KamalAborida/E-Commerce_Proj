@@ -1,11 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { CategoryType } from '../utils/types';
+import { useAppSelector } from '@/lib/store';
 
-interface NavListProps {
-  categories: CategoryType[];
-}
+export default function NavList() {
+  const categories = useAppSelector((state) => state.data.categories);
 
-export default function NavList({ categories }: NavListProps) {
   return (
     <ul className="navList">
       <li className="navList__item">
