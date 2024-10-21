@@ -4,12 +4,8 @@ import Image from 'next/image';
 import NavList from '../NavBar/NavList';
 import FooterAbout from './FooterAbout';
 import FooterSocialMediaList from './FooterSocialMediaList';
-import { CategoryType } from '../utils/types';
-import { useAppSelector } from '@/lib/store';
 
 export default function Footer() {
-  const categories = useAppSelector((state) => state.data.categories);
-
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -21,7 +17,7 @@ export default function Footer() {
             width={145}
             height={25}
           />
-          <NavList categories={categories} />
+          <NavList />
         </div>
         <div className="footer__container__lowerPart">
           <FooterAbout />

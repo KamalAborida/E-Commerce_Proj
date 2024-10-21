@@ -1,7 +1,6 @@
 'use client';
 import CartObject from './CartObject';
 import InfoLine from '@/app/(routes)/checkout/components/Summary/InfoLine';
-import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';

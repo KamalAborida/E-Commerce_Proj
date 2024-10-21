@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useAppSelector } from '@/lib/store';
 import { useRouter } from 'next/navigation';
@@ -9,9 +9,10 @@ vi.mock('@/lib/store', () => ({
   useAppSelector: vi.fn(() => [...categoriesData]),
 }));
 
+const pushMock = vi.fn();
 vi.mock('next/navigation', () => ({
   useRouter: vi.fn(() => ({
-    push: vi.fn(),
+    push: pushMock,
   })),
 }));
 
@@ -45,12 +46,25 @@ describe('NavBar', () => {
 
     render(<NavBar />);
 
-    // screen.debug();
-
     const navList = await screen.findByText('HEADPHONES');
     expect(navList).toBeDefined();
 
     const logo = screen.getByAltText('Audio Store Logo');
     expect(logo).toBeDefined();
+  });
+
+  it('should call handleHamburger when the hamburger menu is clicked', () => {
+    global.innerWidth = 799;
+    window.dispatchEvent(new Event('resize'));
+    const navPathTrigger = '?nav=true';
+
+    render(<NavBar />);
+
+    const hamburgerIcon = screen.getByAltText('Hamburger');
+    expect(hamburgerIcon).toBeDefined();
+
+    fireEvent.click(hamburgerIcon);
+
+    expect(pushMock).toHaveBeenCalledWith(navPathTrigger);
   });
 });

@@ -1,24 +1,39 @@
-// import React, { Suspense } from 'react';
-// import { render, screen } from '@testing-library/react';
-// import { it, expect, vi } from 'vitest';
-// import Categories from './Categories';
-// import { getCategories } from '@/app/server/services/category';
-// import { categoriesData } from '../utils/mockedData';
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { it, expect, vi, describe } from 'vitest';
+import Categories from './Categories';
+import { categoriesData } from '../utils/mockedData';
 
-// vi.mock('@/app/(server)/services/category', () => ({
-//   getCategories: vi.fn(() => {
-//     return Promise.resolve(categoriesData);
-//   }),
-// }));
+vi.mock('@/lib/store', () => ({
+  useAppSelector: vi.fn(() => [...categoriesData]),
+}));
 
-// it('Should fetch data from the server and render categories', async () => {
-//   render(
-//     <Suspense>
-//       <Categories />
-//     </Suspense>
-//   );
+const pushMock = vi.fn();
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(() => ({
+    push: pushMock,
+  })),
+}));
 
-//   const categoriesDiv = await screen.findByRole('div');
+describe('Categories', () => {
+  it('Should fetch data from the server and render categories', async () => {
+    render(<Categories />);
 
-//   expect(categoriesDiv.children.length).toBe(categoriesData.length);
-// });
+    const categoriesDiv = await screen.findByRole('div');
+
+    expect(categoriesDiv.children.length).toBe(categoriesData.length);
+  });
+
+  it('Should have links that have the right url', async () => {
+    const chosenIndex = 0;
+
+    render(<Categories />);
+
+    const shopButton = await screen.findAllByRole('shopLink');
+
+    expect(shopButton[chosenIndex]).toHaveProperty(
+      'href',
+      `http://localhost:3000/category/${categoriesData[chosenIndex].id}`
+    );
+  });
+});

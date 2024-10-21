@@ -1,12 +1,13 @@
 'use client';
 
-import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
-import { cartActions } from '@/lib/features/cart/cart-slice';
 import { AppDispatch } from '@/lib/store';
-import Image from 'next/image';
-import { useCallback, useState } from 'react';
+import { cartActions } from '@/lib/features/cart/cart-slice';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { CartProductType } from '../utils/types';
+
+import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
+import Image from 'next/image';
 
 interface CartObjectProps {
   isEditable: boolean;

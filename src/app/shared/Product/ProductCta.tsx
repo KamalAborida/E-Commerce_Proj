@@ -14,7 +14,7 @@ export default function ProductCta({ product }: productCtaProps) {
         isNew={product.isNew}
         description={product.description}
       />
-      <Link href={`/product/${product.id}`}>
+      <Link role="seeProductLink" href={`/product/${product.id}`}>
         <button className="productCta__btn">SEE PRODUCT</button>
       </Link>
     </div>
