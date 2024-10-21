@@ -19,7 +19,7 @@ describe('Categories', () => {
   it('Should fetch data from the server and render categories', async () => {
     render(<Categories />);
 
-    const categoriesDiv = await screen.findByRole('div');
+    const categoriesDiv = await screen.findByRole('categoriesDiv');
 
     expect(categoriesDiv.children.length).toBe(categoriesData.length);
   });

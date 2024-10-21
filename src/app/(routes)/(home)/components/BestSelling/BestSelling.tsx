@@ -7,7 +7,7 @@ export default function BestSelling() {
   const products = useAppSelector((state) => state.data.products);
 
   return (
-    <div className="bestSelling">
+    <div role="bestSelling" className="bestSelling">
       <h1 className="bestSelling__title">BEST SELLERS</h1>
       <BestSellingCard product={products[0]} />
       <BestSellingCard product={products[1]} />

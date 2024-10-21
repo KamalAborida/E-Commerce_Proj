@@ -1,8 +1,10 @@
-import ProductCta from '../../../../shared/Product/ProductCta';
-import { getProduct } from '@/app/server/services/product';
+'use client';
 
-export default async function Banner() {
-  const product = await getProduct(1);
+import { useAppSelector } from '@/lib/store';
+import ProductCta from '../../../../shared/Product/ProductCta';
+
+export default function Banner() {
+  const product = useAppSelector((state) => state.data.products[1]);
 
   return (
     <div className="banner">{product && <ProductCta product={product} />}</div>

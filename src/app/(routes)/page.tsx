@@ -4,7 +4,7 @@ import BestSelling from './(home)/components/BestSelling/BestSelling';
 import Mission from './(home)/components/Mission/Mission';
 import HomeBackground from './(home)/components/HomeBackground/HomeBackground';
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <div>
       <HomeBackground />

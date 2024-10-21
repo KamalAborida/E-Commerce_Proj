@@ -8,7 +8,7 @@ export default function Categories() {
   const categories = useAppSelector((state) => state.data.categories);
 
   return (
-    <div className="categories" role="div">
+    <div className="categories" role="categoriesDiv">
       {categories &&
         categories.map((category) => {
           return (

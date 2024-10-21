@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Mission() {
   // Change the image src according to the screen size
   return (
-    <div className="mission">
+    <div className="mission" role="missionDiv">
       <div className="mission__content">
         <h2 className="mission__content__title">
           Bringing you the <span className="text-orange">best</span> audio gear

@@ -1,3 +1,3 @@
 export default function HomeBackground() {
-  return <div className="blackBackground"></div>;
+  return <div role="blackBackground" className="blackBackground"></div>;
 }
