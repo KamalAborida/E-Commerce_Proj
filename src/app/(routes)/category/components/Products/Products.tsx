@@ -57,7 +57,7 @@ export default function Products() {
   }
 
   return (
-    <div className="products" role="div">
+    <div className="products" role="productsDiv">
       <ActionDiv
         setArrangementType={setArrangementType}
         setMaxValue={setMaxValue}

@@ -12,7 +12,7 @@ export default function CategoryBackground() {
 
   return (
     <div className="categoryBackground">
-      <h1>{category?.name}</h1>
+      <h1 role="categoryBackgroundTitle">{category?.name}</h1>
     </div>
   );
 }

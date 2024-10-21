@@ -1,9 +1,9 @@
 import { CategoryType, ProductType } from './types';
 
 export const categoriesData: CategoryType[] = [
-  { name: 'Headphones', id: 1, previewImage: '/headphones-preview.svg' },
-  { name: 'Speakers', id: 2, previewImage: '/speakers-preview.svg' },
-  { name: 'Earphones', id: 3, previewImage: '/earphones-preview.svg' },
+  { name: 'Headphones', id: 0, previewImage: '/headphones-preview.svg' },
+  { name: 'Speakers', id: 1, previewImage: '/speakers-preview.svg' },
+  { name: 'Earphones', id: 2, previewImage: '/earphones-preview.svg' },
 ];
 
 export const productsData: ProductType[] = [

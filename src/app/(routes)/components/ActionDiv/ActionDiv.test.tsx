@@ -5,7 +5,7 @@ import {
   searchProducts,
   sortProductsByPrice,
 } from '../../category/components/Products/utils';
-import { productsData } from '../../category/components/Products/mockedData';
+import { productsData } from '@/app/shared/utils/mockedData';
 
 it('should sort the array asc', () => {
   const sortedArray = sortProductsByPrice(productsData, 'asc');
