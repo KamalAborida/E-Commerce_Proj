@@ -49,7 +49,7 @@ export const productsData: ProductType[] = [
       largeImage: 'XX99_Mark_I_Headphones-image',
     }),
     categoryId: 0,
-    id: 0,
+    id: 1,
   },
   {
     name: 'XX99 Mark III Headphones',
@@ -71,6 +71,6 @@ export const productsData: ProductType[] = [
       largeImage: 'XX99_Mark_I_Headphones-image',
     }),
     categoryId: 0,
-    id: 0,
+    id: 2,
   },
 ];

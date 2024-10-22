@@ -5,10 +5,8 @@ import ProductContent from '../components/ProductContent/ProductContent';
 import ProductDiv from '../components/ProductDiv/ProductDiv';
 import ProductPageBackground from '../components/ProductPageBackground/ProductPageBackground';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
-import { getProduct, getProducts } from '@/app/server/services/product';
-import { getCategories } from '@/app/server/services/category';
 
-export default async function Product() {
+export default function ProductPage() {
   return (
     <main>
       <ProductPageBackground />

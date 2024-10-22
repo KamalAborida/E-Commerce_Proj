@@ -17,6 +17,8 @@ export interface ProductType {
   categoryId: number;
 }
 
+export type imageListType = { smallImages: string[]; largeImage: string };
+
 export interface CartProductType extends ProductType {
   quantity: number;
 }

@@ -1,5 +1,7 @@
 'use client';
 
 export default function ProductPageBackground() {
-  return <div className="productPageBackground"></div>;
+  return (
+    <div role="productPageBackground" className="productPageBackground"></div>
+  );
 }

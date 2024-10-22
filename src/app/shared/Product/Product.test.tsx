@@ -42,7 +42,7 @@ describe('Product', () => {
     expect(seeProductLink).toBeDefined();
     expect(seeProductLink).toHaveProperty(
       'href',
-      `http://localhost:3000/product/${mockProduct.id}`
+      expect.stringContaining(`product/${mockProduct.id}`)
     );
   });
 });

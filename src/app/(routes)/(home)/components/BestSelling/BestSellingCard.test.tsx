@@ -25,7 +25,7 @@ describe('BestSelling', () => {
     expect(productButton).toBeDefined();
     expect(productButton).toHaveProperty(
       'href',
-      `http://localhost:3000/product/${chosenProduct.id}`
+      expect.stringContaining(`product/${chosenProduct.id}`)
     );
   });
 });

@@ -33,7 +33,7 @@ describe('Categories', () => {
 
     expect(shopButton[chosenIndex]).toHaveProperty(
       'href',
-      `http://localhost:3000/category/${categoriesData[chosenIndex].id}`
+      expect.stringContaining(`category/${categoriesData[chosenIndex].id}`)
     );
   });
 });

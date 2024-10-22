@@ -15,6 +15,7 @@ export default function ProductFeatures({ features }: ProductFeaturesProps) {
               <li
                 className="productContent__features__list__item"
                 key={feature}
+                role="featuresListItem"
               >
                 <p className="productContent__features__list__item__p">
                   {feature}

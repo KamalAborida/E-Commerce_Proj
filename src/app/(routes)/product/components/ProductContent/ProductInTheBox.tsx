@@ -16,6 +16,7 @@ export default function ProductInTheBox({ inTheBox }: ProductInTheBoxProps) {
               <li
                 className="productContent__inTheBox__list__item"
                 key={boxItem.item}
+                role="inTheBoxListItem"
               >
                 {boxItem.item}
               </li>

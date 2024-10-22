@@ -1,10 +1,9 @@
 'use client';
 
+import { imageListType } from '@/app/shared/utils/types';
 import { useAppSelector } from '@/lib/store';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-
-type imageListType = { smallImages: string[]; largeImage: string };
 
 export default function ImageCollague() {
   const params = useParams();
@@ -19,11 +18,11 @@ export default function ImageCollague() {
   const imagesList: imageListType = JSON.parse(product.images);
 
   return (
-    <div className="imageCollague">
+    <div className="imageCollague" role="imageCollague">
       <div className="imageCollague__img">
         <Image
           src={`/${imagesList.smallImages[0]}.png`}
-          alt="PP"
+          alt={`${product.name} - 1`}
           width={445}
           height={280}
         />
@@ -31,7 +30,7 @@ export default function ImageCollague() {
       <div className="imageCollague__img">
         <Image
           src={`/${imagesList.smallImages[1]}.png`}
-          alt="PP"
+          alt={`${product.name} - 2`}
           width={445}
           height={280}
         />
@@ -39,9 +38,10 @@ export default function ImageCollague() {
       <div className="imageCollague__img">
         <Image
           src={`/${imagesList.largeImage}.png`}
-          alt="PP"
+          alt={`${product.name}-Large`}
           width={635}
           height={592}
+          role="largeImageInCollague"
         />
       </div>
     </div>
