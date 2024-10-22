@@ -1,13 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import {
-  describe,
-  it,
-  expect,
-  vi,
-  beforeEach,
-  afterEach,
-  vitest,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import Products from './Products';
 import { useAppSelector } from '@/lib/store';
 import { useParams } from 'next/navigation';
@@ -39,7 +31,7 @@ describe('Products Component', () => {
   it('should render products based on the category ID', () => {
     render(<Products />);
 
-    // // Verify that the correct products are displayed for categoryId 1
+    // // Verify that the correct products are displayed for categoryId 0
     const product1 = screen.getByText(productsData[0].name);
     const product2 = screen.getByText(productsData[1].name);
     const product3 = screen.getByText(productsData[2].name);

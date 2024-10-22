@@ -8,24 +8,13 @@ import RecommendedProducts from '../components/RecommendedProducts/RecommendedPr
 import { getProduct, getProducts } from '@/app/server/services/product';
 import { getCategories } from '@/app/server/services/category';
 
-interface ProductPageProps {
-  params: { productID: string };
-}
-
-export default async function Product({ params }: ProductPageProps) {
-  const productID = +params.productID;
-  const product = await getProduct(productID);
-
-  if (!product) {
-    return <p>No product found</p>;
-  }
-
+export default async function Product() {
   return (
     <main>
       <ProductPageBackground />
-      <ProductDiv product={product} />
-      <ProductContent features={product.features} inTheBox={product.inTheBox} />
-      <ImageCollague images={product.images} />
+      <ProductDiv />
+      <ProductContent />
+      <ImageCollague />
       <RecommendedProducts />
       <Categories />
       <Mission />

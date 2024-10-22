@@ -4,18 +4,24 @@ import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import ProductDescriptionCta from '@/app/shared/Product/ProductDescriptionCta';
 import { ProductType } from '@/app/shared/utils/types';
 import { cartActions } from '@/lib/features/cart/cart-slice';
-import { AppDispatch } from '@/lib/store';
+import { AppDispatch, useAppSelector } from '@/lib/store';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-interface ProductDivProps {
-  product: ProductType;
-}
+export default function ProductDiv() {
+  const params = useParams();
+  const productId = +params.productID;
+  const products = useAppSelector((state) => state.data.products);
+  const product = products.find((element) => element.id === productId);
 
-export default function ProductDiv({ product }: ProductDivProps) {
   const dispatch = useDispatch<AppDispatch>();
   const [inputNumber, setInputNumber] = useState(1);
+
+  if (!product) {
+    return <p>No Product</p>;
+  }
 
   const setInputNumberState = (quantity: number) => {
     setInputNumber(quantity);

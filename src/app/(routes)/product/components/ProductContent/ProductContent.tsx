@@ -1,19 +1,24 @@
+'use client';
+
+import { useParams } from 'next/navigation';
 import ProductFeatures from './ProductFeatures';
 import ProductInTheBox from './ProductInTheBox';
+import { useAppSelector } from '@/lib/store';
 
-interface ProductContentProps {
-  features: string;
-  inTheBox: string;
-}
+export default function ProductContent() {
+  const params = useParams();
+  const productId = +params.productID;
+  const products = useAppSelector((state) => state.data.products);
+  const product = products.find((element) => element.id === productId);
 
-export default function ProductContent({
-  features,
-  inTheBox,
-}: ProductContentProps) {
+  if (!product) {
+    return <p>No product</p>;
+  }
+
   return (
     <div className="productContent">
-      <ProductFeatures features={features} />
-      <ProductInTheBox inTheBox={inTheBox} />
+      <ProductFeatures features={product.features} />
+      <ProductInTheBox inTheBox={product.inTheBox} />
     </div>
   );
 }

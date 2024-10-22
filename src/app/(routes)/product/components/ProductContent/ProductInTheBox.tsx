@@ -17,9 +17,6 @@ export default function ProductInTheBox({ inTheBox }: ProductInTheBoxProps) {
                 className="productContent__inTheBox__list__item"
                 key={boxItem.item}
               >
-                <span className="productContent__inTheBox__list__item__number">
-                  x{boxItem.quantity}
-                </span>
                 {boxItem.item}
               </li>
             );
