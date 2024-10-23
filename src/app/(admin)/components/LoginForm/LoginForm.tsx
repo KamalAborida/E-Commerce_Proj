@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Input from '@/app/shared/Input/Input';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { authenticateAdmin } from '../../utils/login';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import { InputEventType } from '@/app/shared/utils/types';
+import LoginButton from './LoginButton';
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -15,29 +16,26 @@ export default function LoginForm() {
   const [state, action] = useFormState(authenticateAdmin, null);
   const router = useRouter();
 
-  const handleUsername = (event: InputEventType) => {
+  const handleUsername = useCallback((event: InputEventType) => {
     setUsername(event.target.value);
-  };
+  }, []);
 
-  const handlePassword = (event: InputEventType) => {
+  const handlePassword = useCallback((event: InputEventType) => {
     setPassword(event.target.value);
-  };
+  }, []);
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    const token = localStorage.getItem('token');
+    if (token) {
       router.push('admin/categories');
+      return;
     }
 
-    if (state) {
-      if (state.error) {
-        setError(state.error);
-        return;
-      }
-
-      if (state.token) {
-        localStorage.setItem('token', state.token);
-        router.push('admin/categories');
-      }
+    if (state?.error) {
+      setError(state.error);
+    } else if (state?.token) {
+      localStorage.setItem('token', state.token);
+      router.push('admin/categories');
     }
   }, [router, state]);
 
@@ -66,7 +64,7 @@ export default function LoginForm() {
         onChange={handlePassword}
         value={password}
       />
-      <button className="btn btn-orange loginForm__btn">Login</button>
+      <LoginButton />
     </form>
   );
 }

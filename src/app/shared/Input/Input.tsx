@@ -30,7 +30,9 @@ export default function Input({
 }: InputProps) {
   return (
     <div className="inputDiv">
-      <label className="inputDiv__label">{label}</label>
+      <label htmlFor={name} className="inputDiv__label">
+        {label}
+      </label>
       {isInfoTip && <InfoTip infoTip={infoTip} />}
 
       {!isTextArea && isFileInput && (

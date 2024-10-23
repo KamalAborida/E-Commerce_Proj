@@ -27,7 +27,9 @@ export default function Category({ href, name }: categoryProps) {
         height={20}
         className="category__shadow"
       />
-      <h2 className="category__name">{title}</h2>
+      <h2 role="categoryName" className="category__name">
+        {title}
+      </h2>
       <Link href={`/${href}`} className="category__shop" role="shopLink">
         <p>Shop</p>
         <Image src={'/arrow-right.svg'} alt="arrow" width={5} height={10} />

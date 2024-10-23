@@ -4,7 +4,7 @@ import Category from '@/app/shared/Categories/Category';
 import { useFormState } from 'react-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { deleteCategoryAction } from '../../utils/deleteCategoryAction';
-import { useEffect } from 'react';
+import DeleteIcon from './DeleteIcon';
 
 interface ModifiableCategoryProps {
   href: string;
@@ -22,13 +22,11 @@ export default function ModifiableCategory({
   return (
     <div className="modifiableCategory">
       <div className="modifiableCategory__actionDiv">
-        <form action={action}>
-          <button type="submit">
-            <FaTrashAlt className="modifiableCategory__icon modifiableCategory__icon--delete" />
-          </button>
-          <input hidden value={id} name="id" readOnly />
-        </form>
-        <FaEdit className="modifiableCategory__icon modifiableCategory__icon--edit" />
+        <DeleteIcon action={action} id={id} />
+        <FaEdit
+          role="editIcon"
+          className="modifiableCategory__icon modifiableCategory__icon--edit"
+        />
       </div>
       <Category href={href} name={name} />
     </div>

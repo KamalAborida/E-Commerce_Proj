@@ -24,7 +24,7 @@ function ModifiableListItem({ text, handleDelete }: ModifiableListItemProps) {
   return (
     <li className="modifiableList__item">
       <p className="modifiableList__text">{text}</p>
-      <button type="button" onClick={deleteItem}>
+      <button type="button" onClick={deleteItem} role="deleteButton-list">
         <FaTrashAlt className="modifiableList__icon" />
       </button>
     </li>
