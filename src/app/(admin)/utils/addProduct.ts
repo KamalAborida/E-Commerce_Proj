@@ -1,13 +1,13 @@
 // import { features } from "process";
 
-import { getImageType } from './utils';
+import { fetchRoute, getImageType } from './utils';
 
 export const addProductAction = async (
   currentState: any,
   formData: FormData
 ) => {
   const name = formData.get('name') as string;
-  const imagesName = name.split(' ').join('_');
+  const imagesName = name ? name.split(' ').join('_') : '';
 
   const images = {
     previewImage: formData.get('previewImage') as File,
@@ -34,31 +34,13 @@ export const addProductAction = async (
     },
   };
 
-  // console.log(productData);
-
-  // return { ...productData, isSubmitted: { value: true } };
-
-  if (!productData) {
+  if (!productData.name && !productData.price && !productData.description) {
     return { message: 'No data provided' };
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/products', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify(productData),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Failed to add a new category');
-    }
-
-    const data = await response.json();
-    return { ...data, isSubmitted: { value: true } };
+    const response = await fetchRoute(productData, 'post', 'products');
+    return response;
   } catch (error: unknown) {
     if (error instanceof Error) {
       return { error: error.message };
