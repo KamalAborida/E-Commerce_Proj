@@ -9,7 +9,7 @@ export default function CategoriesSection() {
   return (
     <section className="categoriesSection">
       <h1 className="categoriesSection__title">CATEGORIES</h1>
-      <ul className="categoriesSection__list">
+      <ul className="categoriesSection__list" role="categoriesSectionList">
         {categories.length > 0 &&
           categories.map((category) => {
             return (
