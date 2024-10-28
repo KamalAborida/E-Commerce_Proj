@@ -1,69 +1,31 @@
 'use server';
 
-import { getAdminByUsername } from '@/app/server/services/admin';
-import { addCategory, deleteCategory } from '@/app/server/services/category';
-import { CategoryType, ProductType } from '@/app/shared/utils/types';
-import bcrypt from 'bcrypt';
-import DOMPurify from 'dompurify';
+import { ProductType } from '@/app/shared/utils/types';
 import sanitize from 'sanitize-html';
-import jwt from 'jsonwebtoken';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { addProduct, deleteProduct } from '@/app/server/services/product';
+import { getTokenVerificationResult } from '../utils/tokens';
+import { getProductDataValidationResult } from '../utils/productValidation';
 
 export interface Admin {
   username: string;
   password: string;
 }
 
-const secretKey = process.env.SECRET_KEY;
-
 export async function POST(req: Request) {
-  const authHeader = req.headers.get('authorization');
-  const token = authHeader && authHeader.split(' ')[1];
+  const tokenVerificationResult = getTokenVerificationResult(req);
 
-  if (!token) {
-    return NextResponse.json({ message: 'Access denied' }, { status: 400 });
+  if (!tokenVerificationResult.success) {
+    return tokenVerificationResult.nextResponse;
   }
-
-  jwt.verify(token, secretKey!, (err) => {
-    if (err) {
-      if (err && err.name === 'TokenExpiredError') {
-        return NextResponse.json({ message: 'Token expired' });
-      }
-
-      return NextResponse.json({ message: 'Invalid token' }, { status: 400 });
-    }
-  });
 
   const productData: ProductType = await req.json();
 
-  if (!productData.name) {
-    return NextResponse.json(
-      { message: 'Please provide a name' },
-      { status: 400 }
-    );
-  }
+  const productValidationResult = getProductDataValidationResult(productData);
 
-  if (!productData.price) {
-    return NextResponse.json(
-      { message: 'Please provide a price bigger than 0' },
-      { status: 400 }
-    );
-  }
-
-  if (!productData.description) {
-    return NextResponse.json(
-      { message: 'Please provide a description' },
-      { status: 400 }
-    );
-  }
-
-  if (!productData.inTheBox || !productData.features) {
-    return NextResponse.json(
-      { message: 'Please fill all the fields' },
-      { status: 400 }
-    );
+  if (!productValidationResult.success) {
+    return productValidationResult.nextResponse;
   }
 
   const cleanProductData: ProductType = {
@@ -75,12 +37,10 @@ export async function POST(req: Request) {
     inTheBox: sanitize(String(productData.inTheBox)),
   };
 
-  // console.log(cleanProductData);
-
   try {
     await addProduct(cleanProductData);
 
-    revalidatePath('/admin');
+    revalidatePath('admin');
 
     return NextResponse.json({ message: 'Success' }, { status: 200 });
   } catch (err) {
@@ -92,22 +52,11 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const authHeader = req.headers.get('authorization');
-  const token = authHeader && authHeader.split(' ')[1];
+  const tokenVerificationResult = getTokenVerificationResult(req);
 
-  if (!token) {
-    return NextResponse.json({ message: 'Access denied' }, { status: 400 });
+  if (!tokenVerificationResult.success) {
+    return tokenVerificationResult.nextResponse;
   }
-
-  jwt.verify(token, secretKey!, (err) => {
-    if (err) {
-      if (err && err.name === 'TokenExpiredError') {
-        return NextResponse.json({ message: 'Token expired' });
-      }
-
-      return NextResponse.json({ message: 'Invalid token' }, { status: 400 });
-    }
-  });
 
   const { productId } = await req.json();
 
@@ -121,7 +70,7 @@ export async function DELETE(req: Request) {
   try {
     await deleteProduct(productId);
 
-    revalidatePath('/admin');
+    revalidatePath('admin');
 
     return NextResponse.json(
       { message: 'Category deleted successfully' },

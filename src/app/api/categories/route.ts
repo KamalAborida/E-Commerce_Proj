@@ -1,39 +1,23 @@
 'use server';
 
-import { getAdminByUsername } from '@/app/server/services/admin';
 import { addCategory, deleteCategory } from '@/app/server/services/category';
 import { CategoryType } from '@/app/shared/utils/types';
-import bcrypt from 'bcrypt';
-import DOMPurify from 'dompurify';
 import sanitize from 'sanitize-html';
-import jwt from 'jsonwebtoken';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
+import { getTokenVerificationResult } from '../utils/tokens';
 
 export interface Admin {
   username: string;
   password: string;
 }
 
-const secretKey = process.env.SECRET_KEY;
-
 export async function POST(req: Request) {
-  const authHeader = req.headers.get('authorization');
-  const token = authHeader && authHeader.split(' ')[1];
+  const tokenVerificationResult = getTokenVerificationResult(req);
 
-  if (!token) {
-    return NextResponse.json({ message: 'Access denied' }, { status: 400 });
+  if (!tokenVerificationResult.success) {
+    return tokenVerificationResult.nextResponse;
   }
-
-  jwt.verify(token, secretKey!, (err) => {
-    if (err) {
-      if (err && err.name === 'TokenExpiredError') {
-        return NextResponse.json({ message: 'Token expired' });
-      }
-
-      return NextResponse.json({ message: 'Invalid token' }, { status: 400 });
-    }
-  });
 
   const categoryData: CategoryType = await req.json();
 
@@ -53,7 +37,7 @@ export async function POST(req: Request) {
   try {
     await addCategory(cleanCategoryData.name, cleanCategoryData.previewImage);
 
-    revalidatePath('http://localhost:3000//admin/categories');
+    revalidatePath('admin');
 
     return NextResponse.json({ message: 'Success' }, { status: 200 });
   } catch (err) {
@@ -65,22 +49,11 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const authHeader = req.headers.get('authorization');
-  const token = authHeader && authHeader.split(' ')[1];
+  const tokenVerificationResult = getTokenVerificationResult(req);
 
-  if (!token) {
-    return NextResponse.json({ message: 'Access denied' }, { status: 400 });
+  if (!tokenVerificationResult.success) {
+    return tokenVerificationResult.nextResponse;
   }
-
-  jwt.verify(token, secretKey!, (err) => {
-    if (err) {
-      if (err && err.name === 'TokenExpiredError') {
-        return NextResponse.json({ message: 'Token expired' });
-      }
-
-      return NextResponse.json({ message: 'Invalid token' }, { status: 400 });
-    }
-  });
 
   const { categoryId } = await req.json();
 
@@ -94,7 +67,7 @@ export async function DELETE(req: Request) {
   try {
     await deleteCategory(categoryId);
 
-    revalidatePath('http://localhost:3000//admin/categories');
+    revalidatePath('admin');
 
     return NextResponse.json(
       { message: 'Category deleted successfully' },

@@ -40,3 +40,8 @@ export type InputEventType =
   | React.ChangeEvent<HTMLInputElement>
   | React.ChangeEvent<HTMLTextAreaElement>
   | React.ChangeEvent<HTMLSelectElement>;
+
+export type verificationResultType = {
+  nextResponse: object | undefined;
+  success: boolean;
+};
