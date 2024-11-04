@@ -75,11 +75,14 @@
     }
 
     &__ctaDiv {
+      // border: 2px solid red;
+
       .productDescriptionCta {
+        // border: 2px solid blue;
         text-align: left;
 
         &__name {
-          font-size: 40px;
+          font-size: 30px;
         }
       }
     }

@@ -32,6 +32,13 @@
   .recommendedProductsSection__recommendedProducts__recommendedProduct {
     // border: 2px solid green;
     width: 30%;
+
+    &__name {
+      width: 80%;
+      font-size: 17px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
   }
 }
 

@@ -1628,6 +1628,12 @@ body {
   .recommendedProductsSection__recommendedProducts__recommendedProduct {
     width: 30%;
   }
+  .recommendedProductsSection__recommendedProducts__recommendedProduct__name {
+    width: 80%;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
 }
 @media screen and (max-width: 450px) {
   .recommendedProductsSection__recommendedProducts__recommendedProduct {
@@ -1748,7 +1754,7 @@ body {
     text-align: left;
   }
   .productDiv__ctaDiv .productDescriptionCta__name {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 450px) {
