@@ -5,20 +5,22 @@ import NavList from './NavList';
 import NavIconList from './IconsList';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function NavBar() {
   const [isHamburger, setIsHamburger] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const handleHamburger = () => {
+    if (isHamburger === true && searchParams.get('nav')) {
+      router.push('?nav=false');
+      return;
+    }
     router.push('?nav=true');
   };
 
-  // console.log('NavBar rendered');
-
   useEffect(() => {
-    console.log('Rendering NavBar - ID:', Math.random());
     if (window.innerWidth < 800) {
       setIsHamburger(true);
     }

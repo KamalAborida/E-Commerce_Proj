@@ -4,7 +4,8 @@ import { disableScrolling, enableScrolling } from '../utils/windowFunctions';
 
 export function useModal(modalSearchParam: string, closeDestination: string) {
   const searchParams = useSearchParams();
-  const searchParam = searchParams.get(modalSearchParam);
+  const searchParam =
+    searchParams.get(modalSearchParam) === 'true' ? true : false;
 
   const router = useRouter();
   const path = usePathname();

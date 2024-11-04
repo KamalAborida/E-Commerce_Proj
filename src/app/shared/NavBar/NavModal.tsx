@@ -53,6 +53,7 @@ export default function NavModal() {
     <>
       {modal && (
         <div className="backdrop" onClick={closeModal}>
+          {/* <p style={{ color: 'black', border: '5px solid red' }}>PPP</p> */}
           <div className="navModal" onClick={stopPropagation}>
             <Categories />
           </div>

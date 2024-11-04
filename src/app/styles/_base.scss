@@ -32,6 +32,12 @@
   }
 }
 
+@media screen and (max-width: $mobile-max-width) {
+  .backdrop {
+    // height: 200vh;
+  }
+}
+
 .btn-orange {
   background-color: $primary-orange;
   color: white;

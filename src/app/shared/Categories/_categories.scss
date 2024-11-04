@@ -1,10 +1,13 @@
 .categories {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  // border: 2px solid red;
 
   .category {
     width: 30%;
     max-width: 350px;
+    margin-bottom: 150px;
   }
 }
 
