@@ -835,10 +835,16 @@ body {
   align-self: center;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .cartObject__numbersInputDiv .numbersInput {
   width: 100%;
   padding: 0 10px;
+  height: 100%;
+  margin-right: 10px;
+}
+.cartObject__numbersInputDiv__trashIcon:hover {
+  cursor: pointer;
 }
 
 .cartModal {
@@ -1258,7 +1264,7 @@ body {
   margin-bottom: 45px;
 }
 .bestSellingCard__img {
-  width: 48%;
+  width: 30%;
   height: 330px;
   border-radius: 10px;
 }
@@ -1268,7 +1274,7 @@ body {
 }
 .bestSellingCard__cta {
   background-color: #F1F1F1;
-  width: 50%;
+  width: 65%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

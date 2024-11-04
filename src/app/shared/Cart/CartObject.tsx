@@ -8,6 +8,7 @@ import { CartProductType } from '../utils/types';
 
 import NumbersInput from '@/app/(routes)/components/NumbersInput/NumbersInput';
 import Image from 'next/image';
+import { FaTrash } from 'react-icons/fa';
 
 interface CartObjectProps {
   isEditable: boolean;
@@ -24,6 +25,10 @@ export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
     } else if (operation === '-') {
       dispatch(cartActions.removeItemFromCart(cartItem.id));
     }
+  };
+
+  const deleteItem = () => {
+    dispatch(cartActions.removeAnEntireItem(+cartItem.id));
   };
 
   return (
@@ -48,6 +53,10 @@ export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
             defaultQuantity={inputNumber}
             changeQuantity={changeQuantity}
             setInputNumberState={setInputNumber}
+          />
+          <FaTrash
+            className="cartObject__numbersInputDiv__trashIcon"
+            onClick={deleteItem}
           />
         </div>
       )}
