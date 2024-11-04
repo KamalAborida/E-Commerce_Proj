@@ -7,7 +7,8 @@ import ActionDiv from '@/app/(routes)/components/ActionDiv/ActionDiv';
 import {
   ASCENDING,
   DESCENDING,
-  filterProducts,
+  filterProductsByPrice,
+  filterProductsByCategoryId,
   searchProducts,
   sortProductsByPrice,
 } from './utils';
@@ -27,30 +28,23 @@ export default function Products() {
 
   const areProductsAvailable = products && products.length > 0;
 
-  const getFilteredProducts = useCallback(() => {
-    return (
-      products?.filter((product) => product.categoryId === categoryId) || []
-    );
-  }, [categoryId, products]);
-
   useEffect(() => {
-    if (areProductsAvailable) {
-      const filtered = getFilteredProducts();
-      setCategoryProducts(filtered);
-    }
-  }, [getFilteredProducts, areProductsAvailable]);
-
-  useEffect(() => {
+    if (!areProductsAvailable) return;
+    setCategoryProducts(filterProductsByCategoryId(products, categoryId));
     setCategoryProducts((prev) => searchProducts(prev!, searchTerm));
-  }, [searchTerm]);
-
-  useEffect(() => {
     setCategoryProducts((prev) => sortProductsByPrice(prev!, arrangementType));
-  }, [arrangementType]);
-
-  useEffect(() => {
-    setCategoryProducts((prev) => filterProducts(prev!, minValue, maxValue));
-  }, [minValue, maxValue]);
+    setCategoryProducts((prev) =>
+      filterProductsByPrice(prev!, minValue, maxValue)
+    );
+  }, [
+    areProductsAvailable,
+    arrangementType,
+    categoryId,
+    maxValue,
+    minValue,
+    products,
+    searchTerm,
+  ]);
 
   if (isNaN(categoryId)) {
     return <p>Invalid category ID</p>;

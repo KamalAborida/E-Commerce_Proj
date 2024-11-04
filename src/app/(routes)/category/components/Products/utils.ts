@@ -24,12 +24,12 @@ export function searchProducts(
   searchTerm: string
 ) {
   const searchedProducts = categoryProducts?.filter((product) => {
-    return product.name.includes(searchTerm);
+    return product.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
   return searchedProducts;
 }
 
-export function filterProducts(
+export function filterProductsByPrice(
   categoryProducts: ProductType[],
   minValue: number,
   maxValue: number
@@ -39,3 +39,10 @@ export function filterProducts(
   });
   return filteredProducts;
 }
+
+export const filterProductsByCategoryId = (
+  products: ProductType[],
+  categoryId: number
+) => {
+  return products?.filter((product) => product.categoryId === categoryId) || [];
+};
