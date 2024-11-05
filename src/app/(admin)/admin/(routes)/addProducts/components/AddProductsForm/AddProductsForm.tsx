@@ -10,6 +10,8 @@ import { useFormState } from 'react-dom';
 import { addProductAction } from '@/app/(admin)/utils/addProduct';
 import { useEffect } from 'react';
 import ProductSubmitButton from '../SubmitButton/SubmitButton';
+import { dataActions } from '@/lib/features/cart/data-slice';
+import { useDispatch } from 'react-redux';
 
 export default function AddProductsForm() {
   const {
@@ -32,11 +34,14 @@ export default function AddProductsForm() {
 
   const [state, action] = useFormState(addProductAction, {});
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (state.isSubmitted && state.isSubmitted.value) {
+      dispatch(dataActions.setProducts([...state.data]));
       reset();
     }
-  }, [reset, state.isSubmitted]);
+  }, [dispatch, reset, state.data, state.isSubmitted]);
 
   return (
     <form className="addProductsForm" action={action}>

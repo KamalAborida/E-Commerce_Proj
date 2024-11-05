@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import Recipt from './Recipt';
 import { useModal } from '../hooks/modal-hook';
 

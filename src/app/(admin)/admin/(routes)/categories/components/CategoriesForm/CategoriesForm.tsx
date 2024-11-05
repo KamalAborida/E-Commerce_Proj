@@ -7,6 +7,9 @@ import { useEffect, useState } from 'react';
 import { useFormState } from 'react-dom';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import CategorySubmitButton from '../SubmitButton/SubmitButton';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/lib/store';
+import { dataActions } from '@/lib/features/cart/data-slice';
 
 export default function CategoriesForm() {
   const {
@@ -20,11 +23,14 @@ export default function CategoriesForm() {
 
   const [state, action] = useFormState(addCategoryAction, {});
 
+  const dispatch = useDispatch<AppDispatch>();
+
   useEffect(() => {
     if (state.isSubmitted && state.isSubmitted.value) {
+      dispatch(dataActions.setCategories([...state.data]));
       reset();
     }
-  }, [reset, state.isSubmitted]);
+  }, [dispatch, reset, state.data, state.isSubmitted]);
 
   return (
     <form className="categoriesForm" action={action}>

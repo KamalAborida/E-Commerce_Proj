@@ -1,6 +1,10 @@
 'use server';
 
-import { addCategory, deleteCategory } from '@/app/server/services/category';
+import {
+  addCategory,
+  deleteCategory,
+  getCategories,
+} from '@/app/server/services/category';
 import { CategoryType } from '@/app/shared/utils/types';
 import sanitize from 'sanitize-html';
 import { NextResponse } from 'next/server';
@@ -37,10 +41,17 @@ export async function POST(req: Request) {
   try {
     await addCategory(cleanCategoryData.name, cleanCategoryData.previewImage);
 
-    revalidatePath('admin');
+    revalidatePath('admin', 'layout');
+    revalidatePath('/', 'layout');
 
-    return NextResponse.json({ message: 'Success' }, { status: 200 });
+    const newCategoriesList = await getCategories();
+
+    return NextResponse.json(
+      { message: 'Success', data: newCategoriesList },
+      { status: 200 }
+    );
   } catch (err) {
+    console.log(err);
     return NextResponse.json(
       { message: 'Failed to add category' },
       { status: 500 }
@@ -67,10 +78,13 @@ export async function DELETE(req: Request) {
   try {
     await deleteCategory(categoryId);
 
-    revalidatePath('admin');
+    revalidatePath('admin', 'layout');
+    revalidatePath('/', 'layout');
+
+    const newCategoriesList = await getCategories();
 
     return NextResponse.json(
-      { message: 'Category deleted successfully' },
+      { message: 'Category deleted successfully', data: newCategoriesList },
       { status: 200 }
     );
   } catch (error) {

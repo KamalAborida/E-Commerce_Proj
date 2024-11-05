@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import NavList from './NavList';
 import NavIconList from './IconsList';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 

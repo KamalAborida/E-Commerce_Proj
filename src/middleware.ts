@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
 export function middleware(req: Request) {
   const url = new URL(req.url);
 
-  console.log('Middleware');
+  // console.log('Middleware');
 
   // 1. Authentication Check
   const authHeader = req.headers.get('authorization');

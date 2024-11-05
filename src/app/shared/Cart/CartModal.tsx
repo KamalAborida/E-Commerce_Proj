@@ -1,7 +1,7 @@
 'use client';
 import CartObject from './CartObject';
 import InfoLine from '@/app/(routes)/checkout/components/Summary/InfoLine';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
 import { useDispatch, useSelector } from 'react-redux';

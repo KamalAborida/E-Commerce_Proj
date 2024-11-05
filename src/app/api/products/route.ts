@@ -4,7 +4,11 @@ import { ProductType } from '@/app/shared/utils/types';
 import sanitize from 'sanitize-html';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { addProduct, deleteProduct } from '@/app/server/services/product';
+import {
+  addProduct,
+  deleteProduct,
+  getProducts,
+} from '@/app/server/services/product';
 import { getTokenVerificationResult } from '../utils/tokens';
 import { getProductDataValidationResult } from '../utils/productValidation';
 
@@ -40,9 +44,15 @@ export async function POST(req: Request) {
   try {
     await addProduct(cleanProductData);
 
-    revalidatePath('admin');
+    revalidatePath('admin', 'layout');
+    revalidatePath('/', 'layout');
 
-    return NextResponse.json({ message: 'Success' }, { status: 200 });
+    const newProductslist = await getProducts();
+
+    return NextResponse.json(
+      { message: 'Success', data: [...newProductslist] },
+      { status: 200 }
+    );
   } catch (err) {
     return NextResponse.json(
       { message: 'Failed to add product' },
@@ -70,10 +80,13 @@ export async function DELETE(req: Request) {
   try {
     await deleteProduct(productId);
 
-    revalidatePath('admin');
+    revalidatePath('admin', 'layout');
+    revalidatePath('/', 'layout');
+
+    const newProductslist = await getProducts();
 
     return NextResponse.json(
-      { message: 'Category deleted successfully' },
+      { message: 'Category deleted successfully', data: [...newProductslist] },
       { status: 200 }
     );
   } catch (error) {

@@ -5,6 +5,7 @@ import Footer from '@/app/shared/Footer/Footer';
 import CartModal from '../shared/Cart/CartModal';
 import SuccessModal from '../shared/SuccessModal/SuccessModal';
 import NavModal from '../shared/NavBar/NavModal';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,11 +22,19 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <CartModal />
-        <SuccessModal />
-        <NavModal />
+        <Suspense>
+          <CartModal />
+        </Suspense>
+        <Suspense>
+          <SuccessModal />
+        </Suspense>
+        <Suspense>
+          <NavModal />
+        </Suspense>
         <main className="main">
-          <NavBar />
+          <Suspense>
+            <NavBar />
+          </Suspense>
           {children}
         </main>
         <Footer />

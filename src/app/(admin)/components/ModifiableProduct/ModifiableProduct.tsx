@@ -4,6 +4,10 @@ import { useFormState } from 'react-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { deleteProductAction } from '../../utils/deleteProductAction';
 import DeleteButton from './DeleteButton';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/lib/store';
+import { useEffect } from 'react';
+import { dataActions } from '@/lib/features/cart/data-slice';
 
 interface ModifiableProductProps {
   product: ProductType;
@@ -11,6 +15,13 @@ interface ModifiableProductProps {
 
 export default function ModifiableProduct({ product }: ModifiableProductProps) {
   const [state, action] = useFormState(deleteProductAction, null);
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (state.isSubmitted && state.isSubmitted.value) {
+      dispatch(dataActions.setProducts([...state.data]));
+    }
+  }, [dispatch, state.data, state.isSubmitted]);
 
   return (
     <div className="modifiableProduct">
