@@ -21,7 +21,7 @@ export default function ModifiableCategory({
   name,
   id,
 }: ModifiableCategoryProps) {
-  const [state, action] = useFormState(deleteCategoryAction, null);
+  const [state, action] = useFormState(deleteCategoryAction, {});
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {

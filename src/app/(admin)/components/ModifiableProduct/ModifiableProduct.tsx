@@ -14,7 +14,7 @@ interface ModifiableProductProps {
 }
 
 export default function ModifiableProduct({ product }: ModifiableProductProps) {
-  const [state, action] = useFormState(deleteProductAction, null);
+  const [state, action] = useFormState(deleteProductAction, {});
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
