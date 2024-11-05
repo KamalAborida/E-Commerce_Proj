@@ -32,7 +32,6 @@
 
       &__btn, .numbersInput {
         height: 50px;
-        // border: 3px solid yellow;
         width: 160px;
         margin-right: 20px;
       }
@@ -51,16 +50,6 @@
       }
     }
   }
-}
-
-.addToCart {
-  background-color: $primary-orange;
-  color: white;
-  font-size: 13px;
-}
-
-.cartProductNumber {
-  background-color: $very-light-gray;
 }
 
 @media screen and (max-width: $tablet-max-width) {

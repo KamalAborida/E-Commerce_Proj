@@ -27,7 +27,7 @@ export default function RecommendedProduct({
         {product.name}
       </h3>
       <Link href={`/product/${product.id}`}>
-        <button className="recommendedProductsSection__recommendedProducts__recommendedProduct__btn">
+        <button className="recommendedProductsSection__recommendedProducts__recommendedProduct__btn btn-orange">
           SEE PRODUCT
         </button>
       </Link>

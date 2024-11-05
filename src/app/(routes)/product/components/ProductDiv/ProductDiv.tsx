@@ -55,7 +55,7 @@ export default function ProductDiv() {
             defaultQuantity={1}
           />
           <button
-            className="productDiv__ctaDiv__btnDiv__btn addToCart"
+            className="productDiv__ctaDiv__btnDiv__btn btn-orange"
             onClick={handleAddToCart}
           >
             ADD TO CART

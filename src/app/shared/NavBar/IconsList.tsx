@@ -1,19 +1,28 @@
 'use client';
 
-import Image from 'next/image';
+import { useAppSelector } from '@/lib/store';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { FaCartPlus } from 'react-icons/fa';
 
 export default function NavIconList() {
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      setIsCartEmpty(false);
+    } else {
+      setIsCartEmpty(true);
+    }
+  }, [cartItems]);
+
   return (
     <ul className="navIconList">
       <li className="navIconList__item">
         <Link href={'?cart=true'}>
-          <Image
-            src={'/cart-icon.svg'}
-            alt="Shopping Cart Icon"
-            width={20}
-            height={20}
-          />
+          <FaCartPlus className="navIconList__icon" />
+          {!isCartEmpty && <div className="isNotEmptyBall"></div>}
         </Link>
       </li>
     </ul>
