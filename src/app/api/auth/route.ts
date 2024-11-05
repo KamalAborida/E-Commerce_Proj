@@ -13,15 +13,11 @@ export interface Admin {
 const secretKey = process.env.SECRET_KEY;
 
 export async function POST(req: Request) {
-  console.log('Request');
-
   const adminData = await req.json();
 
   const admin = getAdminByUsername(adminData.username);
 
   if (!admin) {
-    console.log('No admin');
-
     return NextResponse.json(
       { message: 'There is no admin with that username' },
       { status: 400 }

@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const tokenVerificationResult = getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
-    return tokenVerificationResult.nextResponse;
+    return tokenVerificationResult.nextResponse!;
   }
 
   const categoryData: CategoryType = await req.json();
@@ -52,7 +52,7 @@ export async function DELETE(req: Request) {
   const tokenVerificationResult = getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
-    return tokenVerificationResult.nextResponse;
+    return tokenVerificationResult.nextResponse!;
   }
 
   const { categoryId } = await req.json();
