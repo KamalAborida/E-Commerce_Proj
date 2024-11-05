@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   const tokenVerificationResult = getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
-    return tokenVerificationResult.nextResponse!;
+    return tokenVerificationResult.nextResponse as NextResponse;
   }
 
   const productData: ProductType = await req.json();
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
   const productValidationResult = getProductDataValidationResult(productData);
 
   if (!productValidationResult.success) {
-    return productValidationResult.nextResponse!;
+    return productValidationResult.nextResponse as NextResponse;
   }
 
   const cleanProductData: ProductType = {
@@ -55,7 +55,7 @@ export async function DELETE(req: Request) {
   const tokenVerificationResult = getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
-    return tokenVerificationResult.nextResponse!;
+    return tokenVerificationResult.nextResponse as NextResponse;
   }
 
   const { productId } = await req.json();
