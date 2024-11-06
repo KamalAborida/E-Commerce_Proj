@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import { CategoryType } from '../utils/types';
 import { useAppSelector } from '@/lib/store';
+import { useEffect, useState } from 'react';
 
 export default function NavList() {
   const categories = useAppSelector((state) => state.data.categories);
 
   return (
     <ul className="navList">
-      <li className="navList__item">
+      <li className="navList__item" key={'Home'}>
         <Link href={'/'}>HOME</Link>
       </li>
       {categories &&

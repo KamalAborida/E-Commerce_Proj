@@ -1,3 +1,4 @@
+import { deleteCategoryImageFromS3 } from '@/app/server/awsUtilities';
 import { fetchRoute } from './utils';
 
 export const deleteCategoryAction = async (
@@ -13,6 +14,7 @@ export const deleteCategoryAction = async (
   }
 
   try {
+    await deleteCategoryImageFromS3(+categoryId);
     const response = await fetchRoute({ categoryId }, 'delete', 'categories');
     return response;
   } catch (error: unknown) {

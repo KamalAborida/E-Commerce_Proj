@@ -2,6 +2,7 @@
 
 import { useAppSelector } from '@/lib/store';
 import BestSellingCard from './BestSellingCard';
+import { useEffect, useState } from 'react';
 
 export default function BestSelling() {
   const products = useAppSelector((state) => state.data.products);

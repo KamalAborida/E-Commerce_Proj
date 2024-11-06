@@ -4,9 +4,10 @@ import Link from 'next/link';
 interface categoryProps {
   href: string;
   name: string;
+  image: string;
 }
 
-export default function Category({ href, name }: categoryProps) {
+export default function Category({ href, name, image }: categoryProps) {
   const nameArr = name.split('');
   nameArr[0] = nameArr[0].toUpperCase();
   const title = nameArr.join('');
@@ -14,7 +15,7 @@ export default function Category({ href, name }: categoryProps) {
   return (
     <div className="category">
       <Image
-        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${name.toLowerCase()}-noBackground.svg`}
+        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${image}`}
         alt="HeadPhones"
         width={120}
         height={160}

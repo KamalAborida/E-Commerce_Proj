@@ -14,12 +14,14 @@ interface ModifiableCategoryProps {
   href: string;
   name: string;
   id: number;
+  image: string;
 }
 
 export default function ModifiableCategory({
   href,
   name,
   id,
+  image,
 }: ModifiableCategoryProps) {
   const [state, action] = useFormState(deleteCategoryAction, {});
   const dispatch = useDispatch<AppDispatch>();
@@ -39,7 +41,7 @@ export default function ModifiableCategory({
           className="modifiableCategory__icon modifiableCategory__icon--edit"
         />
       </div>
-      <Category href={href} name={name} />
+      <Category href={href} name={name} image={image} />
     </div>
   );
 }

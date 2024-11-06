@@ -46,12 +46,9 @@ const insertAdmin = db.prepare(`
 
 try {
   // Insert categories
-  const headphones = insertCategory.run(
-    'Headphones',
-    'url-to-headphones-preview'
-  );
-  const speakers = insertCategory.run('Speakers', 'url-to-speakers-preview');
-  const earphones = insertCategory.run('Earphones', 'url-to-earphones-preview');
+  const headphones = insertCategory.run('Headphones', 'headphones.svg');
+  const speakers = insertCategory.run('Speakers', 'speakers.svg');
+  const earphones = insertCategory.run('Earphones', 'earphones.svg');
 
   // Populate Headphones category
   insertProduct.run(

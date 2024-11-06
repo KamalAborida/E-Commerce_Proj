@@ -24,6 +24,7 @@ export const addProductAction = async (
     description: formData.get('description'),
     inTheBox: formData.get('inTheBox'),
     features: formData.get('features'),
+    // previewImage: `${imagesName}-preview.${getImageType(images.previewImage)}`,
     previewImage: `${imagesName}-preview.${getImageType(images.previewImage)}`,
     images: {
       smallImages: [

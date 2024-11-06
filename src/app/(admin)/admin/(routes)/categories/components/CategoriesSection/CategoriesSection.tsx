@@ -18,6 +18,7 @@ export default function CategoriesSection() {
                   href={''}
                   name={category.name}
                   id={category.id}
+                  image={category.previewImage}
                 />
               </li>
             );
