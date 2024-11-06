@@ -18,7 +18,7 @@ export default function RecommendedProduct({
       <div className="recommendedProductsSection__recommendedProducts__recommendedProduct__img">
         <Image
           alt="Product"
-          src={`/${product.previewImage}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${product.previewImage}.png`}
           width={350}
           height={320}
         />

@@ -36,7 +36,7 @@ export default function ProductDiv() {
       <div className="productDiv__img">
         <Image
           alt="Product Preview"
-          src={`/${product.previewImage}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${product.previewImage}.png`}
           width={540}
           height={560}
         />

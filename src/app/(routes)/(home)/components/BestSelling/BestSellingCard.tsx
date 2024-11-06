@@ -15,7 +15,7 @@ export default function BestSellingCard({ product }: bestSellingCardProps) {
     <div className="bestSellingCard">
       <div className="bestSellingCard__img">
         <Image
-          src={`/${product.previewImage}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${product.previewImage}.png`}
           alt="Product Image"
           width={550}
           height={330}

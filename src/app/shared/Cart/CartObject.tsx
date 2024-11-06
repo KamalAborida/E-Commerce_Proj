@@ -35,7 +35,8 @@ export default function CartObject({ isEditable, cartItem }: CartObjectProps) {
     <div className="cartObject">
       <Image
         className="cartObject__img"
-        src={`/${cartItem.previewImage}.png`}
+        // src={`/${cartItem.previewImage}.png`}
+        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${cartItem.previewImage}.png`}
         alt="Headphones"
         width={64}
         height={64}

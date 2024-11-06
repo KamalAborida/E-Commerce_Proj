@@ -14,7 +14,7 @@ export default function Category({ href, name }: categoryProps) {
   return (
     <div className="category">
       <Image
-        src={`/${name}-noBackground.svg`}
+        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${name.toLowerCase()}-noBackground.svg`}
         alt="HeadPhones"
         width={120}
         height={160}

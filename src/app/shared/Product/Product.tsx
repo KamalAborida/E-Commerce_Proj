@@ -11,7 +11,8 @@ export default function Product({ product }: productProps) {
     <div className="product">
       <div className="product__img">
         <Image
-          src={`/${product.previewImage}.png`}
+          // src={`/${product.previewImage}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${product.previewImage}.png`}
           alt="Product Image"
           width={540}
           height={560}

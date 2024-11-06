@@ -21,7 +21,8 @@ export default function ImageCollague() {
     <div className="imageCollague" role="imageCollague">
       <div className="imageCollague__img">
         <Image
-          src={`/${imagesList.smallImages[0]}.png`}
+          // src={`/${imagesList.smallImages[0]}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${imagesList.smallImages[0]}.png`}
           alt={`${product.name} - 1`}
           width={445}
           height={280}
@@ -29,7 +30,8 @@ export default function ImageCollague() {
       </div>
       <div className="imageCollague__img">
         <Image
-          src={`/${imagesList.smallImages[1]}.png`}
+          // src={`/${imagesList.smallImages[1]}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${imagesList.smallImages[1]}.png`}
           alt={`${product.name} - 2`}
           width={445}
           height={280}
@@ -37,7 +39,8 @@ export default function ImageCollague() {
       </div>
       <div className="imageCollague__img">
         <Image
-          src={`/${imagesList.largeImage}.png`}
+          // src={`/${imagesList.largeImage}.png`}
+          src={`https://audiophile.s3.eu-north-1.amazonaws.com/${imagesList.largeImage}.png`}
           alt={`${product.name}-Large`}
           width={635}
           height={592}

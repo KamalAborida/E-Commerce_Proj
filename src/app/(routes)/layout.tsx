@@ -22,17 +22,17 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <Suspense>
+        <Suspense fallback={<p>Loading...</p>}>
           <CartModal />
         </Suspense>
-        <Suspense>
+        <Suspense fallback={<p>Loading...</p>}>
           <SuccessModal />
         </Suspense>
-        <Suspense>
+        <Suspense fallback={<p>Loading...</p>}>
           <NavModal />
         </Suspense>
         <main className="main">
-          <Suspense>
+          <Suspense fallback={<p>Loading...</p>}>
             <NavBar />
           </Suspense>
           {children}
