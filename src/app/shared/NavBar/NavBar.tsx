@@ -3,9 +3,10 @@
 import Image from 'next/image';
 import NavList from './NavList';
 import NavIconList from './IconsList';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 export default function NavBar() {
   const [isHamburger, setIsHamburger] = useState(false);

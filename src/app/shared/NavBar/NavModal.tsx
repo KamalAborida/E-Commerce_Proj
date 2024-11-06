@@ -2,7 +2,7 @@
 
 import Categories from '@/app/shared/Categories/Categories';
 import { usePathname } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { enableScrolling, handleWindow } from '../utils/windowFunctions';
 import { stopPropagation } from '../utils/general';
 import { useModal } from '../hooks/modal-hook';
