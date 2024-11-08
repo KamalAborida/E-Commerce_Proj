@@ -30,7 +30,7 @@ export const uploadToS3 = async (image: File, name: string) => {
 
   const bufferedImage = await image.arrayBuffer();
 
-  console.log(fileName);
+  // console.log(fileName);
 
   try {
     await s3.putObject({
