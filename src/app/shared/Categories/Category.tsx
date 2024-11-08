@@ -12,10 +12,12 @@ export default function Category({ href, name, image }: categoryProps) {
   nameArr[0] = nameArr[0].toUpperCase();
   const title = nameArr.join('');
 
+  // console.log(image);
+
   return (
     <div className="category">
       <Image
-        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${image}`}
+        src={`https://audiophile.s3.eu-north-1.amazonaws.com/${image.toLowerCase()}`}
         alt="HeadPhones"
         width={120}
         height={160}

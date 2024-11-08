@@ -18,6 +18,12 @@ export default function DeleteIcon({ action, id }: DeleteIconProps) {
         <FaTrashAlt className="modifiableCategory__icon modifiableCategory__icon--delete" />
       </button>
       <input hidden value={id} name="id" readOnly />
+      <input
+        hidden
+        name="localStorageToken"
+        readOnly
+        value={localStorage.getItem('token') || ''}
+      />
     </form>
   );
 }

@@ -34,6 +34,12 @@ export default function CategoriesForm() {
 
   return (
     <form className="categoriesForm" action={action}>
+      <input
+        hidden
+        name="localStorageToken"
+        readOnly
+        value={localStorage.getItem('token') || ''}
+      />
       <h1 className="categoriesForm__title">CATEGORY</h1>
       {state && state.error && <p className="p--error">{state.error}</p>}
       {isTouched.categoryName && errors.categoryName && (

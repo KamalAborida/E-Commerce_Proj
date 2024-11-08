@@ -1,3 +1,5 @@
+'use server';
+
 import { getS3ObjectKey, uploadToS3 } from '@/app/server/awsUtilities';
 import { fetchRoute } from './utils';
 
@@ -5,14 +7,12 @@ export const addCategoryAction = async (
   currentState: any,
   formData: FormData
 ) => {
+  const token = formData.get('localStorageToken') as string;
+
   const image = formData.get('previewImage') as File;
   const imageName = formData.get('name') as string;
 
-  console.log(image, imageName);
-
   const s3Key = await getS3ObjectKey(image, imageName.toLowerCase());
-
-  console.log(s3Key);
 
   const { name, previewImage } = {
     name: formData.get('name'),
@@ -29,7 +29,8 @@ export const addCategoryAction = async (
     const response = await fetchRoute(
       { name, previewImage },
       'post',
-      'categories'
+      'categories',
+      token
     );
 
     return response;

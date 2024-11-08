@@ -5,13 +5,14 @@ export const getImageType = (image: File) => {
 export const fetchRoute = async (
   bodyData: object,
   method: string,
-  route: string
+  route: string,
+  localStorageToken: string
 ) => {
   const response = await fetch(`http://localhost:3000/api/${route}`, {
     method: method.toUpperCase(),
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${localStorage.getItem('token')}`,
+      authorization: `Bearer ${localStorageToken}`,
     },
     body: JSON.stringify(bodyData),
   });

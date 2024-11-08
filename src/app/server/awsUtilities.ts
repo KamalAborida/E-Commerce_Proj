@@ -12,33 +12,37 @@ const s3 = new S3({
   },
 });
 
-export const getImageExtension = (image: File) => {
-  const extension = image.name.split('.').pop() || 'png';
+export const getImageExtension = async (image: File) => {
+  const extension = (await image.name.split('.').pop()) || 'png';
   return extension;
 };
 
-export const getS3ObjectKey = (image: File, objectName: string) => {
-  console.log(image, objectName);
-
-  const extension = getImageExtension(image);
+export const getS3ObjectKey = async (image: File, objectName: string) => {
+  const extension = await getImageExtension(image);
   const fileName = `${objectName}.${extension}`;
   return fileName;
 };
 
 export const uploadToS3 = async (image: File, name: string) => {
-  const fileName = getS3ObjectKey(image, name);
+  // console.log('uploadToS3: ', image, name);
+
+  const fileName = await getS3ObjectKey(image, name);
 
   const bufferedImage = await image.arrayBuffer();
 
+  console.log(fileName);
+
   try {
-    s3.putObject({
+    await s3.putObject({
       Bucket: process.env.AWS_BUCKET_NAME,
-      Key: fileName,
+      Key: fileName.toLowerCase(),
       Body: Buffer.from(bufferedImage),
       ContentType: image.type,
     });
   } catch (err: unknown) {
-    throw new Error('Failed to upload image');
+    if (err instanceof Error) {
+      throw new Error(`Failed to upload image: ${err}`);
+    }
   }
 };
 
