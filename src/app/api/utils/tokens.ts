@@ -1,3 +1,5 @@
+'use server';
+
 import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import { verificationResultType } from '@/app/shared/utils/types';
@@ -30,16 +32,16 @@ export const verifyToken = (token: string): verificationResultType => {
   }
 };
 
-export const getToken = (req: Request) => {
-  const authHeader = req.headers.get('authorization');
+export const getToken = async (req: Request) => {
+  const authHeader = await req.headers.get('authorization');
   const token = authHeader && authHeader.split(' ')[1];
   return token;
 };
 
-export const getTokenVerificationResult = (
+export const getTokenVerificationResult = async (
   req: Request
-): verificationResultType => {
-  const token = getToken(req);
+): Promise<verificationResultType> => {
+  const token = await getToken(req);
 
   if (!token) {
     return {

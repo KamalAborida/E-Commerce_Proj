@@ -1,35 +1,20 @@
 'use client';
 
-import {
-  disableScrolling,
-  enableScrolling,
-} from '@/app/shared/utils/windowFunctions';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { FaLock } from 'react-icons/fa';
+import { handleVerification } from './utils';
 
 export default function TokenChecker() {
   const router = useRouter();
-  const [token, setToken] = useState<string | null>(null);
+
+  const storedToken = localStorage.getItem('token') || '';
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      disableScrolling();
-      const storedToken = localStorage.getItem('token');
-      setToken(storedToken);
+    handleVerification(storedToken, router);
+  }, [router, storedToken]);
 
-      if (token) {
-        enableScrolling();
-      }
-
-      if (!storedToken) {
-        router.push('/admin');
-        enableScrolling();
-      }
-    }
-  }, [router, token]);
-
-  if (token === null) {
+  if (storedToken === null) {
     return (
       <div className="backdrop backdrop--noOffset backdrop--displayCenter">
         <div className="tokenChecker">

@@ -17,10 +17,10 @@ export interface Admin {
 }
 
 export async function POST(req: Request) {
-  const tokenVerificationResult = getTokenVerificationResult(req);
+  const tokenVerificationResult = await getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
-    return tokenVerificationResult.nextResponse as NextResponse;
+    return tokenVerificationResult.nextResponse! as NextResponse;
   }
 
   const categoryData: CategoryType = await req.json();
@@ -51,7 +51,6 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (err) {
-    console.log(err);
     return NextResponse.json(
       { message: 'Failed to add category' },
       { status: 500 }
@@ -60,7 +59,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const tokenVerificationResult = getTokenVerificationResult(req);
+  const tokenVerificationResult = await getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
     return tokenVerificationResult.nextResponse as NextResponse;

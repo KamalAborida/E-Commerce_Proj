@@ -41,7 +41,8 @@ export const uploadToS3 = async (image: File, name: string) => {
     });
   } catch (err: unknown) {
     if (err instanceof Error) {
-      throw new Error(`Failed to upload image: ${err}`);
+      console.log(`Failed to upload image: ${err}`);
+      throw new Error(`Failed to upload image`);
     }
   }
 };
@@ -55,7 +56,7 @@ export const deleteCategoryImageFromS3 = async (categoryId: number) => {
 
   const params = {
     Bucket: process.env.AWS_BUCKET_NAME,
-    Key: category.previewImage,
+    Key: category.previewImage.toLowerCase(),
   };
 
   s3.deleteObject(params, async (err: unknown) => {
