@@ -1,3 +1,5 @@
+'use client';
+
 import Product from '@/app/shared/Product/Product';
 import { ProductType } from '@/app/shared/utils/types';
 import { useFormState, useFormStatus } from 'react-dom';
@@ -23,6 +25,12 @@ export default function DeleteButton({ action, id }: DeleteButtonProps) {
         {pending ? 'Pending...' : 'Delete'}
       </button>
       <input hidden value={id} name="id" readOnly />
+      <input
+        hidden
+        name="localStorageToken"
+        readOnly
+        value={localStorage.getItem('token') || ''}
+      />
     </form>
   );
 }

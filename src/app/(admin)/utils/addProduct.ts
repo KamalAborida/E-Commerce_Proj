@@ -6,6 +6,8 @@ export const addProductAction = async (
   currentState: any,
   formData: FormData
 ) => {
+  const token = formData.get('localStorageToken') as string;
+
   const name = formData.get('name') as string;
   const imagesName = name ? name.split(' ').join('_') : '';
 
@@ -40,7 +42,7 @@ export const addProductAction = async (
   }
 
   try {
-    const response = await fetchRoute(productData, 'post', 'products');
+    const response = await fetchRoute(productData, 'post', 'products', token);
     return response;
   } catch (error: unknown) {
     if (error instanceof Error) {

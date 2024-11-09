@@ -46,6 +46,12 @@ export default function AddProductsForm() {
   return (
     <form className="addProductsForm" action={action}>
       <h1 className="addProductsForm__title">ADD PRODUCT</h1>
+      <input
+        hidden
+        name="localStorageToken"
+        readOnly
+        value={localStorage.getItem('token') || ''}
+      />
       {state && state.error && (
         <p className="addProductsForm__errorState p--error">{state.error}</p>
       )}

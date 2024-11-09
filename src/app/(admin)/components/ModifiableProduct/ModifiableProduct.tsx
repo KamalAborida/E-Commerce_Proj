@@ -1,3 +1,5 @@
+'use client';
+
 import Product from '@/app/shared/Product/Product';
 import { ProductType } from '@/app/shared/utils/types';
 import { useFormState } from 'react-dom';
