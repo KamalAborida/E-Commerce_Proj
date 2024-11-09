@@ -24,7 +24,7 @@ vi.mock('next/navigation', () => ({
   })),
 }));
 
-describe.only('NavBar', () => {
+describe('NavBar', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
