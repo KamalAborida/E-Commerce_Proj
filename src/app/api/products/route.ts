@@ -18,7 +18,7 @@ export interface Admin {
 }
 
 export async function POST(req: Request) {
-  const tokenVerificationResult = getTokenVerificationResult(req);
+  const tokenVerificationResult = await getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
     return tokenVerificationResult.nextResponse as NextResponse;
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const tokenVerificationResult = getTokenVerificationResult(req);
+  const tokenVerificationResult = await getTokenVerificationResult(req);
 
   if (!tokenVerificationResult.success) {
     return tokenVerificationResult.nextResponse as NextResponse;
