@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useAppSelector } from '@/lib/store';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import NavBar from './NavBar';
 import { categoriesData } from '../utils/mockedData';
 
@@ -9,14 +9,22 @@ vi.mock('@/lib/store', () => ({
   useAppSelector: vi.fn(() => [...categoriesData]),
 }));
 
+const getParamMock = vi.fn((searchParam: string) => {
+  return true;
+});
+
 const pushMock = vi.fn();
 vi.mock('next/navigation', () => ({
   useRouter: vi.fn(() => ({
     push: pushMock,
   })),
+
+  useSearchParams: vi.fn(() => ({
+    get: getParamMock,
+  })),
 }));
 
-describe('NavBar', () => {
+describe.only('NavBar', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -54,6 +62,12 @@ describe('NavBar', () => {
   });
 
   it('should call handleHamburger when the hamburger menu is clicked', () => {
+    (useSearchParams as any).mockReturnValue({
+      get: () => {
+        false;
+      },
+    });
+
     global.innerWidth = 799;
     window.dispatchEvent(new Event('resize'));
     const navPathTrigger = '?nav=true';

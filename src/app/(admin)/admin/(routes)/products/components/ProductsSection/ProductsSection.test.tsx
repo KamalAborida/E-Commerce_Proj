@@ -10,6 +10,10 @@ vi.mock('@/lib/store', () => ({
   useAppSelector: vi.fn(() => [...productsData]),
 }));
 
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
+
 vi.mock('react-dom', () => ({
   useFormStatus: vi.fn(() => ({
     pending: false,

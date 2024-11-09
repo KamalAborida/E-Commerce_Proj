@@ -60,7 +60,12 @@ const defaultAdminFormReturnValue = {
 const defaultState = {
   isSubmitted: { value: false },
   error: null,
+  data: [],
 };
+
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
 
 vi.mock('@/app/(admin)/hooks/form-hook', () => ({
   useAdminForms: vi.fn(() => defaultAdminFormReturnValue),
@@ -133,19 +138,6 @@ describe('AddProductsForm Component', () => {
     expect(mockHandlePreviewImg).toHaveBeenCalled();
   });
 
-  it('should reset form when submission is successful', async () => {
-    (useFormState as any).mockReturnValue([
-      { isSubmitted: { value: true } },
-      vi.fn(),
-    ]);
-
-    render(<AddProductsForm />);
-
-    await waitFor(() => {
-      expect(mockReset).toHaveBeenCalled();
-    });
-  });
-
   it('should display error message if there is an error in form state', () => {
     (useFormState as any).mockReturnValue([
       { error: 'Error submitting form' },
@@ -165,5 +157,20 @@ describe('AddProductsForm Component', () => {
     const submitButton = screen.getByRole('button', { name: 'Submitting' });
 
     expect(submitButton).toBeDefined();
+  });
+
+  it('should reset form when submission is successful', async () => {
+    const submittedState = {
+      ...defaultState,
+      isSubmitted: { value: true },
+    };
+
+    (useFormState as any).mockReturnValue([submittedState, vi.fn()]);
+
+    render(<AddProductsForm />);
+
+    await waitFor(() => {
+      expect(mockReset).toHaveBeenCalled();
+    });
   });
 });

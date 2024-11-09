@@ -33,6 +33,10 @@ vi.mock('react-dom', () => ({
   useFormStatus: vi.fn(() => ({ pending: false })),
 }));
 
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
+
 describe('ModifiableProduct Component', () => {
   const defaultProduct: ProductType = { ...productsData[0] };
 

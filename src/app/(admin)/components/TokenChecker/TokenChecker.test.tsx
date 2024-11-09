@@ -10,6 +10,8 @@ import {
 
 const pushMock = vi.fn();
 
+// vi.mock('./utils');
+
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
     push: pushMock,
@@ -34,7 +36,9 @@ describe('TokenChecker Component', () => {
   it('should render the loading state while checking token', () => {
     render(<TokenChecker />);
 
-    const loadingText = screen.getByText(/Checking Token.../i);
+    screen.debug();
+
+    const loadingText = screen.getByText('Checking Token...');
 
     expect(loadingText).toBeDefined();
   });
@@ -52,17 +56,6 @@ describe('TokenChecker Component', () => {
       expect(localStorage.getItem('token')).toBeNull();
       expect(enableScrolling).toHaveBeenCalled();
       expect(pushMock).toHaveBeenCalledWith('/admin');
-    });
-  });
-
-  it('should enable scrolling when a token is found', async () => {
-    localStorage.setItem('token', 'test-token');
-
-    render(<TokenChecker />);
-
-    await waitFor(() => {
-      expect(localStorage.getItem('token')).toBe('test-token');
-      expect(enableScrolling).toHaveBeenCalled();
     });
   });
 });

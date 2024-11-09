@@ -14,7 +14,7 @@ export default function TokenChecker() {
     handleVerification(storedToken, router);
   }, [router, storedToken]);
 
-  if (storedToken === null) {
+  if (!storedToken) {
     return (
       <div className="backdrop backdrop--noOffset backdrop--displayCenter">
         <div className="tokenChecker">

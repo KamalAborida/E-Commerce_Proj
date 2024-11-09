@@ -26,6 +26,10 @@ const mockState: MockStateType = {
   status: 200,
 };
 
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
+
 vi.mock('react-dom', () => ({
   useFormState: vi.fn((firstMockedAction, initialState) => {
     firstMockedAction = vi.fn();
@@ -39,6 +43,7 @@ describe('ModifiableCategory Component', () => {
     href: '/category/1',
     name: 'Category',
     id: 1,
+    image: '',
   };
 
   beforeEach(() => {

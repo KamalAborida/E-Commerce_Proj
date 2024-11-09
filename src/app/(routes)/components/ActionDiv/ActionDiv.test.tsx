@@ -1,7 +1,7 @@
 import React from 'react';
 import { it, expect } from 'vitest';
 import {
-  filterProducts,
+  filterProductsByPrice,
   searchProducts,
   sortProductsByPrice,
 } from '../../category/components/Products/utils';
@@ -32,7 +32,7 @@ it('should filter the array to the searched term and the array should be empty',
 });
 
 it('should filter the array and return only one product', () => {
-  const sortedArray = filterProducts(productsData, 200, 400);
+  const sortedArray = filterProductsByPrice(productsData, 200, 400);
 
   sortedArray.forEach((product) => {
     expect(product.price).toBeGreaterThanOrEqual(200);

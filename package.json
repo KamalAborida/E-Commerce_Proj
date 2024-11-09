@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "init-db": "ts-node src/app/server/initDB.ts",
     "init-db-prod": "ts-node src/app/server/initDB-production.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "testFile": "vitest CategoriesForm"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.685.0",

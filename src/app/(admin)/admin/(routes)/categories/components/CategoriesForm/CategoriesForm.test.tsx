@@ -10,6 +10,7 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 import CategoriesForm from './CategoriesForm';
 import { useAdminForms } from '@/app/(admin)/hooks/form-hook';
 import { useFormState, useFormStatus } from 'react-dom';
+import { useDispatch } from 'react-redux';
 
 const mockHandleCategoryName = vi.fn();
 const mockHandleCategoryPreviewImg = vi.fn();
@@ -24,6 +25,7 @@ const defaultFormData = {
 const defaultState = {
   isSubmitted: { value: false },
   error: null,
+  data: [],
 };
 
 const defaultAdminFormReturnValue = {
@@ -34,6 +36,10 @@ const defaultAdminFormReturnValue = {
   errors: { categoryName: false },
   isTouched: { categoryName: false },
 };
+
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
 
 vi.mock('@/app/(admin)/hooks/form-hook', () => ({
   useAdminForms: vi.fn(() => defaultAdminFormReturnValue),
@@ -102,21 +108,6 @@ describe('CategoriesForm Component', () => {
     expect(errorMessage).toBeDefined();
   });
 
-  it('should handle form submission and reset on successful submission', async () => {
-    const submittedState = {
-      ...defaultAdminFormReturnValue,
-      isSubmitted: { value: true },
-    };
-
-    (useFormState as any).mockReturnValue([submittedState, mockAction]);
-
-    render(<CategoriesForm />);
-
-    await waitFor(() => {
-      expect(mockReset).toHaveBeenCalled();
-    });
-  });
-
   it('should call the handleCategoryName function when the category name input changes', () => {
     render(<CategoriesForm />);
 
@@ -135,5 +126,20 @@ describe('CategoriesForm Component', () => {
     fireEvent.change(previewImageInput);
 
     expect(mockHandleCategoryPreviewImg).toHaveBeenCalled();
+  });
+
+  it('should handle form submission and reset on successful submission', async () => {
+    const submittedState = {
+      ...defaultState,
+      isSubmitted: { value: true },
+    };
+
+    (useFormState as any).mockReturnValue([submittedState, mockAction]);
+
+    render(<CategoriesForm />);
+
+    await waitFor(() => {
+      expect(mockReset).toHaveBeenCalled();
+    });
   });
 });

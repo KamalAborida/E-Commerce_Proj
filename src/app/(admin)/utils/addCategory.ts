@@ -12,16 +12,16 @@ export const addCategoryAction = async (
   const image = formData.get('previewImage') as File;
   const imageName = formData.get('name') as string;
 
+  if (!imageName || !image) {
+    return { error: 'Please Complete the category data' };
+  }
+
   const s3Key = await getS3ObjectKey(image, imageName.toLowerCase());
 
   const { name, previewImage } = {
     name: formData.get('name'),
     previewImage: `${s3Key}`,
   };
-
-  if (!name || !previewImage) {
-    return { error: 'No data provided' };
-  }
 
   try {
     await uploadToS3(image, imageName);

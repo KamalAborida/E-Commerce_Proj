@@ -21,7 +21,9 @@ vi.mock('./utils', () => ({
 describe('deleteCategoryAction', () => {
   const mockFormData = new FormData();
   const categoryId = '1';
+  const token = 'xx55';
   mockFormData.append('id', categoryId);
+  mockFormData.append('localStorageToken', token);
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -38,7 +40,8 @@ describe('deleteCategoryAction', () => {
     expect(fetchRoute).toHaveBeenCalledWith(
       { categoryId: categoryId },
       'delete',
-      'categories'
+      'categories',
+      token
     );
   });
 

@@ -11,6 +11,10 @@ vi.mock('@/lib/store', () => ({
   useAppSelector: vi.fn(() => [...categoriesData]),
 }));
 
+vi.mock('react-redux', () => ({
+  useDispatch: vi.fn(() => vi.fn()),
+}));
+
 vi.mock('react-dom', () => ({
   useFormState: vi.fn((firstMockedAction, initialState) => {
     firstMockedAction = vi.fn();

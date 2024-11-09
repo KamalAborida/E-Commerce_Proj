@@ -5,6 +5,8 @@ import { fetchRoute } from './utils';
 
 global.fetch = vi.fn();
 
+vi.mock('@/app/server/awsUtilities');
+
 vi.mock('./utils', () => ({
   fetchRoute: vi.fn((bodyData, method, route) => {
     return new Promise((resolve, reject) => {
@@ -59,6 +61,6 @@ describe('addCategoryAction', () => {
 
     const result = await addCategoryAction({}, emptyFormData);
 
-    expect(result).toEqual({ error: 'No data provided' });
+    expect(result).toEqual({ error: 'Please Complete the category data' });
   });
 });
